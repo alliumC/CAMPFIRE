@@ -42,7 +42,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(8, 14)
 
-[node name="Node2D" type="Node2D"]
+[node name="CHARACTER" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_0e48y")
@@ -51,7 +51,7 @@ script = ExtResource("1_0e48y")
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_rj586")
 autoplay = "default"
-frame_progress = 0.8974101
+frame_progress = 0.8210024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -7)
