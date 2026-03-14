@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cofh5p0jfukfg"
+path="res://.godot/imported/dungeon v2.wav-a662f0744d4da0443452a3799bbb99fe.sample"
+
+[deps]
+
+source_file="res://songs/dungeon v2.wav"
+dest_files=["res://.godot/imported/dungeon v2.wav-a662f0744d4da0443452a3799bbb99fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
