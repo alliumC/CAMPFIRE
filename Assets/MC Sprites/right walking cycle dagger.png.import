@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqs5y3dswxbv7"
-path="res://.godot/imported/right walking cycle dagger.png-8dff69074b068b7c840ba230f68e2b32.ctex"
+path="res://.godot/imported/right walking cycle dagger.png-cacb6fdc157541bcf5afbdd1939d0ec3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MC Sprites/right walking cycle dagger.png"
-dest_files=["res://.godot/imported/right walking cycle dagger.png-8dff69074b068b7c840ba230f68e2b32.ctex"]
+source_file="res://Assets/MC Sprites/right walking cycle dagger.png"
+dest_files=["res://.godot/imported/right walking cycle dagger.png-cacb6fdc157541bcf5afbdd1939d0ec3.ctex"]
 
 [params]
 

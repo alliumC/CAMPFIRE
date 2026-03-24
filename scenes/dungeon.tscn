@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://cd2ekv3lcnfgt"]
 
-[ext_resource type="Texture2D" uid="uid://c3lor5oib3l20" path="res://assets/Dungeon/PNG/walls_floor.png" id="1_noicg"]
-[ext_resource type="Texture2D" uid="uid://dcaalfv4ik4p0" path="res://assets/Dungeon/PNG/decorative_cracks_walls.png" id="2_0wj4k"]
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="2_orq0m"]
-[ext_resource type="PackedScene" uid="uid://b20dwhqsaekcu" path="res://scripts/enemy.res" id="3_fvacq"]
-[ext_resource type="AudioStream" uid="uid://cofh5p0jfukfg" path="res://songs/dungeon v2.wav" id="4_orq0m"]
-[ext_resource type="Script" uid="uid://bj5hisoph3ddd" path="res://scenes/area_2d.gd" id="6_hsn05"]
-[ext_resource type="AudioStream" uid="uid://djo3eqlimuten" path="res://songs/BOSSS.wav" id="7_etlrv"]
-[ext_resource type="Script" uid="uid://cfuesuj8mwvci" path="res://scripts/audio_stream_player_2d.gd" id="7_hsn05"]
+[ext_resource type="Texture2D" uid="uid://c3lor5oib3l20" path="res://Assets/Dungeon/PNG/walls_floor.png" id="1_noicg"]
+[ext_resource type="Texture2D" uid="uid://dcaalfv4ik4p0" path="res://Assets/Dungeon/PNG/decorative_cracks_walls.png" id="2_0wj4k"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/player.tscn" id="2_orq0m"]
+[ext_resource type="PackedScene" uid="uid://b20dwhqsaekcu" path="res://Scenes/enemy.res" id="3_fvacq"]
+[ext_resource type="AudioStream" uid="uid://cofh5p0jfukfg" path="res://Sounds/Music/dungeon v2.wav" id="4_orq0m"]
+[ext_resource type="Script" uid="uid://bj5hisoph3ddd" path="res://Scripts/area_2d (2).gd" id="6_hsn05"]
+[ext_resource type="AudioStream" uid="uid://djo3eqlimuten" path="res://Sounds/Music/BOSSS.wav" id="7_etlrv"]
+[ext_resource type="Script" uid="uid://cfuesuj8mwvci" path="res://Scripts/audio_stream_player_2d.gd" id="7_hsn05"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_112p8"]
 texture = ExtResource("1_noicg")

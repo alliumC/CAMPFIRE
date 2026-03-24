@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwvss4jalnpwm"]
 
-[ext_resource type="Script" uid="uid://dsaw2ay7jwkhs" path="res://scripts/control.gd" id="1_r67kn"]
-[ext_resource type="Texture2D" uid="uid://cld3g84ma7v7n" path="res://assets/Main Menu/Menu 1.png" id="2_brbbq"]
+[ext_resource type="Script" uid="uid://dsaw2ay7jwkhs" path="res://Scripts/control.gd" id="1_r67kn"]
+[ext_resource type="Texture2D" uid="uid://cld3g84ma7v7n" path="res://Assets/Main Menu/Menu 1.png" id="2_brbbq"]
 
 [sub_resource type="FontVariation" id="FontVariation_qtu10"]
 
