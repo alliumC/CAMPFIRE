@@ -64,7 +64,6 @@ func takeDamage():
 		health -= GlobalVar.damageDealt
 		print(health)
 
-
 func _on_attack_timeout():
 	cooldown=false
 	
