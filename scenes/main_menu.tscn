@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b20ypjk246783"]
 
-[ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://Scripts/main_menu.gd" id="1_n45e2"]
+[ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://Scripts/MainMenu.gd" id="1_n45e2"]
 [ext_resource type="Texture2D" uid="uid://cld3g84ma7v7n" path="res://Assets/Main Menu/Menu 1.png" id="2_opfnp"]
 [ext_resource type="FontFile" uid="uid://dkpketnay57ig" path="res://Assets/Font/Star Crush.ttf" id="3_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://d32y5tblmd2vp" path="res://Assets/Main Menu/default menu panel.png" id="4_yhxw7"]
@@ -47,22 +47,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n45e2")
 
-[node name="BG" type="TextureRect" parent="." unique_id=307363825]
-modulate = Color(0.31431612, 0.31431612, 0.3143161, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -18.0
-offset_right = 60.0
-offset_bottom = 238.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_opfnp")
-expand_mode = 1
-stretch_mode = 6
-
 [node name="Title" type="Label" parent="." unique_id=1500184802]
 layout_mode = 1
 anchors_preset = 8
@@ -82,6 +66,22 @@ text = "VENOR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="MainMenuBG" type="TextureRect" parent="." unique_id=307363825]
+modulate = Color(0.31431612, 0.31431612, 0.3143161, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -18.0
+offset_right = 60.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_opfnp")
+expand_mode = 1
+stretch_mode = 6
+
 [node name="Button BG" type="TextureRect" parent="." unique_id=1309340325]
 layout_mode = 1
 anchors_preset = 8
@@ -100,7 +100,7 @@ texture = ExtResource("4_yhxw7")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1388513150]
+[node name="ButtonsBox" type="VBoxContainer" parent="." unique_id=1388513150]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,7 +115,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 12
 
-[node name="start" type="Button" parent="VBoxContainer" unique_id=1078115945]
+[node name="Start" type="Button" parent="ButtonsBox" unique_id=1078115945]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 48
@@ -125,7 +125,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
 text = "Start Game"
 
-[node name="options" type="Button" parent="VBoxContainer" unique_id=1241452125]
+[node name="Options" type="Button" parent="ButtonsBox" unique_id=1241452125]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 48
@@ -135,7 +135,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
 text = "Options"
 
-[node name="quit" type="Button" parent="VBoxContainer" unique_id=510917756]
+[node name="Quit" type="Button" parent="ButtonsBox" unique_id=510917756]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 48
@@ -150,6 +150,6 @@ text = "Quit
 stream = ExtResource("5_trj04")
 autoplay = true
 
-[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonsBox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonsBox/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="ButtonsBox/Quit" to="." method="_on_quit_pressed"]
