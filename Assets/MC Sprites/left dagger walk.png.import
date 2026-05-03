@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvg364crrqnq0"
-path="res://.godot/imported/left dagger walk.png-ffc6424198ff9fa7e0cfc65f48180869.ctex"
+path="res://.godot/imported/left dagger walk.png-b1d5501f6b9fa49e96f9b91f035056bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MC Sprites/left dagger walk.png"
-dest_files=["res://.godot/imported/left dagger walk.png-ffc6424198ff9fa7e0cfc65f48180869.ctex"]
+source_file="res://Assets/MC Sprites/left dagger walk.png"
+dest_files=["res://.godot/imported/left dagger walk.png-b1d5501f6b9fa49e96f9b91f035056bc.ctex"]
 
 [params]
 

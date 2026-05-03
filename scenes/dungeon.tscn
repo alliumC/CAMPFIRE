@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cd2ekv3lcnfgt"]
 
-[ext_resource type="Texture2D" uid="uid://c3lor5oib3l20" path="res://assets/Dungeon/PNG/walls_floor.png" id="1_noicg"]
-[ext_resource type="Texture2D" uid="uid://dcaalfv4ik4p0" path="res://assets/Dungeon/PNG/decorative_cracks_walls.png" id="2_0wj4k"]
+[ext_resource type="Texture2D" uid="uid://c3lor5oib3l20" path="res://Assets/Dungeon/PNG/walls_floor.png" id="1_noicg"]
+[ext_resource type="Texture2D" uid="uid://dcaalfv4ik4p0" path="res://Assets/Dungeon/PNG/decorative_cracks_walls.png" id="2_0wj4k"]
 [ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="2_orq0m"]
 [ext_resource type="PackedScene" uid="uid://b20dwhqsaekcu" path="res://scripts/enemy.res" id="3_fvacq"]
 [ext_resource type="AudioStream" uid="uid://cofh5p0jfukfg" path="res://songs/dungeon v2.wav" id="4_orq0m"]
@@ -770,31 +770,32 @@ position = Vector2(-191, 216)
 position = Vector2(-223, 211)
 rotation = -0.7853982
 
-[node name="Path2D2" type="Path2D" parent="Dungeon/PATHING" unique_id=1016454191]
-position = Vector2(137, -118)
+[node name="Path2D2" type="Path2D" parent="Dungeon/PATHING" unique_id=2060664561]
+position = Vector2(17, 1)
 curve = SubResource("Curve2D_ys5p8")
 
-[node name="enemy1" parent="Dungeon/PATHING/Path2D2" unique_id=162506691 instance=ExtResource("3_fvacq")]
+[node name="enemy" parent="Dungeon/PATHING/Path2D2" unique_id=2026926142 instance=ExtResource("3_fvacq")]
 position = Vector2(-191, 216)
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Dungeon/PATHING/Path2D2" unique_id=409084649]
+[node name="PathFollow2D" type="PathFollow2D" parent="Dungeon/PATHING/Path2D2" unique_id=637146663]
 position = Vector2(-223, 211)
 rotation = -0.7853982
 
-[node name="Path2D3" type="Path2D" parent="Dungeon/PATHING" unique_id=2115569714]
-position = Vector2(132, -5)
+[node name="Path2D3" type="Path2D" parent="Dungeon/PATHING" unique_id=1638160681]
+position = Vector2(17, 1)
 curve = SubResource("Curve2D_ys5p8")
 
-[node name="enemy2" parent="Dungeon/PATHING/Path2D3" unique_id=1502831103 instance=ExtResource("3_fvacq")]
+[node name="enemy" parent="Dungeon/PATHING/Path2D3" unique_id=1035647137 instance=ExtResource("3_fvacq")]
 position = Vector2(-191, 216)
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Dungeon/PATHING/Path2D3" unique_id=209421795]
+[node name="PathFollow2D" type="PathFollow2D" parent="Dungeon/PATHING/Path2D3" unique_id=302217619]
 position = Vector2(-223, 211)
 rotation = -0.7853982
 
 [node name="CHARACTER" parent="Dungeon" unique_id=330398334 instance=ExtResource("2_orq0m")]
-position = Vector2(-395, 233)
+position = Vector2(-395, 232)
 scale = Vector2(1.235, 1.235)
+metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Dungeon/CHARACTER" unique_id=1156129787]
 zoom = Vector2(5, 5)

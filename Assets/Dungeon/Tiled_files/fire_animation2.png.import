@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cblashoeg77m7"
-path="res://.godot/imported/fire_animation2.png-043c222e6f02de05ceb406b91756104e.ctex"
+path="res://.godot/imported/fire_animation2.png-fc0c699319852f8abe538b1229198d2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dungeon/Tiled_files/fire_animation2.png"
-dest_files=["res://.godot/imported/fire_animation2.png-043c222e6f02de05ceb406b91756104e.ctex"]
+source_file="res://Assets/Dungeon/Tiled_files/fire_animation2.png"
+dest_files=["res://.godot/imported/fire_animation2.png-fc0c699319852f8abe538b1229198d2c.ctex"]
 
 [params]
 

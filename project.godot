@@ -19,6 +19,10 @@ run/main_scene="uid://b20ypjk246783"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ciiqfqx5p7lo7"
+
 [autoload]
 
 GlobalVar="*uid://2okcbbrs0lxn"
@@ -26,6 +30,10 @@ GlobalVar="*uid://2okcbbrs0lxn"
 [display]
 
 window/stretch/aspect="ignore"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [input]
 
