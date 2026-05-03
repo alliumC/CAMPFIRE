@@ -1,11 +1,8 @@
 extends CharacterBody2D
 
-@export var speed:float =100
+@export var speed:float =150
 @onready var sprite=$AnimatedSprite2D
 @onready var light = $PointLight2D
-var maxHealth=10
-var health=maxHealth
-var minHealth=0
 var lastDirection=0
 var enemy
 var attack=false
@@ -58,12 +55,6 @@ func _on_hit_body_exited(body):
 	if body.name == "enemy":
 		print('bye')
 		enemy=null
-
-func takeDamage():
-	if health > minHealth:
-		health -= GlobalVar.damageDealt
-		print(health)
-
 
 func _on_attack_timeout():
 	cooldown=false

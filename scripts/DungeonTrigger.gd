@@ -5,7 +5,7 @@ extends Area2D
 
 var triggered = false
 
-func _on_area_entered(Area2D):
+func _on_area_entered(_Area2D):
 	if triggered:
 		return
 	

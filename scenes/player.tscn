@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b15xa8wx6mij4" path="res://Assets/MC Sprites/back idle.png" id="5_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://dhx625nkwphgn" path="res://Assets/MC Sprites/updated walk cycle.png" id="5_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://d0huryddoob3x" path="res://Assets/MC Sprites/protag back walk cycle.png" id="6_d2wvv"]
-[ext_resource type="PackedScene" uid="uid://cjld16swoj8" path="res://scenes/health.tscn" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_fjrip")
@@ -231,7 +230,7 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_2hs0m")
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1736766046]
-position = Vector2(-0.8097166, -4.048583)
+position = Vector2(0, -5.668017)
 scale = Vector2(1.9101564, 1.8810728)
 energy = 1.21
 shadow_enabled = true
@@ -239,19 +238,10 @@ texture = SubResource("GradientTexture2D_d2wvv")
 texture_scale = 0.25
 
 [node name="hit" type="Area2D" parent="player" unique_id=1821732196]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/hit" unique_id=1116134754]
-position = Vector2(0, -5)
+position = Vector2(0, -4.048583)
 shape = SubResource("CircleShape2D_tuyoq")
 debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
-
-[node name="health" parent="player" unique_id=1489768819 instance=ExtResource("7_fjrip")]
-visible = false
-offset_left = -9.000001
-offset_top = 2.0
-offset_right = 321.0
-offset_bottom = 20.0
-scale = Vector2(0.057725064, 0.10763621)
 
 [connection signal="body_entered" from="player/hit" to="player" method="_on_hit_body_entered"]

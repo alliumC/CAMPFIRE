@@ -35,6 +35,15 @@ window/stretch/aspect="ignore"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "purple",
+"res://scenes/": "orange",
+"res://scripts/": "green",
+"res://songs/": "blue"
+}
+
 [input]
 
 ui_left={
