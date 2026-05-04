@@ -187,19 +187,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 4.0
 
-[sub_resource type="Gradient" id="Gradient_y4r1p"]
-offsets = PackedFloat32Array(0, 0.7556818)
-colors = PackedColorArray(0.9764411, 0.69238615, 0.4637419, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_syqex"]
+offsets = PackedFloat32Array(0, 0.29117647, 0.7147059, 1)
+colors = PackedColorArray(1, 1, 0.7176471, 1, 0.744856, 0.744856, 0.5345437, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_d2wvv"]
-gradient = SubResource("Gradient_y4r1p")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ur7pv"]
+gradient = SubResource("Gradient_syqex")
 fill = 1
-fill_from = Vector2(0.5, 0.51282054)
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tuyoq"]
 radius = 13.0
 
-[node name="CHARACTER" type="Node2D" unique_id=1052419685]
+[node name="Player" type="Node2D" unique_id=1052419685]
 light_mask = 3
 visibility_layer = 3
 y_sort_enabled = true
@@ -226,20 +226,19 @@ animation = &"attack"
 autoplay = "idle down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=19654118]
+visible = false
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_2hs0m")
 
-[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1736766046]
-position = Vector2(0, -5.668017)
-scale = Vector2(1.9101564, 1.8810728)
-energy = 1.21
+[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=153064454]
+scale = Vector2(0.8097166, 0.8097166)
 shadow_enabled = true
-texture = SubResource("GradientTexture2D_d2wvv")
-texture_scale = 0.25
+texture = SubResource("GradientTexture2D_ur7pv")
 
 [node name="hit" type="Area2D" parent="player" unique_id=1821732196]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/hit" unique_id=1116134754]
+visible = false
 position = Vector2(0, -4.048583)
 shape = SubResource("CircleShape2D_tuyoq")
 debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
