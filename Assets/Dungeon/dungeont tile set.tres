@@ -22,6 +22,9 @@ polygon = PackedVector2Array(8, -24, -6, -24, -6, 11, -4.5, 11, -4.5, -8.051611,
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bi2ke"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mgdx3"]
+polygon = PackedVector2Array(-8, -15.5, 8, -15.5, 8, -8, -8, -8)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bxdjx"]
 polygon = PackedVector2Array(-8, -15.5, 8, -15.5, 8, -8, -8, -8)
 
@@ -42,6 +45,9 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_onlab"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xl447"]
+polygon = PackedVector2Array(-8, -15.5, 8, -15.5, 8, -8, -8, -8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ctajg"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -64,11 +70,17 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yypoi"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2ce1y"]
+polygon = PackedVector2Array(8, 0.5, -4, 0.5, -4, 8, 8, 8)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tfavu"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b3u7p"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5vpkt"]
+polygon = PackedVector2Array(-8, 0.5, 5, 0.5, 5, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fodpt"]
 polygon = PackedVector2Array(-8, -8, 6, -8, 6, 8, -8, 8)
@@ -357,6 +369,7 @@ texture = ExtResource("1_bi2ke")
 12:22/0 = 0
 1:15/size_in_atlas = Vector2i(1, 3)
 1:15/0 = 0
+1:15/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_mgdx3")
 2:16/0 = 0
 2:17/0 = 0
 0:15/size_in_atlas = Vector2i(1, 3)
@@ -376,14 +389,17 @@ texture = ExtResource("1_bi2ke")
 3:15/size_in_atlas = Vector2i(1, 3)
 3:15/next_alternative_id = 2
 3:15/0 = 0
+3:15/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xl447")
 6:13/0 = 0
 6:14/0 = 0
 5:13/0 = 0
 5:14/0 = 0
 6:15/0 = 0
+6:15/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5vpkt")
 6:16/0 = 0
 6:17/0 = 0
 5:15/0 = 0
+5:15/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2ce1y")
 5:16/0 = 0
 5:17/0 = 0
 3:18/0 = 0
