@@ -10,9 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dryvmlpoogysy" path="res://Assets/Home/Tiled_files/ground_grass_details.png" id="9_w7kh3"]
 [ext_resource type="Texture2D" uid="uid://c8dqo0hd8cca" path="res://Assets/Home/Tiled_files/Trees_animation.png" id="10_e3hyu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7frw"]
-size = Vector2(21, 34)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
 texture = ExtResource("4_k0juu")
 0:0/0 = 0
@@ -3813,6 +3810,9 @@ sources/5 = SubResource("TileSetAtlasSource_e3hyu")
 sources/6 = SubResource("TileSetAtlasSource_q5onr")
 sources/7 = SubResource("TileSetAtlasSource_jhx03")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7frw"]
+size = Vector2(21, 34)
+
 [sub_resource type="Gradient" id="Gradient_7r4gi"]
 offsets = PackedFloat32Array(0, 0.9911765)
 colors = PackedColorArray(0.47843137, 0.6784314, 0.33333334, 1, 0.47843137, 0.6784314, 0.33333334, 1)
@@ -3822,27 +3822,18 @@ gradient = SubResource("Gradient_7r4gi")
 
 [node name="WORLD" type="Node" unique_id=2097567805]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2089352337]
-position = Vector2(5, 4)
-script = ExtResource("7_jhx03")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=618690877]
-position = Vector2(40, -593)
-shape = SubResource("RectangleShape2D_q7frw")
-
 [node name="Map" type="Node2D" parent="." unique_id=1788962872]
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(5, 4)
+position = Vector2(32, -288)
+metadata/_edit_group_ = true
 
-[node name="player" parent="Map" unique_id=1035596880 instance=ExtResource("5_e3hyu")]
+[node name="Player" parent="Map" unique_id=1035596880 instance=ExtResource("5_e3hyu")]
 light_mask = 1
 z_index = 2
 z_as_relative = false
 position = Vector2(-182, 122)
-
-[node name="path" type="Node2D" parent="Map" unique_id=122411974]
-position = Vector2(-286, -288)
+scale = Vector2(0.7, 0.7)
 
 [node name="BACK" type="TileMapLayer" parent="Map" unique_id=701620218]
 z_as_relative = false
@@ -3872,11 +3863,19 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AADq/xIAAQANABIAAADr/wwAAQABABcAAAAEAAkAAQAMACcAAAAGAPn/AQAOABUAAAAQAAQAAQAKACIAAAAeABEAAQAMACcAAAAjAAIAAQAMAA4AAAAjAAcAAQAOABUAAAAkAA8AAQANABIAAAAmAAUAAQANABIAAAApAAIAAQAMAA4AAAArAAoAAQAKACIAAAACAA0AAQABABcAAADh//3/AQAFABcAAADx//7/AQACAAEAAAAwAPv/AQAJABgAAADi/wsAAQAKACIAAADr/+j/AQAMACsAAADy/+r/AQANABIAAAAIAPP/AQAJABgAAAAJAOf/AQABABcAAAALAPX/AQANABIAAAASAPL/AQAMACsAAAAWAOz/AQAMACcAAAD1/+j/AQAFABcAAAD5/+3/AQAMAA4AAAD8/+v/AQAMACcAAAAIAO3/AQAKACIAAAAPAOr/AQAJABgAAAARAOz/AQAMACcAAAASAOz/AQAMACsAAAATAOj/AQAOABUAAAAbAOj/AQAFABcAAADs//H/AQAMACcAAADw/+f/AQANABIAAADy/+X/AQABABcAAADy/+P/AQAMAA4AAADz/93/AQABABcAAADz/+D/AQANABIAAAD4/+T/AQAOABUAAAD6/97/AQAFABcAAAAKANz/AQAMAA4AAAALAOT/AQAOABUAAAAUAOL/AQAMACcAAAAYAN7/AQAMAA4AAAAaAN//AQAMACsAAAAbANv/AQAKACIAAADz/9z/AQANABIAAAD9/93/AQAJABgAAAAFAOD/AQAMAA4AAAAMANv/AQABABcAAAAOAOP/AQAFABcAAAAPANz/AQABABcAAAAZAOX/AQAFABcAAAD8/+H/AQANABIAAAAaAOP/AQABABcAAAAKAN//AQAFABcAAAAIAOD/AQAOABUAAAD0/9z/AQAMACcAAAD1/+X/AQAOABUAAAD5/+X/AQAMACcAAAAFAOH/AQAMACcAAAAHAOH/AQAKACIAAAANAOP/AQAMACsAAAARAN3/AQAKACIAAAATAN7/AQAMACcAAADx//H/AQANABIAAAD9/+X/AQAJABgAAAD3/9//AQAJABgAAAD6//j/AQANABIAAAASAOD/AQABABcAAADl//b/AwAFAAIAAAAYAPH/AQAKACIAAAAYAPD/AQAMACcAAAAUAOX/AQAKACIAAAAAANn/AAAAAAAAAAAAANr/AAAAAAEAAAAAANv/AAAAAAIAAAABANn/AAABAAAAAAABANr/AAABAAEAAAABANv/AAABAAIAAAACANn/AAACAAAAAAACANr/AAACAAEAAAACANv/AAACAAIAAAADANn/AAADAAAAAAADANr/AAADAAEAAAADANv/AAADAAIAAAAMAO3/AQAGACoAAAAsAPz/AQAGACoAABAIABAAAQAGACoAABDm/w0AAQAGACoAAAD7/wIAAQAFABcAAADu/+j/AQABABcAAADu/wkAAQAOABUAAADs//v/AQAOABUAAAAaAAkAAQAOABUAAAALAP3/AQANABsAAADg/xAAAQANABsAAADm//r/AQANABsAAAD+/w8AAQANABsAAAATABEAAQANABsAAAATABAAAQANABsAAAAxAAcAAQANABsAAAArAPj/AQANABsAAAAaAP//AQAKACIAAAD1//T/AQABABcAAAD9//z/AQABABcAAADy//7/AQADAAEAAADz//7/AQAEAAEAAAD0//7/AQAFAAEAAAD1//7/AQAGAAEAAADx/wEAAQACAAQAAADx/wIAAQACAAUAAADy////AQADAAIAAADy/wAAAQADAAMAAADy/wEAAQADAAQAAADy/wIAAQADAAUAAADz////AQAEAAIAAADz/wAAAQAEAAMAAADz/wEAAQAEAAQAAADz/wIAAQAEAAUAAAD0////AQAFAAIAAAD0/wAAAQAFAAMAAAD0/wEAAQAFAAQAAAD0/wIAAQAFAAUAAAD1////AQAGAAIAAAD1/wAAAQAGAAMAAAD1/wEAAQAGAAQAAAD1/wIAAQAGAAUAAAD2////AQAHAAIAAAD2/wAAAQAHAAMAAAD2/wEAAQAHAAQAAAD2/wIAAQAHAAUAAAD3/wAAAQAIAAMAAAD3/wEAAQAIAAQAAAD3/wIAAQAIAAUAAAD4/wAAAQAJAAMAAAD4/wEAAQAJAAQAAAD4/wIAAQAJAAUAAADw/wEAAQABAAQAAADw/wIAAQABAAUAAADx////AQACAAIAAADx/wAAAQACAAMAAADw/wMAAQABAAYAAADx/wMAAQACAAYAAAD4/wMAAQAJAAYAAAD5/wMAAQAKAAYAAAA=")
 tile_set = SubResource("TileSet_n0148")
 
+[node name="Area2D" type="Area2D" parent="Map" unique_id=2089352337]
+position = Vector2(-27, 292)
+script = ExtResource("7_jhx03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Area2D" unique_id=618690877]
+position = Vector2(61, -883)
+shape = SubResource("RectangleShape2D_q7frw")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=53847958]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=490401471]
-position = Vector2(582.99994, 325.99997)
-scale = Vector2(4.5, 649.99994)
+position = Vector2(639, 360.24997)
+scale = Vector2(4.992188, 724.49994)
 texture = SubResource("GradientTexture1D_w7kh3")
 
-[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_entered" from="Map/Area2D" to="Map/Area2D" method="_on_area_entered"]

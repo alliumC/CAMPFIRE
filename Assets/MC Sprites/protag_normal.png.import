@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhx625nkwphgn"
-path="res://.godot/imported/updated walk cycle.png-cb209083a2ed32d9e181711bcae1c08e.ctex"
+uid="uid://0tiy3tl3ckyr"
+path="res://.godot/imported/protag_normal.png-b982715bdeb43fe2d45fb22178babc9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MC Sprites/updated walk cycle.png"
-dest_files=["res://.godot/imported/updated walk cycle.png-cb209083a2ed32d9e181711bcae1c08e.ctex"]
+source_file="res://Assets/MC Sprites/protag_normal.png"
+dest_files=["res://.godot/imported/protag_normal.png-b982715bdeb43fe2d45fb22178babc9e.ctex"]
 
 [params]
 
