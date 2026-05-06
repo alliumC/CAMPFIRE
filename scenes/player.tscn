@@ -3,18 +3,6 @@
 [ext_resource type="Script" uid="uid://k8yo23fmtgwt" path="res://scripts/player.gd" id="1_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="2_g2els"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
-radius = 8.336542
-
-[sub_resource type="Gradient" id="Gradient_syqex"]
-offsets = PackedFloat32Array(0, 0.29117647, 0.7147059, 1)
-colors = PackedColorArray(1, 1, 0.7176471, 1, 0.744856, 0.744856, 0.5345437, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ur7pv"]
-gradient = SubResource("Gradient_syqex")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r5pv"]
 atlas = ExtResource("2_g2els")
 region = Rect2(192, 0, 64, 64)
@@ -207,6 +195,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
+radius = 8.336542
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 7.2874494
 height = 22.672066
@@ -219,17 +210,6 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_tuyoq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=19654118]
-visible = false
-position = Vector2(0, -8.097166)
-shape = SubResource("CircleShape2D_2hs0m")
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=153064454]
-position = Vector2(0, -9.716599)
-scale = Vector2(2, 2)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_ur7pv")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2003332554]
 light_mask = 2
 visibility_layer = 2
@@ -240,15 +220,17 @@ animation = &"idle down"
 autoplay = "idle down"
 centered = false
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=19654118]
+position = Vector2(0, -8.097166)
+shape = SubResource("CircleShape2D_2hs0m")
+
 [node name="hit" type="Area2D" parent="." unique_id=1821732196]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit" unique_id=1116134754]
+texture_filter = 1
 position = Vector2(0, -12.145749)
 shape = SubResource("CapsuleShape2D_g2els")
 debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=555270632]
-zoom = Vector2(4, 4)
 
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]

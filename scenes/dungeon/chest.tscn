@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dussugdqlujc7"]
+
+[ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Dungeon/PNG/Objects.png" id="1_8uwsg"]
+[ext_resource type="Script" uid="uid://c60sqx885t4x7" path="res://scenes/dungeon/chest.gd" id="1_kpaji"]
+[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://scenes/interactions/interactable.tscn" id="2_bp1or"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oooyy"]
+size = Vector2(20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oooyy"]
+atlas = ExtResource("1_8uwsg")
+region = Rect2(135, 4, 19, 19)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_631qo"]
+radius = 15.033297
+
+[node name="chest" type="StaticBody2D" unique_id=563591159]
+script = ExtResource("1_kpaji")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1962037313]
+shape = SubResource("RectangleShape2D_oooyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=98805808]
+texture = SubResource("AtlasTexture_oooyy")
+
+[node name="Interactable" parent="." unique_id=436187935 instance=ExtResource("2_bp1or")]
+visible = false
+interact_name = "Open Chest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1340209472]
+shape = SubResource("CircleShape2D_631qo")
+debug_color = Color(0, 1, 0, 0.41960785)

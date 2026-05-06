@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
-@export var speed:float =150
+@export var speed:float =500
 @onready var sprite=$AnimatedSprite2D
-@onready var light = $PointLight2D
 var lastDirection=0
 var enemy
 var attack=false
