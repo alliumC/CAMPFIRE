@@ -17,9 +17,9 @@ position = Vector2(1060.5, 601.49994)
 scale = Vector2(8.722655, 1264.9998)
 texture = SubResource("GradientTexture1D_tkjml")
 
-[node name="Dungeon Base" parent="." unique_id=1960524575 instance=ExtResource("1_wfh6k")]
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2121849812]
 color = Color(0.7312715, 0.7357062, 0.7478415, 1)
 energy = 0.72
 blend_mode = 1
+
+[node name="Dungeon Base" parent="." unique_id=1960524575 instance=ExtResource("1_wfh6k")]

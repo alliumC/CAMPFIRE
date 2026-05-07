@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
-@export var speed:float =500
+@export var speed:float =200
 @onready var sprite=$AnimatedSprite2D
+@export var max_health = 100
+@onready var current_health: int = max_health
+
 var lastDirection=0
 var enemy
 var attack=false
