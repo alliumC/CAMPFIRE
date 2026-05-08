@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cw50vq0r1kbs0"]
+
+[ext_resource type="Script" uid="uid://nymslpaksbcm" path="res://scripts/enemies/enemy_base.gd" id="1_1ito2"]
+[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="1_kfcno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8bx4"]
+atlas = ExtResource("1_kfcno")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ito2"]
+atlas = ExtResource("1_kfcno")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob1c7"]
+atlas = ExtResource("1_kfcno")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8bx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8bx4")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ito2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob1c7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ob1c7"]
+radius = 63.126858
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4asau"]
+radius = 6.0827627
+
+[node name="enemy" type="CharacterBody2D" unique_id=1741310870]
+visible = false
+script = ExtResource("1_1ito2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1002223494]
+position = Vector2(-2.9802322e-07, -11)
+scale = Vector2(0.34375003, 0.34375003)
+sprite_frames = SubResource("SpriteFrames_f8bx4")
+animation = &"death"
+autoplay = "idle"
+
+[node name="detection" type="Area2D" parent="." unique_id=619706072]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection" unique_id=282739793]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_ob1c7")
+debug_color = Color(1, 0.0032462266, 0.091528974, 0.41960785)
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=2109836510]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_4asau")
+
+[connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
+[connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]

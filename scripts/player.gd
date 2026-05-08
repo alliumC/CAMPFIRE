@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed:float =200
 @onready var sprite=$AnimatedSprite2D
@@ -45,8 +46,6 @@ func _physics_process(_delta):
 func _on_animated_sprite_2d_frame_changed():
 	if enemy and sprite.animation == "attack" and sprite.frame == 1:
 		enemy.takeDamage()
-
-#------
 
 func _on_hit_body_entered(body):
 	if body.name == "enemy":

@@ -1,9 +1,6 @@
 extends TextureProgressBar
+@onready var player: Player
 
-@onready var Dep = $Depletion
-
-func _ready() -> void:
-	Dep.start()
-
-func _on_depletion_timeout() -> void:
-	self.value -= 1
+func update():
+	value = player.current_health * 100 / player.max_healh
+	print(value)
