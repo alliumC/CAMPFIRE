@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Venor"
-run/main_scene="uid://b20ypjk246783"
+run/main_scene="uid://dah80ulbndvh4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -31,7 +31,6 @@ GlobalVar="*uid://2okcbbrs0lxn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 

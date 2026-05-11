@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://yc06lkicyjiq" path="res://Assets/Under.png" id="1_v7xq2"]
 [ext_resource type="Texture2D" uid="uid://dlaufm4n36qm0" path="res://Assets/Progress.png" id="2_edlq6"]
-[ext_resource type="Script" uid="uid://dyygwld873boy" path="res://scripts/sanity_bar.gd" id="3_robbt"]
+[ext_resource type="Script" uid="uid://dyygwld873boy" path="res://scripts/hp_bar.gd" id="3_robbt"]
 [ext_resource type="Texture2D" uid="uid://brbo5fvioe3xh" path="res://Assets/Outline.png" id="4_b0gw5"]
 
 [node name="HPBarr" type="TextureProgressBar" unique_id=854388712]

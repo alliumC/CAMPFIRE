@@ -104,6 +104,10 @@ zoom = Vector2(3.805, 3.805)
 script = ExtResource("8_8bo53")
 player = NodePath("../Player")
 
-[node name="enemy" parent="." unique_id=1741310870 instance=ExtResource("9_25w15")]
-visible = true
-position = Vector2(209, -75)
+[node name="enemy" parent="." unique_id=1741310870 node_paths=PackedStringArray("endPoint") instance=ExtResource("9_25w15")]
+position = Vector2(-27, -95)
+speed = 40
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="enemy" unique_id=2119047638]
+position = Vector2(0, 7)

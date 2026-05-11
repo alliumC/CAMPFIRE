@@ -9,4 +9,3 @@ func get_player_input() -> void:
 
 func _physics_process(_delta):
 	get_player_input()
-	

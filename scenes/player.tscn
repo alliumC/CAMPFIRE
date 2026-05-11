@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://k8yo23fmtgwt" path="res://scripts/player.gd" id="1_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="2_g2els"]
-[ext_resource type="PackedScene" uid="uid://b6gyhebwkdb6q" path="res://scenes/HUD.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://c6aob5hrbqegr" path="res://scenes/health bar.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -205,7 +205,8 @@ animations = [{
 radius = 8.336542
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
-radius = 11.336032
+radius = 9.7165985
+height = 30.76923
 
 [node name="player" type="CharacterBody2D" unique_id=1105362448]
 light_mask = 2
@@ -230,15 +231,18 @@ centered = false
 position = Vector2(0, -8.097166)
 shape = SubResource("CircleShape2D_2hs0m")
 
-[node name="hit" type="Area2D" parent="." unique_id=1821732196]
+[node name="PlayerHurtbox" type="Area2D" parent="." unique_id=1821732196]
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit" unique_id=1116134754]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHurtbox" unique_id=1116134754]
 texture_filter = 1
-position = Vector2(0, -12.145749)
+position = Vector2(0, -14.574899)
 shape = SubResource("CapsuleShape2D_qhqgy")
 debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
 
-[node name="Control" parent="." unique_id=1936109820 instance=ExtResource("3_qhqgy")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1708496629]
 
-[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
-[connection signal="body_exited" from="hit" to="." method="_on_hit_body_exited"]
+[node name="HPBarr" parent="CanvasLayer" unique_id=854388712 node_paths=PackedStringArray("player") instance=ExtResource("3_qhqgy")]
+player = NodePath("../..")
+
+[connection signal="area_entered" from="PlayerHurtbox" to="." method="_on_hurtbox_area_entered"]
