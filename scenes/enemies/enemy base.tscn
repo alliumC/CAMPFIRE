@@ -11,10 +11,6 @@
 atlas = ExtResource("1_kfcno")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ito2"]
-atlas = ExtResource("1_kfcno")
-region = Rect2(192, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0yk4"]
 atlas = ExtResource("3_ob1c7")
 region = Rect2(0, 0, 48, 48)
@@ -107,14 +103,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ito2")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_l0yk4")
 }, {
 "duration": 1.0,
@@ -201,6 +189,9 @@ height = 24.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob1c7"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0yk4"]
+radius = 30.0
+
 [node name="enemy" type="CharacterBody2D" unique_id=1741310870]
 z_index = 1
 collision_layer = 4
@@ -211,7 +202,7 @@ script = ExtResource("1_1ito2")
 position = Vector2(-1.6940659e-21, -13)
 scale = Vector2(0.9166667, 0.875)
 sprite_frames = SubResource("SpriteFrames_f8bx4")
-animation = &"walk down"
+animation = &"death"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=619706072]
 collision_layer = 4
@@ -230,4 +221,12 @@ shape = SubResource("CircleShape2D_ob1c7")
 wait_time = 1.5
 one_shot = true
 
+[node name="Spot" type="Area2D" parent="." unique_id=1309962185]
+
+[node name="detection" type="CollisionShape2D" parent="Spot" unique_id=60164826]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_l0yk4")
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Spot" to="." method="_on_spot_body_entered"]
+[connection signal="body_exited" from="Spot" to="." method="_on_spot_body_exited"]

@@ -9,5 +9,6 @@ func _ready() -> void:
 
 
 func update_position() -> void:
+	@warning_ignore("integer_division")
 	var current_cell: Vector2i = Vector2i(player.global_position) / size
 	global_position = current_cell * size

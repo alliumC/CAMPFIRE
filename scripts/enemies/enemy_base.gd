@@ -8,18 +8,34 @@ class_name enemy
 
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
+@onready var detection_shape = $Spot/detection
 
+var chase: bool = false
 var startPos
 var endPos
+var player = null
 
 func _ready():
 	startPos = position
 	endPos = endPoint.global_position
+	
+	detection_shape.shape = $Spot/detection.shape.duplicate()
+
+
+func _physics_process(_delta):
+	if not chase:
+		move_and_slide()
+		updateVelocity()
+		updateAnim()
+	elif chase:
+		position += (player.position - position) / speed
+
 
 func changeDirection():
 	var tempEnd = endPos
 	endPos = startPos
 	startPos = tempEnd
+
 
 func updateVelocity():
 	var moveDirection = endPos - position
@@ -27,8 +43,8 @@ func updateVelocity():
 		changeDirection()
 		
 	velocity = moveDirection.normalized()*speed
-	
-	
+
+
 func updateAnim():
 	if velocity.length() == 0:
 		if animations.is_playing():
@@ -42,20 +58,29 @@ func updateAnim():
 		animations.play("walk " + direction)
 
 
-func _physics_process(_delta):
-	updateVelocity()
-	move_and_slide()
-	updateAnim()
-	
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player:
 		damage_player(body)
 
-func damage_player(player):
+
+func _on_spot_body_entered(body: Node2D) -> void:
+	if body is Player:
+		chase = true
+		player = body
+		$Spot/detection.shape.radius = 85.0
+
+
+func _on_spot_body_exited(body: Node2D) -> void:
+	if body is Player:
+		chase = false
+		player = null
+		$Spot/detection.shape.radius = 30.0
+
+
+func damage_player(target: Player):
 	if damage_time.is_stopped():
-		player.currentHealth -= damage
+		target.currentHealth -= damage
 		damage_time.start()
 	else: 
 		await damage_time.timeout
-		damage_player(player)
+		damage_player(target)

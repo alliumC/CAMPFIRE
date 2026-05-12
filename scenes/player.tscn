@@ -243,6 +243,14 @@ debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1708496629]
 
 [node name="HPBarr" parent="CanvasLayer" unique_id=854388712 node_paths=PackedStringArray("player") instance=ExtResource("3_qhqgy")]
+offset_left = 25.0
+offset_top = 17.999992
+offset_right = -365.0
+offset_bottom = -662.0
 player = NodePath("../..")
+
+[node name="HealCool" type="Timer" parent="." unique_id=392474417]
+wait_time = 1.4779999999999998
+one_shot = true
 
 [connection signal="area_entered" from="PlayerHurtbox" to="." method="_on_hurtbox_area_entered"]

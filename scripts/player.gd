@@ -6,12 +6,14 @@ class_name Player
 @export var speed:float =200
 @onready var sprite=$AnimatedSprite2D
 @onready var hp_barr: TextureProgressBar = $CanvasLayer/HPBarr
+@onready var heal_cooldown: Timer = $HealCool
 
 
 var currentHealth: int = maxHealth
 var lastDirection=0
 var attack=false
 var cooldown=false
+
 
 func _ready() -> void:
 	hp_barr.max_value = maxHealth
@@ -21,6 +23,9 @@ func _process(_delta: float) -> void:
 	hp_barr.value = currentHealth
 	if currentHealth == 0:
 		get_tree().reload_current_scene()
+	elif currentHealth != maxHealth and heal_cooldown.is_stopped():
+		currentHealth += 1	
+		heal_cooldown.start()
 
 func get_player_input() -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
