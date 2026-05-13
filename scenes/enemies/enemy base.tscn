@@ -202,7 +202,7 @@ script = ExtResource("1_1ito2")
 position = Vector2(-1.6940659e-21, -13)
 scale = Vector2(0.9166667, 0.875)
 sprite_frames = SubResource("SpriteFrames_f8bx4")
-animation = &"death"
+animation = &"walk down"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=619706072]
 collision_layer = 4

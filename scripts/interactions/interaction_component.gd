@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var label: Label = $Label
+@onready var label: Label = $CanvasLayer/Label
+
 var current_interacions := []
 var can_interact := true
 
