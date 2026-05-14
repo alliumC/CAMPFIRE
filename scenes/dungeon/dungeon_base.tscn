@@ -35,7 +35,7 @@ size = Vector2(22, 34)
 [node name="Dungeon Base" type="Node2D" unique_id=1960524575]
 
 [node name="Map" type="Node2D" parent="." unique_id=132261497]
-position = Vector2(190.00002, 1)
+position = Vector2(22.000015, 2)
 
 [node name="Floor" type="TileMapLayer" parent="Map" unique_id=88734724]
 position = Vector2(-198, -98)
@@ -92,7 +92,7 @@ scale = Vector2(0.21874997, 0.20833337)
 texture = ExtResource("4_3xja6")
 
 [node name="Player" parent="." unique_id=1052419685 instance=ExtResource("1_ak1iy")]
-position = Vector2(0, -95)
+position = Vector2(-167.00002, -94)
 scale = Vector2(0.825, 0.825)
 metadata/_edit_group_ = true
 
@@ -105,7 +105,7 @@ texture = SubResource("GradientTexture2D_rtveb")
 position = Vector2(0, -13.496937)
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1839984300]
-position = Vector2(168.00002, 0)
+position = Vector2(1.5258789e-05, 1)
 
 [node name="goblin 1" parent="Enemies" unique_id=1741310870 node_paths=PackedStringArray("endPoint") instance=ExtResource("9_25w15")]
 position = Vector2(32, -136)
@@ -121,10 +121,10 @@ endPoint = NodePath("Marker2D")
 damage = 5
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/goblin 2" unique_id=1851480666]
-position = Vector2(272, 0)
+position = Vector2(272, -1)
 
 [node name="Camera" type="Node2D" parent="." unique_id=2111122291]
-position = Vector2(167, -193.5)
+position = Vector2(0, -0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1223136786]
 position = Vector2(-168, -95.50001)

@@ -8,7 +8,7 @@ extends Camera2D
 @onready var transition: Timer = $"../Transition"
 
 func _ready() -> void:
-	camera.position = Vector2(168, -1.5)
+	camera.position = Vector2(0, -0.5)
 
 
 func _on_up_body_entered(body: Node2D) -> void:
