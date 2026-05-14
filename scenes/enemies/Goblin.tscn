@@ -192,7 +192,7 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_l0yk4"]
 radius = 30.0
 
-[node name="enemy" type="CharacterBody2D" unique_id=1741310870]
+[node name="Goblin" type="CharacterBody2D" unique_id=1741310870]
 z_index = 1
 collision_layer = 4
 collision_mask = 4

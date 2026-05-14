@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://sd2fnr06e8qw" path="res://Assets/Dungeon/PNG/blood arrow.png" id="5_kggsr"]
 [ext_resource type="Texture2D" uid="uid://1o3rwl7q8537" path="res://Assets/Dungeon/PNG/blood arrow 2.png" id="5_ogvea"]
 [ext_resource type="Script" uid="uid://d0m7fkucwkfuy" path="res://scenes/dungeon/camera_2d.gd" id="8_8bo53"]
-[ext_resource type="PackedScene" uid="uid://cw50vq0r1kbs0" path="res://scenes/enemies/enemy base.tscn" id="9_25w15"]
+[ext_resource type="PackedScene" uid="uid://cw50vq0r1kbs0" path="res://scenes/enemies/Goblin.tscn" id="9_25w15"]
 
 [sub_resource type="Gradient" id="Gradient_syqex"]
 offsets = PackedFloat32Array(0, 0.29117647, 0.7147059, 1)
@@ -21,16 +21,16 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0egkp"]
-size = Vector2(52, 20)
+size = Vector2(52, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mlh8f"]
-size = Vector2(22, 34)
+size = Vector2(4, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xja6"]
-size = Vector2(52, 14)
+size = Vector2(52, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bw5o7"]
-size = Vector2(22, 34)
+size = Vector2(4, 34)
 
 [node name="Dungeon Base" type="Node2D" unique_id=1960524575]
 
@@ -134,14 +134,15 @@ limit_enabled = false
 script = ExtResource("8_8bo53")
 
 [node name="Up" type="Area2D" parent="Camera" unique_id=1321149382]
-position = Vector2(-167, -195.5)
+position = Vector2(-168, -195.5)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Up" unique_id=1567050134]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_0egkp")
 
 [node name="Left" type="Area2D" parent="Camera" unique_id=694997448]
-position = Vector2(2, -96.5)
+position = Vector2(-10, -96.5)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Left" unique_id=1256374539]
@@ -149,15 +150,15 @@ position = Vector2(-336, 0)
 shape = SubResource("RectangleShape2D_mlh8f")
 
 [node name="Down" type="Area2D" parent="Camera" unique_id=1773177995]
-position = Vector2(-168, -9.5)
-metadata/_edit_group_ = true
+position = Vector2(-168, -4.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Down" unique_id=1829637948]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_3xja6")
+metadata/_edit_group_ = true
 
 [node name="Right" type="Area2D" parent="Camera" unique_id=1629981732]
-position = Vector2(1, -96.5)
+position = Vector2(10, -96.5)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Right" unique_id=1378671827]
