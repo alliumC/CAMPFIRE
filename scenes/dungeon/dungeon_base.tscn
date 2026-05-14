@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://1o3rwl7q8537" path="res://Assets/Dungeon/PNG/blood arrow 2.png" id="5_ogvea"]
 [ext_resource type="Script" uid="uid://d0m7fkucwkfuy" path="res://scenes/dungeon/camera_2d.gd" id="8_8bo53"]
 [ext_resource type="PackedScene" uid="uid://cw50vq0r1kbs0" path="res://scenes/enemies/Goblin.tscn" id="9_25w15"]
+[ext_resource type="PackedScene" uid="uid://br2tdqvja6pc1" path="res://scenes/enemies/Spirit.tscn" id="10_mlh8f"]
 
 [sub_resource type="Gradient" id="Gradient_syqex"]
 offsets = PackedFloat32Array(0, 0.29117647, 0.7147059, 1)
@@ -122,6 +123,25 @@ damage = 5
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/goblin 2" unique_id=1851480666]
 position = Vector2(272, -1)
+
+[node name="Spirit" parent="Enemies" unique_id=1109354238 node_paths=PackedStringArray("endPoint") instance=ExtResource("10_mlh8f")]
+position = Vector2(-646, -132)
+speed = 40
+endPoint = NodePath("Marker2D")
+damage = 5
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Spirit" unique_id=1979520506]
+position = Vector2(277, 0)
+
+[node name="Spirit2" parent="Enemies" unique_id=349087201 node_paths=PackedStringArray("endPoint") instance=ExtResource("10_mlh8f")]
+editor_description = "speed is lower the number, faster it is"
+position = Vector2(-646, -17)
+speed = 40
+endPoint = NodePath("Marker2D")
+damage = 5
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Spirit2" unique_id=1773028802]
+position = Vector2(277, 0)
 
 [node name="Camera" type="Node2D" parent="." unique_id=2111122291]
 position = Vector2(0, -0.5)

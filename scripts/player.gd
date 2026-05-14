@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	hp_barr.value = currentHealth
-	if currentHealth == 0:
+	if currentHealth == 0 or currentHealth < 0:
 		get_tree().reload_current_scene()
 	elif currentHealth != maxHealth and heal_cooldown.is_stopped():
 		currentHealth += 1	
