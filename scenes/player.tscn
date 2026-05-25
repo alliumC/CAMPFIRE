@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://k8yo23fmtgwt" path="res://scripts/player.gd" id="1_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="2_g2els"]
-[ext_resource type="PackedScene" uid="uid://c6aob5hrbqegr" path="res://scenes/health bar.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://c6aob5hrbqegr" path="res://scenes/UI/health bar.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://dltkt4ue6j18h" path="res://scenes/UI/inventory test.tscn" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_g2els")
@@ -240,14 +241,17 @@ position = Vector2(0, -14.574899)
 shape = SubResource("CapsuleShape2D_qhqgy")
 debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1708496629]
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerHurtbox/CollisionShape2D" unique_id=1708496629]
+visible = false
 
-[node name="HPBarr" parent="CanvasLayer" unique_id=854388712 node_paths=PackedStringArray("player") instance=ExtResource("3_qhqgy")]
+[node name="HPBarr" parent="PlayerHurtbox/CollisionShape2D/CanvasLayer" unique_id=854388712 node_paths=PackedStringArray("player") instance=ExtResource("3_qhqgy")]
 offset_left = 25.0
 offset_top = 17.999992
 offset_right = -365.0
 offset_bottom = -662.0
-player = NodePath("../..")
+player = NodePath("../../../..")
+
+[node name="VBoxContainer" parent="PlayerHurtbox/CollisionShape2D/CanvasLayer" unique_id=1772833902 instance=ExtResource("4_dqkch")]
 
 [node name="HealCool" type="Timer" parent="." unique_id=392474417]
 wait_time = 1.4779999999999998

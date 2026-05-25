@@ -5,7 +5,7 @@ class_name Player
 @export var maxHealth: int = 100
 @export var speed:float =200
 @onready var sprite=$AnimatedSprite2D
-@onready var hp_barr: TextureProgressBar = $CanvasLayer/HPBarr
+@onready var hp_barr: TextureProgressBar = $PlayerHurtbox/CollisionShape2D/CanvasLayer/HPBarr
 @onready var heal_cooldown: Timer = $HealCool
 
 
@@ -18,6 +18,7 @@ var cooldown=false
 func _ready() -> void:
 	hp_barr.max_value = maxHealth
 	hp_barr.value = maxHealth
+	$PlayerHurtbox/CollisionShape2D/CanvasLayer.visible = true
 
 func _process(_delta: float) -> void:
 	hp_barr.value = currentHealth
