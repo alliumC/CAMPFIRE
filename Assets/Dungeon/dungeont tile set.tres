@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://tyrhxra0mp52"]
 
 [ext_resource type="Texture2D" uid="uid://c3lor5oib3l20" path="res://Assets/Dungeon/PNG/walls_floor.png" id="1_bi2ke"]
-[ext_resource type="Texture2D" uid="uid://dcaalfv4ik4p0" path="res://Assets/Dungeon/PNG/decorative_cracks_walls.png" id="2_bxdjx"]
+[ext_resource type="Texture2D" uid="uid://duy4wqtdb0xd" path="res://Assets/Dungeon/Tiled_files/decorative_cracks_walls.png" id="2_bxdjx"]
 [ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Home/Sprites-Anims/Cave.png" id="3_ikof2"]
 [ext_resource type="Texture2D" uid="uid://bjdulw2g8bvat" path="res://Assets/Dungeon/Sprites-Anims/mid torch anim.png" id="4_ikof2"]
 [ext_resource type="Texture2D" uid="uid://bjbxdvt3x7jx4" path="res://Assets/Dungeon/Sprites-Anims/small torch anim.png" id="5_2f2so"]
@@ -456,9 +456,8 @@ texture = ExtResource("1_bi2ke")
 5:20/0 = 0
 5:19/0 = 0
 6:18/0 = 0
-5:4/next_alternative_id = 2
+5:4/next_alternative_id = 3
 5:4/0 = 0
-5:4/1 = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvacq"]
 texture = ExtResource("2_bxdjx")
