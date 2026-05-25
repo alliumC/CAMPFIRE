@@ -1,15 +1,32 @@
 extends CharacterBody2D
+class_name Player
 
-@export var speed:float =100
+
+@export var maxHealth: int = 100
+@export var speed:float =200
 @onready var sprite=$AnimatedSprite2D
-@onready var light = $PointLight2D
-var maxHealth=10
-var health=maxHealth
-var minHealth=0
+@onready var hp_barr: TextureProgressBar = $PlayerHurtbox/CollisionShape2D/CanvasLayer/HPBarr
+@onready var heal_cooldown: Timer = $HealCool
+
+
+var currentHealth: int = maxHealth
 var lastDirection=0
-var enemy
 var attack=false
 var cooldown=false
+
+
+func _ready() -> void:
+	hp_barr.max_value = maxHealth
+	hp_barr.value = maxHealth
+	$PlayerHurtbox/CollisionShape2D/CanvasLayer.visible = true
+
+func _process(_delta: float) -> void:
+	hp_barr.value = currentHealth
+	if currentHealth == 0 or currentHealth < 0:
+		get_tree().reload_current_scene()
+	elif currentHealth != maxHealth and heal_cooldown.is_stopped():
+		currentHealth += 1	
+		heal_cooldown.start()
 
 func get_player_input() -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -42,29 +59,3 @@ func get_player_input() -> void:
 func _physics_process(_delta):
 	get_player_input()
 	move_and_slide()
-
-func _on_animated_sprite_2d_frame_changed():
-	if enemy and sprite.animation == "attack" and sprite.frame == 1:
-		enemy.takeDamage()
-
-#------
-
-func _on_hit_body_entered(body):
-	if body.name == "enemy":
-		print("yo")
-		enemy=body
-		
-func _on_hit_body_exited(body):
-	if body.name == "enemy":
-		print('bye')
-		enemy=null
-
-func takeDamage():
-	if health > minHealth:
-		health -= GlobalVar.damageDealt
-		print(health)
-
-
-func _on_attack_timeout():
-	cooldown=false
-	

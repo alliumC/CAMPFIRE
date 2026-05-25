@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duy4wqtdb0xd"
-path="res://.godot/imported/decorative_cracks_walls.png-1dd30b90a2d19bde896a84b0fdb3c1c8.ctex"
+path="res://.godot/imported/decorative_cracks_walls.png-f0c47802027d198709ebb163f9c4b8fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dungeon/Tiled_files/decorative_cracks_walls.png"
-dest_files=["res://.godot/imported/decorative_cracks_walls.png-1dd30b90a2d19bde896a84b0fdb3c1c8.ctex"]
+source_file="res://Assets/Dungeon/Tiled_files/decorative_cracks_walls.png"
+dest_files=["res://.godot/imported/decorative_cracks_walls.png-f0c47802027d198709ebb163f9c4b8fe.ctex"]
 
 [params]
 

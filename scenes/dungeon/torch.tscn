@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dkns0r76lpail"]
+
+[ext_resource type="Texture2D" uid="uid://cw17d1gle2uk8" path="res://Assets/Dungeon/PNG/fire_animation.png" id="1_8d5eo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x5oh"]
+atlas = ExtResource("1_8d5eo")
+region = Rect2(38, 0, 34, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d8jt"]
+atlas = ExtResource("1_8d5eo")
+region = Rect2(38, 48, 34, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtp8i"]
+atlas = ExtResource("1_8d5eo")
+region = Rect2(38, 96, 34, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cmaq"]
+atlas = ExtResource("1_8d5eo")
+region = Rect2(38, 144, 34, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68nru"]
+atlas = ExtResource("1_8d5eo")
+region = Rect2(38, 192, 34, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1kl8"]
+atlas = ExtResource("1_8d5eo")
+region = Rect2(38, 240, 34, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gr5i3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x5oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d8jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtp8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cmaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68nru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1kl8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1kl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68nru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cmaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtp8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d8jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x5oh")
+}],
+"loop": true,
+"name": &"default_2",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_lt4c7"]
+offsets = PackedFloat32Array(0, 0.6983051, 1)
+colors = PackedColorArray(1, 1, 0.40392157, 1, 0.033898294, 0.033898294, 0.033898294, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qe66m"]
+gradient = SubResource("Gradient_lt4c7")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1704808207]
+scale = Vector2(0.665, 0.665)
+sprite_frames = SubResource("SpriteFrames_gr5i3")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1625500430]
+scale = Vector2(0.65789473, 0.65789473)
+color = Color(1, 1, 0.40392157, 1)
+shadow_color = Color(0.34901962, 0.34901962, 0.34901962, 1)
+texture = SubResource("GradientTexture2D_qe66m")
