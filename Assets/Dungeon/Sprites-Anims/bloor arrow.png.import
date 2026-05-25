@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bidct365dpp8o"
-path="res://.godot/imported/bloor arrow.png-3b99c90ec5e198a0f19a3c52e2238e78.ctex"
+path="res://.godot/imported/bloor arrow.png-4e5d5fb1c58aced19900d03cb6b67349.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/bloor arrow.png"
-dest_files=["res://.godot/imported/bloor arrow.png-3b99c90ec5e198a0f19a3c52e2238e78.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/bloor arrow.png"
+dest_files=["res://.godot/imported/bloor arrow.png-4e5d5fb1c58aced19900d03cb6b67349.ctex"]
 
 [params]
 

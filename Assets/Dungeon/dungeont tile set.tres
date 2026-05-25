@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://c3lor5oib3l20" path="res://Assets/Dungeon/PNG/walls_floor.png" id="1_bi2ke"]
 [ext_resource type="Texture2D" uid="uid://dcaalfv4ik4p0" path="res://Assets/Dungeon/PNG/decorative_cracks_walls.png" id="2_bxdjx"]
-[ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Dungeon/PNG/Objects.png" id="3_ikof2"]
-[ext_resource type="Texture2D" uid="uid://bjdulw2g8bvat" path="res://Assets/Dungeon/PNG/mid torch anim.png" id="4_ikof2"]
-[ext_resource type="Texture2D" uid="uid://bjbxdvt3x7jx4" path="res://Assets/Dungeon/PNG/small torch anim.png" id="5_2f2so"]
+[ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Home/Sprites-Anims/Cave.png" id="3_ikof2"]
+[ext_resource type="Texture2D" uid="uid://bjdulw2g8bvat" path="res://Assets/Dungeon/Sprites-Anims/mid torch anim.png" id="4_ikof2"]
+[ext_resource type="Texture2D" uid="uid://bjbxdvt3x7jx4" path="res://Assets/Dungeon/Sprites-Anims/small torch anim.png" id="5_2f2so"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_bi2ke"]
 tile_data = PackedInt32Array(0, 196608, 0, 65536, 589824, 0, 131072, 589824, 1, 196608, 589824, 2, 262144, 589824, 3, 458752, 262144, 4, 524288, 131072, 1, 589824, 131072, 1, 655360, 131072, 1, 720896, 196608, 3, 65537, 65536, 2, 720897, 65536, 0, 65538, 65536, 2, 720898, 65536, 0, 65539, 65536, 2, 720899, 65536, 0, 65540, 65536, 2, 720900, 65536, 0, 65541, 65536, 2, 720901, 65536, 0, 65542, 65536, 2, 720902, 65536, 0, 65543, 65536, 2, 720903, 65536, 0, 65544, 131072, 2, 720904, 65536, 0, 720905, 65536, 0, 720906, 65536, 0, 720907, 65536, 0, 65548, 0, 2, 720908, 65536, 0, 65549, 65536, 2, 720909, 65536, 0, 65550, 65536, 2, 720910, 65536, 0, 65551, 65536, 2, 720911, 65536, 0, 65552, 65536, 2, 720912, 65536, 0, 65553, 65536, 2, 720913, 65536, 0, 65554, 65536, 2, 720914, 262144, 3, 65555, 65536, 2, 720915, 262144, 3, 20, 327680, 0, 65556, 786432, 0, 131092, 786432, 1, 196628, 786432, 2, 262164, 786432, 3, 458772, 196608, 4, 524308, 0, 1, 589844, 0, 1, 655380, 0, 1, 720916, 327680, 3)
@@ -721,72 +721,40 @@ texture = ExtResource("2_bxdjx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkjml"]
 texture = ExtResource("3_ikof2")
-8:0/size_in_atlas = Vector2i(2, 2)
 8:0/0 = 0
-12:4/size_in_atlas = Vector2i(1, 2)
 12:4/0 = 0
-13:4/size_in_atlas = Vector2i(1, 2)
 13:4/0 = 0
-14:4/size_in_atlas = Vector2i(1, 2)
 14:4/0 = 0
-15:4/size_in_atlas = Vector2i(1, 2)
 15:4/0 = 0
-16:4/size_in_atlas = Vector2i(1, 2)
 16:4/0 = 0
-17:4/size_in_atlas = Vector2i(1, 2)
 17:4/0 = 0
-18:3/size_in_atlas = Vector2i(2, 2)
 18:3/0 = 0
-20:2/size_in_atlas = Vector2i(2, 2)
 20:2/0 = 0
-20:4/size_in_atlas = Vector2i(2, 2)
 20:4/0 = 0
-22:2/size_in_atlas = Vector2i(2, 2)
 22:2/0 = 0
-23:0/size_in_atlas = Vector2i(1, 2)
 23:0/0 = 0
-22:0/size_in_atlas = Vector2i(1, 2)
 22:0/0 = 0
-20:0/size_in_atlas = Vector2i(2, 2)
 20:0/0 = 0
-18:0/size_in_atlas = Vector2i(2, 3)
 18:0/0 = 0
-16:0/size_in_atlas = Vector2i(2, 3)
 16:0/0 = 0
-14:0/size_in_atlas = Vector2i(1, 2)
 14:0/0 = 0
-15:0/size_in_atlas = Vector2i(1, 2)
 15:0/0 = 0
-12:0/size_in_atlas = Vector2i(2, 2)
 12:0/0 = 0
-12:2/size_in_atlas = Vector2i(2, 2)
 12:2/0 = 0
-14:2/size_in_atlas = Vector2i(1, 2)
 14:2/0 = 0
 15:2/0 = 0
 16:3/0 = 0
 17:3/0 = 0
-10:2/size_in_atlas = Vector2i(2, 2)
 10:2/0 = 0
-8:2/size_in_atlas = Vector2i(2, 2)
 8:2/0 = 0
-10:0/size_in_atlas = Vector2i(2, 2)
 10:0/0 = 0
-10:4/size_in_atlas = Vector2i(2, 2)
 10:4/0 = 0
-9:4/size_in_atlas = Vector2i(1, 2)
 9:4/0 = 0
-7:4/size_in_atlas = Vector2i(2, 2)
 7:4/0 = 0
-6:4/size_in_atlas = Vector2i(1, 2)
 6:4/0 = 0
-5:4/size_in_atlas = Vector2i(1, 2)
 5:4/0 = 0
-4:4/size_in_atlas = Vector2i(1, 2)
 4:4/0 = 0
-2:4/size_in_atlas = Vector2i(2, 2)
 2:4/0 = 0
-0:4/size_in_atlas = Vector2i(2, 2)
 0:4/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -796,9 +764,7 @@ texture = ExtResource("3_ikof2")
 22:4/0 = 0
 22:5/0 = 0
 23:4/0 = 0
-7:0/size_in_atlas = Vector2i(1, 2)
 7:0/0 = 0
-6:2/size_in_atlas = Vector2i(1, 2)
 6:2/0 = 0
 6:1/0 = 0
 6:0/0 = 0

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk5rcgtjp87oq"
-path="res://.godot/imported/chest_anim.png-8dda163d2d9532124a59f6b13fa5d76c.ctex"
+path="res://.godot/imported/chest_anim.png-3de1ab1b137ae7f3786e2d24c5ece1da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/chest_anim.png"
-dest_files=["res://.godot/imported/chest_anim.png-8dda163d2d9532124a59f6b13fa5d76c.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/chest_anim.png"
+dest_files=["res://.godot/imported/chest_anim.png-3de1ab1b137ae7f3786e2d24c5ece1da.ctex"]
 
 [params]
 

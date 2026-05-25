@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjdulw2g8bvat"
-path="res://.godot/imported/mid torch anim.png-5c91059e02f8df051073bd2d687c07a8.ctex"
+path="res://.godot/imported/mid torch anim.png-55ffde4e47b186ce27ac046d49d0ffaf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/mid torch anim.png"
-dest_files=["res://.godot/imported/mid torch anim.png-5c91059e02f8df051073bd2d687c07a8.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/mid torch anim.png"
+dest_files=["res://.godot/imported/mid torch anim.png-55ffde4e47b186ce27ac046d49d0ffaf.ctex"]
 
 [params]
 

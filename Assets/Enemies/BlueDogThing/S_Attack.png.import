@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2466eqkknh6m"
-path="res://.godot/imported/S_Attack.png-cdae53827281f813d7b1aa05dd164aae.ctex"
+path="res://.godot/imported/S_Attack.png-de043d04422429afee8b16c386d29215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/3/S_Attack.png"
-dest_files=["res://.godot/imported/S_Attack.png-cdae53827281f813d7b1aa05dd164aae.ctex"]
+source_file="res://Assets/Enemies/BlueDogThing/S_Attack.png"
+dest_files=["res://.godot/imported/S_Attack.png-de043d04422429afee8b16c386d29215.ctex"]
 
 [params]
 

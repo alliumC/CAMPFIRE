@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cibbqyvn15i84"
-path="res://.godot/imported/bloody pentagram.png-47f61cae80bd50f461013aa8952b712b.ctex"
+path="res://.godot/imported/bloody pentagram.png-b4ec7fe81f3553a6bada7d75296d7b8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/bloody pentagram.png"
-dest_files=["res://.godot/imported/bloody pentagram.png-47f61cae80bd50f461013aa8952b712b.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/bloody pentagram.png"
+dest_files=["res://.godot/imported/bloody pentagram.png-b4ec7fe81f3553a6bada7d75296d7b8d.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cflryoel0jqua"
-path="res://.godot/imported/interact.png-3082153ba4890fde983dfe067cce41c1.ctex"
+path="res://.godot/imported/interact.png-5f3aac029f3217995f7b021ee19ae13b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/interact.png"
-dest_files=["res://.godot/imported/interact.png-3082153ba4890fde983dfe067cce41c1.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/interact.png"
+dest_files=["res://.godot/imported/interact.png-5f3aac029f3217995f7b021ee19ae13b.ctex"]
 
 [params]
 

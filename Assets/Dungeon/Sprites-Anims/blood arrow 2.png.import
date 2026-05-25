@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1o3rwl7q8537"
-path="res://.godot/imported/blood arrow 2.png-021fb73f71b5d6698c0de48f92fbe6eb.ctex"
+path="res://.godot/imported/blood arrow 2.png-0810e092e6a7f42b32fcfd8db72804e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/blood arrow 2.png"
-dest_files=["res://.godot/imported/blood arrow 2.png-021fb73f71b5d6698c0de48f92fbe6eb.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/blood arrow 2.png"
+dest_files=["res://.godot/imported/blood arrow 2.png-0810e092e6a7f42b32fcfd8db72804e3.ctex"]
 
 [params]
 

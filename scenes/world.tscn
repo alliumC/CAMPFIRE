@@ -1,16 +1,13 @@
 [gd_scene format=4 uid="uid://byk555wkqyfg6"]
 
 [ext_resource type="Texture2D" uid="uid://cytu7cwip8jd8" path="res://Assets/Home/Tiled_files/exterior.png" id="4_0fj1v"]
-[ext_resource type="Texture2D" uid="uid://csgipdm2oqifd" path="res://Assets/Home/Sprites-Anims/Cave.png" id="4_k0juu"]
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/player.tscn" id="5_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Home/Sprites-Anims/Cave.png" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="5_e3hyu"]
 [ext_resource type="Texture2D" uid="uid://bjtv0imu00sd3" path="res://Assets/Home/Tiled_files/house_details.png" id="7_4mrxx"]
-[ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://Scripts/DungeonEntrance.gd" id="7_jhx03"]
+[ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://scripts/cave.gd" id="7_jhx03"]
 [ext_resource type="Texture2D" uid="uid://dhm7sv5ewewja" path="res://Assets/Home/Tiled_files/walls_floor.png" id="8_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://dryvmlpoogysy" path="res://Assets/Home/Tiled_files/ground_grass_details.png" id="9_w7kh3"]
 [ext_resource type="Texture2D" uid="uid://c8dqo0hd8cca" path="res://Assets/Home/Tiled_files/Trees_animation.png" id="10_e3hyu"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7frw"]
-size = Vector2(21, 34)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71j4m"]
 texture = ExtResource("4_k0juu")

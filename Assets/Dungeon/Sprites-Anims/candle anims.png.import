@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2c6csu5b6hcr"
-path="res://.godot/imported/candle anims.png-d3e4d396cafeb95e7ffc9b11b15509d2.ctex"
+path="res://.godot/imported/candle anims.png-14cc4d4c5ac8126f6c05dc8e8f68a82a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dungeon/PNG/candle anims.png"
-dest_files=["res://.godot/imported/candle anims.png-d3e4d396cafeb95e7ffc9b11b15509d2.ctex"]
+source_file="res://Assets/Dungeon/Sprites-Anims/candle anims.png"
+dest_files=["res://.godot/imported/candle anims.png-14cc4d4c5ac8126f6c05dc8e8f68a82a.ctex"]
 
 [params]
 
