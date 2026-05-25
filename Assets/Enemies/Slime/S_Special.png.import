@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv3am0yhrdj7t"
-path="res://.godot/imported/S_Special.png-444d7dd05a9cdc499b932e9e0b5131c3.ctex"
+path="res://.godot/imported/S_Special.png-36ef81905ecb117f01fa095ac72f2b88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Slime/S_Special.png"
-dest_files=["res://.godot/imported/S_Special.png-444d7dd05a9cdc499b932e9e0b5131c3.ctex"]
+source_file="res://Assets/Enemies/1/S_Special.png"
+dest_files=["res://.godot/imported/S_Special.png-36ef81905ecb117f01fa095ac72f2b88.ctex"]
 
 [params]
 

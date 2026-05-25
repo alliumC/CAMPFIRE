@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dussugdqlujc7"]
+
+[ext_resource type="Script" uid="uid://c60sqx885t4x7" path="res://scripts/chest.gd" id="1_kpaji"]
+[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://scenes/interactions/interactable.tscn" id="2_bp1or"]
+[ext_resource type="Texture2D" uid="uid://dk5rcgtjp87oq" path="res://Assets/Dungeon/PNG/chest_anim.png" id="2_kpaji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_631qo"]
+atlas = ExtResource("2_kpaji")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqt0j"]
+atlas = ExtResource("2_kpaji")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apbd1"]
+atlas = ExtResource("2_kpaji")
+region = Rect2(25, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0ant"]
+atlas = ExtResource("2_kpaji")
+region = Rect2(50, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd8y2"]
+atlas = ExtResource("2_kpaji")
+region = Rect2(75, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8px0"]
+atlas = ExtResource("2_kpaji")
+region = Rect2(100, 0, 25, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_reugm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_631qo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqt0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apbd1")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_l0ant")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_jd8y2")
+}, {
+"duration": 3.1,
+"texture": SubResource("AtlasTexture_j8px0")
+}],
+"loop": false,
+"name": &"open",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oooyy"]
+size = Vector2(20, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_631qo"]
+radius = 15.033297
+
+[node name="Chest" type="AnimatableBody2D" unique_id=217911783]
+script = ExtResource("1_kpaji")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=474194033]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_reugm")
+animation = &"open"
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1962037313]
+shape = SubResource("RectangleShape2D_oooyy")
+
+[node name="Interactable" parent="." unique_id=436187935 instance=ExtResource("2_bp1or")]
+visible = false
+interact_name = "Open Chest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable" unique_id=1340209472]
+shape = SubResource("CircleShape2D_631qo")
+debug_color = Color(0, 1, 0, 0.41960785)

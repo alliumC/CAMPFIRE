@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b02uw8jw03vpw"
-path="res://.godot/imported/U_Death.png-0c06a5330ccbcf64f2c292d3db03feef.ctex"
+path="res://.godot/imported/U_Death.png-035a23080a3062d79d5a42b903d5089c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/BlueDogThing/U_Death.png"
-dest_files=["res://.godot/imported/U_Death.png-0c06a5330ccbcf64f2c292d3db03feef.ctex"]
+source_file="res://Assets/Enemies/3/U_Death.png"
+dest_files=["res://.godot/imported/U_Death.png-035a23080a3062d79d5a42b903d5089c.ctex"]
 
 [params]
 

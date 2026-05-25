@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bef8ss0co4pc4"]
+
+[ext_resource type="Texture2D" uid="uid://yc06lkicyjiq" path="res://Assets/Under.png" id="1_lakte"]
+[ext_resource type="Texture2D" uid="uid://dj60we8pnw4ft" path="res://Assets/Progress_Boss.png" id="2_lakte"]
+[ext_resource type="Script" uid="uid://dyygwld873boy" path="res://scripts/hp_bar.gd" id="3_3g043"]
+[ext_resource type="Texture2D" uid="uid://brbo5fvioe3xh" path="res://Assets/Outline.png" id="4_itd43"]
+
+[node name="HPBarr" type="TextureProgressBar" unique_id=854388712]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -449.0
+offset_top = -279.0
+offset_right = 441.0
+offset_bottom = -239.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+texture_under = ExtResource("1_lakte")
+texture_progress = ExtResource("2_lakte")
+script = ExtResource("3_3g043")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=124261697]
+position = Vector2(446.345, 20.66)
+texture = ExtResource("4_itd43")

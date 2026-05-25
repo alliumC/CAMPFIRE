@@ -3,19 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ieqprseefjtq"
-path="res://.godot/imported/U_Attack.png-89702989c3f05cf30d884551cda029a6.ctex"
+path="res://.godot/imported/U_Attack.png-7f45b2baeda08b486ce9bae993ca14f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< HEAD:Assets/Enemies/Goblin/U_Attack.png.import
 source_file="res://Assets/Enemies/Goblin/U_Attack.png"
 dest_files=["res://.godot/imported/U_Attack.png-89702989c3f05cf30d884551cda029a6.ctex"]
-
+=======
 [params]
 
-compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

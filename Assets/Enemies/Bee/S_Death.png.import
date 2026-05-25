@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vjvkvgwlw8xr"
-path="res://.godot/imported/S_Death.png-95af7d9ec0a66e03ef37be72a4d0b648.ctex"
+path="res://.godot/imported/S_Death.png-a8127e0eb2bace019dec8660c4dd72e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Bee/S_Death.png"
-dest_files=["res://.godot/imported/S_Death.png-95af7d9ec0a66e03ef37be72a4d0b648.ctex"]
+source_file="res://Assets/Enemies/4/S_Death.png"
+dest_files=["res://.godot/imported/S_Death.png-a8127e0eb2bace019dec8660c4dd72e6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y2javvd2w6qb"
-path="res://.godot/imported/protag1.png-7a4a333b2b5cfc1b9c4590466831c8c4.ctex"
+uid="uid://byav3n86rmyx1"
+path="res://.godot/imported/L_Death.png-2aae171777d8270078f9e9f9772258cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Home/MC Sprites/protag1.png"
-dest_files=["res://.godot/imported/protag1.png-7a4a333b2b5cfc1b9c4590466831c8c4.ctex"]
+source_file="res://Assets/Enemies/2/L_Death.png"
+dest_files=["res://.godot/imported/L_Death.png-2aae171777d8270078f9e9f9772258cd.ctex"]
 
 [params]
 

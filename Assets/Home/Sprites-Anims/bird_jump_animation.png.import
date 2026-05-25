@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck23vg4l453vn"
-path="res://.godot/imported/bird_jump_animation.png-948c560ad7c61c3a6d7bad6db16dee4b.ctex"
+path="res://.godot/imported/bird_jump_animation.png-907bb101a388b1726bf782f81183bc78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Home/Sprites-Anims/bird_jump_animation.png"
-dest_files=["res://.godot/imported/bird_jump_animation.png-948c560ad7c61c3a6d7bad6db16dee4b.ctex"]
+source_file="res://Assets/Home/PNG/bird_jump_animation.png"
+dest_files=["res://.godot/imported/bird_jump_animation.png-907bb101a388b1726bf782f81183bc78.ctex"]
 
 [params]
 

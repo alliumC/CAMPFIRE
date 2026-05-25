@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bug52gwqpede"
-path="res://.godot/imported/U_Walk.png-694ceb1629308dd6a8312479dabe69bd.ctex"
+path="res://.godot/imported/U_Walk.png-8bf278c39ab0090474abec74775b1130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemies/Bee/U_Walk.png"
-dest_files=["res://.godot/imported/U_Walk.png-694ceb1629308dd6a8312479dabe69bd.ctex"]
+source_file="res://Assets/Enemies/4/U_Walk.png"
+dest_files=["res://.godot/imported/U_Walk.png-8bf278c39ab0090474abec74775b1130.ctex"]
 
 [params]
 
