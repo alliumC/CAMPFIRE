@@ -10,11 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://sd2fnr06e8qw" path="res://Assets/Dungeon/Sprites-Anims/blood arrow.png" id="5_kggsr"]
 [ext_resource type="Texture2D" uid="uid://1o3rwl7q8537" path="res://Assets/Dungeon/Sprites-Anims/blood arrow 2.png" id="5_ogvea"]
 [ext_resource type="Script" uid="uid://d0m7fkucwkfuy" path="res://scripts/camera_2d.gd" id="8_8bo53"]
-[ext_resource type="Texture2D" uid="uid://cxxsa3wdx42up" path="res://Assets/Dungeon/Sprites-Anims/HELP US.png" id="8_l4kwt"]
 [ext_resource type="PackedScene" uid="uid://cw50vq0r1kbs0" path="res://scenes/enemies/Goblin.tscn" id="9_25w15"]
 [ext_resource type="PackedScene" uid="uid://br2tdqvja6pc1" path="res://scenes/enemies/Spirit.tscn" id="10_mlh8f"]
 [ext_resource type="Texture2D" uid="uid://b2c6csu5b6hcr" path="res://Assets/Dungeon/Sprites-Anims/candle anims.png" id="12_3xja6"]
 [ext_resource type="Texture2D" uid="uid://cibbqyvn15i84" path="res://Assets/Dungeon/Sprites-Anims/bloody pentagram.png" id="13_mugg0"]
+[ext_resource type="Script" uid="uid://chasuldimtc4n" path="res://scenes/dungeon/enemy_detector.gd" id="15_l4kwt"]
 
 [sub_resource type="Gradient" id="Gradient_l4kwt"]
 offsets = PackedFloat32Array(0, 0.55487806, 0.89634144)
@@ -24,6 +24,15 @@ colors = PackedColorArray(1, 0.9098039, 0.6, 1, 0.09345794, 0.08502841, 0.056074
 gradient = SubResource("Gradient_l4kwt")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mugg0"]
+size = Vector2(27, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4kwt"]
+size = Vector2(29, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mugg0"]
+load_path = "res://.godot/imported/HELP US.png-8dbb12abffb8c4723574b5c6c74387b1.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw5o7"]
 atlas = ExtResource("12_3xja6")
@@ -254,6 +263,8 @@ gradient = SubResource("Gradient_1shxj")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mugg0"]
+
 [sub_resource type="Gradient" id="Gradient_syqex"]
 offsets = PackedFloat32Array(0, 0.09146342, 0.6707317, 1)
 colors = PackedColorArray(1, 1, 0.7176471, 1, 0.744856, 0.744856, 0.5345437, 1, 0, 0, 0, 1, 0, 0, 0, 1)
@@ -274,6 +285,21 @@ size = Vector2(52, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bw5o7"]
 size = Vector2(4, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o40l"]
+size = Vector2(308, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0su8"]
+size = Vector2(52, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1shxj"]
+size = Vector2(52, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbohb"]
+size = Vector2(2, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5htxp"]
+size = Vector2(3, 34)
 
 [node name="Dungeon Base" type="Node2D" unique_id=1960524575]
 
@@ -300,32 +326,49 @@ metadata/_edit_lock_ = true
 
 [node name="Chest" parent="Map/Top" unique_id=2099036457 instance=ExtResource("2_qx02k")]
 position = Vector2(9, -189)
+metadata/_edit_lock_ = true
 
 [node name="Lights" type="Node2D" parent="Map/Top" unique_id=809879808]
+position = Vector2(7.9999847, 0)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D2" type="PointLight2D" parent="Map/Top/Lights" unique_id=1073939108]
-position = Vector2(-24.000015, -67)
+position = Vector2(-32, -67)
 energy = 0.5
 texture = SubResource("GradientTexture2D_2o40l")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Map/Top/Lights" unique_id=1561651920]
-position = Vector2(39.999985, -72)
+position = Vector2(32, -67)
 energy = 0.5
 texture = SubResource("GradientTexture2D_2o40l")
 
 [node name="Chest Room" type="Node2D" parent="Map/Top" unique_id=504926361]
+position = Vector2(8.999985, 0)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Map/Top/Chest Room" unique_id=974136604]
-position = Vector2(-127.000015, -240)
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Top/Chest Room" unique_id=1479603560]
+position = Vector2(-140, -242)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Map/Top/Chest Room/StaticBody2D" unique_id=974136604]
 texture = ExtResource("3_l4kwt")
 region_enabled = true
-region_rect = Rect2(304.15, 63.025, 32, 32)
+region_rect = Rect2(304, 63.025, 32, 32)
 
-[node name="Sprite2D" type="Sprite2D" parent="Map/Top/Chest Room" unique_id=977650457]
-position = Vector2(146.99998, -240)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Top/Chest Room/StaticBody2D" unique_id=620522844]
+shape = SubResource("RectangleShape2D_mugg0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Map/Top/Chest Room" unique_id=1501305786]
+position = Vector2(137, -242)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Map/Top/Chest Room/StaticBody2D2" unique_id=977650457]
 texture = ExtResource("3_l4kwt")
 region_enabled = true
 region_rect = Rect2(335, 48, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Top/Chest Room/StaticBody2D2" unique_id=323313930]
+shape = SubResource("RectangleShape2D_l4kwt")
 
 [node name="arrows + tutorial" type="Node2D" parent="Map" unique_id=1643048849]
 position = Vector2(2, -14)
@@ -364,9 +407,9 @@ texture = ExtResource("4_3xja6")
 position = Vector2(-358, -2)
 
 [node name="HelpUs" type="Sprite2D" parent="Map/Lore" unique_id=971345445]
-position = Vector2(412.00003, 29.000002)
+position = Vector2(413, 31.000002)
 scale = Vector2(0.875, 0.85)
-texture = ExtResource("8_l4kwt")
+texture = SubResource("CompressedTexture2D_mugg0")
 
 [node name="triple2" type="AnimatedSprite2D" parent="Map/Lore" unique_id=761212413]
 position = Vector2(473, 142)
@@ -437,6 +480,12 @@ position = Vector2(504, 112)
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("13_mugg0")
 
+[node name="Sprite2D" type="Sprite2D" parent="Map" unique_id=371299670]
+visible = false
+position = Vector2(-190.00002, -98.00001)
+scale = Vector2(336, 192.00002)
+texture = SubResource("PlaceholderTexture2D_mugg0")
+
 [node name="Player" parent="." unique_id=1052419685 instance=ExtResource("1_ak1iy")]
 position = Vector2(-167.00002, -94)
 scale = Vector2(0.825, 0.825)
@@ -464,6 +513,7 @@ position = Vector2(272, 0)
 
 [node name="goblin 2" parent="Enemies" unique_id=1489085298 node_paths=PackedStringArray("endPoint") instance=ExtResource("9_25w15")]
 position = Vector2(304, -17)
+speed = 40
 endPoint = NodePath("Marker2D")
 damage = 5
 
@@ -472,7 +522,7 @@ position = Vector2(-272, 0)
 
 [node name="Spirit" parent="Enemies" unique_id=1109354238 node_paths=PackedStringArray("endPoint") instance=ExtResource("10_mlh8f")]
 position = Vector2(-646, -132)
-speed = 40
+speed = 60
 endPoint = NodePath("Marker2D")
 damage = 5
 
@@ -482,18 +532,35 @@ position = Vector2(278, 115)
 [node name="Spirit2" parent="Enemies" unique_id=349087201 node_paths=PackedStringArray("endPoint") instance=ExtResource("10_mlh8f")]
 editor_description = "speed is lower the number, faster it is"
 position = Vector2(-646, -17)
-speed = 40
+speed = 60
 endPoint = NodePath("Marker2D")
 damage = 5
 
 [node name="Marker2D" type="Marker2D" parent="Enemies/Spirit2" unique_id=1773028802]
 position = Vector2(278, -115)
 
+[node name="Goblin" parent="Enemies" unique_id=2067017789 node_paths=PackedStringArray("endPoint") instance=ExtResource("9_25w15")]
+position = Vector2(-983, -17)
+speed = 40
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Goblin" unique_id=2143922464]
+position = Vector2(287, 0)
+
+[node name="Spirit3" parent="Enemies" unique_id=906838227 node_paths=PackedStringArray("endPoint") instance=ExtResource("10_mlh8f")]
+position = Vector2(-696, -132)
+speed = 60
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="Enemies/Spirit3" unique_id=237099972]
+position = Vector2(-287, -8)
+
 [node name="Camera" type="Node2D" parent="." unique_id=1272627557]
 
 [node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1223136786 node_paths=PackedStringArray("camera")]
 position = Vector2(-168, -96)
 scale = Vector2(0.825, 0.825)
+offset = Vector2(0, 0.5)
 zoom = Vector2(3.81, 3.75)
 limit_enabled = false
 script = ExtResource("8_8bo53")
@@ -507,7 +574,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_0egkp")
 
 [node name="Left" type="Area2D" parent="Camera" unique_id=694997448]
-position = Vector2(-10, -96.5)
+position = Vector2(-10, -97)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Left" unique_id=1256374539]
@@ -523,13 +590,47 @@ shape = SubResource("RectangleShape2D_3xja6")
 metadata/_edit_group_ = true
 
 [node name="Right" type="Area2D" parent="Camera" unique_id=1629981732]
-position = Vector2(10, -96.5)
+position = Vector2(10, -97)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Right" unique_id=1378671827]
 shape = SubResource("RectangleShape2D_bw5o7")
 
+[node name="enemy detector" type="Area2D" parent="Camera" unique_id=681950704]
+position = Vector2(-1, 0)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("15_l4kwt")
+
+[node name="detector" type="CollisionShape2D" parent="Camera/enemy detector" unique_id=1137361213]
+position = Vector2(-167, -96)
+shape = SubResource("RectangleShape2D_2o40l")
+
+[node name="Invis Borders" type="StaticBody2D" parent="Camera" unique_id=626604209]
+
+[node name="Up" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=188315550]
+position = Vector2(-168, -193.5)
+shape = SubResource("RectangleShape2D_k0su8")
+disabled = true
+
+[node name="Down" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=1886697909]
+position = Vector2(-168, 2)
+shape = SubResource("RectangleShape2D_1shxj")
+disabled = true
+
+[node name="Right" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=1667743260]
+position = Vector2(1, -97)
+shape = SubResource("RectangleShape2D_mbohb")
+disabled = true
+
+[node name="Left" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=1346046623]
+position = Vector2(-337.5, -97)
+shape = SubResource("RectangleShape2D_5htxp")
+disabled = true
+
 [connection signal="body_entered" from="Camera/Up" to="Camera/Camera2D" method="_on_up_body_entered"]
 [connection signal="body_entered" from="Camera/Left" to="Camera/Camera2D" method="_on_left_body_entered"]
 [connection signal="body_entered" from="Camera/Down" to="Camera/Camera2D" method="_on_down_body_entered"]
 [connection signal="body_entered" from="Camera/Right" to="Camera/Camera2D" method="_on_right_body_entered"]
+[connection signal="body_entered" from="Camera/enemy detector" to="Camera/enemy detector" method="_on_body_entered"]
+[connection signal="body_exited" from="Camera/enemy detector" to="Camera/enemy detector" method="_on_body_exited"]

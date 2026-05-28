@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm8dvtbhkt2v5"]
 
 [ext_resource type="Script" uid="uid://i8j82s0r6eyl" path="res://scripts/boss.gd" id="1_7aoto"]
-[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="2_0p1ha"]
+[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="2_0p1ha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8bx4"]
 atlas = ExtResource("2_0p1ha")
@@ -120,15 +120,11 @@ radius = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ob1c7"]
 radius = 12.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l0yk4"]
-radius = 288.02777
-
 [node name="BOSS" type="CharacterBody2D" unique_id=1741310870]
 z_index = 1
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_7aoto")
-speed = 5
 damage = 20
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1002223494]
@@ -155,17 +151,7 @@ shape = SubResource("CircleShape2D_ob1c7")
 wait_time = 1.5
 one_shot = true
 
-[node name="Spot" type="Area2D" parent="." unique_id=1309962185]
-position = Vector2(0, -15)
-
-[node name="detection" type="CollisionShape2D" parent="Spot" unique_id=60164826]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_l0yk4")
-
-[node name="Follow" type="Timer" parent="." unique_id=33558742]
-wait_time = 5.0
+[node name="Timer" type="Timer" parent="." unique_id=1003885745]
 one_shot = true
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_entered" from="Spot" to="." method="_on_spot_body_entered"]
-[connection signal="body_exited" from="Spot" to="." method="_on_spot_body_exited"]

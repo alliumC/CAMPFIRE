@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Boss
+class_name BOSS
 
 @export var speed = 30
 @export var limit = 0.5
@@ -8,19 +8,21 @@ class_name Boss
 
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
-@onready var detection_shape = $Spot/detection
+@onready var player: Player = $"../Player"
 
 var chase: bool = false
 var startPos
 var endPos
-var player = null
+var player_status = null
 
 func _ready():
 	startPos = position
-	endPos = endPoint.global_position
+	endPos = player.global_position
 	
-	detection_shape.shape = $Spot/detection.shape.duplicate()
 
+
+func _process(_delta: float) -> void:
+	endPos = player.global_position
 
 func _physics_process(_delta):
 	if not chase:
@@ -66,15 +68,15 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 func _on_spot_body_entered(body: Node2D) -> void:
 	if body is Player:
 		chase = true
-		player = body
+		player_status = body
 		$Spot/detection.shape.radius = 85.0
 
 
 func _on_spot_body_exited(body: Node2D) -> void:
 	if body is Player:
 		chase = false
-		player = null
-		$Spot/detection.shape.radius = 85
+		player_status = null
+		$Spot/detection.shape.radius = 30.0
 
 
 func damage_player(target: Player):

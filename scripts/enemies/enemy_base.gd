@@ -21,6 +21,10 @@ func _ready():
 	
 	detection_shape.shape = $Spot/detection.shape.duplicate()
 
+func _process(delta: float) -> void:
+	await(get_tree().create_timer(5).timeout)
+	queue_free()
+
 
 func _physics_process(_delta):
 	if not chase:
