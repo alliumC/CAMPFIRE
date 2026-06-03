@@ -36,10 +36,10 @@ tile_set = ExtResource("1_5kpjc")
 
 [node name="BOSS" parent="." unique_id=422566797 node_paths=PackedStringArray("endPoint") instance=ExtResource("15_p828j")]
 position = Vector2(-6, 3)
-speed = null
-limit = null
+speed = 1
+limit = 1.0
 endPoint = NodePath("Marker2D")
-damage = null
+damage = 1
 
 [node name="Marker2D" type="Marker2D" parent="BOSS" unique_id=842912480]
 position = Vector2(99, 5)

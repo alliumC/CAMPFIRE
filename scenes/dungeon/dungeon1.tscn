@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cd2ekv3lcnfgt"]
 
-[ext_resource type="PackedScene" uid="uid://dah80ulbndvh4" path="res://scenes/dungeon/dungeon_base.tscn" id="1_wfh6k"]
+[ext_resource type="PackedScene" uid="uid://13uvevqqwlpf" path="res://scenes/dungeon/dungeon_boss_room.tscn" id="1_wrvrf"]
 
 [sub_resource type="Gradient" id="Gradient_etlrv"]
 colors = PackedColorArray(0.05490196, 0.050980393, 0.078431375, 1, 0.05490196, 0.050980393, 0.078431375, 1)
@@ -13,8 +13,8 @@ gradient = SubResource("Gradient_etlrv")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1069755099]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=1094950409]
-position = Vector2(1060.5, 601.49994)
-scale = Vector2(8.722655, 1264.9998)
+position = Vector2(640.00006, 359.99997)
+scale = Vector2(5, 720)
 texture = SubResource("GradientTexture1D_tkjml")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2121849812]
@@ -22,4 +22,4 @@ color = Color(0.7312715, 0.7357062, 0.7478415, 1)
 energy = 0.72
 blend_mode = 1
 
-[node name="Dungeon Base" parent="." unique_id=1960524575 instance=ExtResource("1_wfh6k")]
+[node name="Boss Room" parent="." unique_id=1960524575 instance=ExtResource("1_wrvrf")]
