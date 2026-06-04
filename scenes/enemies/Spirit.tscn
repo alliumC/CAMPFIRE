@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://br2tdqvja6pc1"]
 
-[ext_resource type="Script" uid="uid://nymslpaksbcm" path="res://scripts/enemies/enemy_base.gd" id="1_anins"]
-[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="2_hqg0b"]
-[ext_resource type="Texture2D" uid="uid://caqd0atijsuhv" path="res://Assets/Enemies/1/D_Walk.png" id="3_2lnt3"]
-[ext_resource type="Texture2D" uid="uid://dyy61e5dvuvc" path="res://Assets/Enemies/1/S_Walk.png" id="4_anins"]
-[ext_resource type="Texture2D" uid="uid://c7n0d0e2o61wc" path="res://Assets/Enemies/1/U_Walk.png" id="5_hqg0b"]
+[ext_resource type="Script" uid="uid://nymslpaksbcm" path="res://Scripts/Enemies/enemy_base.gd" id="1_anins"]
+[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="2_hqg0b"]
+[ext_resource type="Texture2D" uid="uid://caqd0atijsuhv" path="res://Assets/Enemies/Slime/D_Walk.png" id="3_2lnt3"]
+[ext_resource type="Texture2D" uid="uid://dyy61e5dvuvc" path="res://Assets/Enemies/Slime/S_Walk.png" id="4_anins"]
+[ext_resource type="Texture2D" uid="uid://c7n0d0e2o61wc" path="res://Assets/Enemies/Slime/U_Walk.png" id="5_hqg0b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8bx4"]
 atlas = ExtResource("2_hqg0b")

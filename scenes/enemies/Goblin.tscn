@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cw50vq0r1kbs0"]
 
-[ext_resource type="Script" uid="uid://nymslpaksbcm" path="res://scripts/enemies/enemy_base.gd" id="1_1ito2"]
-[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/MC Sprites/protag_normal.png" id="1_kfcno"]
-[ext_resource type="Texture2D" uid="uid://d1cm48kxepj1b" path="res://Assets/Enemies/2/D_Walk.png" id="3_ob1c7"]
-[ext_resource type="Texture2D" uid="uid://cslx7oehu6gvd" path="res://Assets/Enemies/2/U_Walk.png" id="4_4asau"]
-[ext_resource type="Texture2D" uid="uid://cvftaylg1rwn3" path="res://Assets/Enemies/2/L_Walk.png" id="4_l0yk4"]
-[ext_resource type="Texture2D" uid="uid://cmgnti6udgi4r" path="res://Assets/Enemies/2/R_Walk.png" id="5_rcybe"]
+[ext_resource type="Script" uid="uid://nymslpaksbcm" path="res://Scripts/Enemies/enemy_base.gd" id="1_1ito2"]
+[ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="1_kfcno"]
+[ext_resource type="Texture2D" uid="uid://d1cm48kxepj1b" path="res://Assets/Enemies/Goblin/D_Walk.png" id="3_ob1c7"]
+[ext_resource type="Texture2D" uid="uid://cslx7oehu6gvd" path="res://Assets/Enemies/Goblin/U_Walk.png" id="4_4asau"]
+[ext_resource type="Texture2D" uid="uid://cvftaylg1rwn3" path="res://Assets/Enemies/Goblin/S_Walk.png" id="4_l0yk4"]
+[ext_resource type="Texture2D" uid="uid://cmgnti6udgi4r" path="res://Assets/Enemies/Goblin/R_Walk.png" id="5_rcybe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8bx4"]
 atlas = ExtResource("1_kfcno")
