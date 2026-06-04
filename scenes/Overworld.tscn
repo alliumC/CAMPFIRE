@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://byk555wkqyfg6"]
 
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="1_puia7"]
+[ext_resource type="Script" uid="uid://b7fsfj8c03v8d" path="res://scripts/Overworld/overworld.gd" id="1_gacct"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="1_puia7"]
 [ext_resource type="Texture2D" uid="uid://cytu7cwip8jd8" path="res://Assets/Home/Tiled_files/exterior.png" id="2_gacct"]
-[ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://Scripts/cave.gd" id="3_w51ix"]
+[ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://scripts/cave.gd" id="3_w51ix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
 texture = ExtResource("2_gacct")
@@ -1332,6 +1333,7 @@ colors = PackedColorArray(0.47843137, 0.6784314, 0.33333334, 1, 0.47843137, 0.67
 gradient = SubResource("Gradient_7r4gi")
 
 [node name="WORLD" type="Node" unique_id=2097567805]
+script = ExtResource("1_gacct")
 
 [node name="Map" type="Node2D" parent="." unique_id=1788962872]
 z_as_relative = false
@@ -1349,6 +1351,8 @@ scale = Vector2(0.7, 0.7)
 [node name="Camera2D" type="Camera2D" parent="Map/Player" unique_id=94649766]
 position = Vector2(2, 1)
 zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Map/Player" unique_id=709545052]
 
 [node name="TileMaps" type="Node2D" parent="Map" unique_id=947028826]
 

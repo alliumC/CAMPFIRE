@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bdeitmfdw0a3s"]
+
+[ext_resource type="Script" uid="uid://db3mlpp4hc1bj" path="res://scripts/dialogue_system.gd" id="1_sofqc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sofqc"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3421h"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a8p2u"]
+
+[node name="DialogueSystem" type="Control" unique_id=1124796771]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sofqc")
+
+[node name="DialogueBox" type="TextureRect" parent="." unique_id=1814561568]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -572.0
+offset_top = -211.0
+offset_right = 572.0
+offset_bottom = -38.23999
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("PlaceholderTexture2D_sofqc")
+
+[node name="SpeakerProfile" type="TextureRect" parent="DialogueBox" unique_id=466465580]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.4
+offset_top = -74.98
+offset_right = 161.4
+offset_bottom = 75.01999
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_3421h")
+
+[node name="TextContainer" type="VBoxContainer" parent="DialogueBox" unique_id=1337528278]
+layout_mode = 0
+offset_left = 172.0
+offset_right = 1118.0
+offset_bottom = 172.76
+alignment = 1
+
+[node name="CharacterName" type="RichTextLabel" parent="DialogueBox/TextContainer" unique_id=860288337]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+text = "Character Name"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="CharacterDialogue" type="RichTextLabel" parent="DialogueBox/TextContainer" unique_id=549738150]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "Character Dialogue Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel sapien nec ligula lobortis varius vel sit amet justo. Pellentesque sodales faucibus odio. Curabitur in molestie tellus. Proin non eros sodales, fringilla ligula in, scelerisque risus. Aenean vestibulum, justo eu iaculis varius, ligula est aliquet felis, id scelerisque lectus nunc eu erat. Phasellus pellentesque sollicitudin lobortis. Nullam non dolor sit amet augue consectetur eleifend. Phasellus posuere vel leo ut varius."
+scroll_active = false
+scroll_following = true
+scroll_following_visible_characters = true
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="SkipButton" type="TextureRect" parent="DialogueBox" unique_id=2077905876]
+visible = false
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 138.0
+offset_right = 1137.0
+offset_bottom = 166.0
+texture = SubResource("PlaceholderTexture2D_a8p2u")
+
+[node name="DialogueSpeed" type="Timer" parent="." unique_id=1015766506]
+wait_time = 0.05
+
+[connection signal="dialogue_ended" from="." to="." method="_on_dialogue_ended"]
+[connection signal="dialogue_skipped" from="." to="." method="_on_dialogue_skipped"]
+[connection signal="timeout" from="DialogueSpeed" to="." method="_on_dialogue_speed_timeout"]
