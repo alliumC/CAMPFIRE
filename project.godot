@@ -15,16 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Venor"
+run/main_scene="uid://byk555wkqyfg6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [audio]
 
 buses/default_bus_layout="uid://ciiqfqx5p7lo7"
-
-[autoload]
-
-GlobalVar="*uid://2okcbbrs0lxn"
 
 [display]
 
@@ -41,8 +38,8 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 folder_colors={
 "res://Assets/": "purple",
-"res://scenes/": "orange",
-"res://scripts/": "green",
+"res://Scenes/": "orange",
+"res://Scripts/": "green",
 "res://songs/": "blue"
 }
 

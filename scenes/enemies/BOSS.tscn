@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm8dvtbhkt2v5"]
 
-[ext_resource type="Script" uid="uid://i8j82s0r6eyl" path="res://scripts/boss.gd" id="1_7aoto"]
+[ext_resource type="Script" uid="uid://i8j82s0r6eyl" path="res://Scripts/Dungeon/Boss/boss.gd" id="1_7aoto"]
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="2_0p1ha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8bx4"]

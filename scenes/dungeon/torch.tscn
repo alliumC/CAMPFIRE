@@ -1,29 +1,29 @@
 [gd_scene format=3 uid="uid://dkns0r76lpail"]
 
-[ext_resource type="Texture2D" uid="uid://cw17d1gle2uk8" path="res://Assets/Dungeon/PNG/fire_animation.png" id="1_8d5eo"]
+[ext_resource type="Texture2D" uid="uid://cw17d1gle2uk8" path="res://Assets/Dungeon/Sprites-Anims/fire_animation.png" id="1_6ock4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8x5oh"]
-atlas = ExtResource("1_8d5eo")
+atlas = ExtResource("1_6ock4")
 region = Rect2(38, 0, 34, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4d8jt"]
-atlas = ExtResource("1_8d5eo")
+atlas = ExtResource("1_6ock4")
 region = Rect2(38, 48, 34, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rtp8i"]
-atlas = ExtResource("1_8d5eo")
+atlas = ExtResource("1_6ock4")
 region = Rect2(38, 96, 34, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4cmaq"]
-atlas = ExtResource("1_8d5eo")
+atlas = ExtResource("1_6ock4")
 region = Rect2(38, 144, 34, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68nru"]
-atlas = ExtResource("1_8d5eo")
+atlas = ExtResource("1_6ock4")
 region = Rect2(38, 192, 34, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1kl8"]
-atlas = ExtResource("1_8d5eo")
+atlas = ExtResource("1_6ock4")
 region = Rect2(38, 240, 34, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gr5i3"]

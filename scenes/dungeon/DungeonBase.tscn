@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://dah80ulbndvh4"]
+
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="1_dqepy"]
+[ext_resource type="PackedScene" uid="uid://botogx5t4m7as" path="res://Scenes/Interation/interaction_component.tscn" id="2_t4d24"]
+[ext_resource type="Script" uid="uid://d0m7fkucwkfuy" path="res://Scripts/Dungeon/dungeon_camera.gd" id="3_h03bg"]
+[ext_resource type="Script" uid="uid://chasuldimtc4n" path="res://Scripts/Dungeon/enemy_detector.gd" id="4_k3b38"]
+
+[sub_resource type="Gradient" id="Gradient_syqex"]
+offsets = PackedFloat32Array(0, 0.09146342, 0.6707317, 1)
+colors = PackedColorArray(1, 1, 0.7176471, 1, 0.744856, 0.744856, 0.5345437, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rtveb"]
+gradient = SubResource("Gradient_syqex")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0egkp"]
+size = Vector2(52, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlh8f"]
+size = Vector2(4, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xja6"]
+size = Vector2(52, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw5o7"]
+size = Vector2(4, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o40l"]
+size = Vector2(308, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0su8"]
+size = Vector2(52, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1shxj"]
+size = Vector2(52, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbohb"]
+size = Vector2(2, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5htxp"]
+size = Vector2(3, 34)
+
+[node name="Dungeon Base" type="Node2D" unique_id=1960524575]
+
+[node name="Map" type="Node2D" parent="." unique_id=132261497]
+position = Vector2(22.000015, 2)
+
+[node name="Player" parent="." unique_id=1052419685 instance=ExtResource("1_dqepy")]
+position = Vector2(-167.00002, -94)
+scale = Vector2(0.825, 0.825)
+metadata/_edit_group_ = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="Player" unique_id=1696871120]
+position = Vector2(1.8495502e-05, -13.333331)
+scale = Vector2(1.477273, 1.4772727)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_rtveb")
+
+[node name="InteractionComponent" parent="Player" unique_id=169027638 instance=ExtResource("2_t4d24")]
+position = Vector2(0, -13.496937)
+
+[node name="Camera" type="Node2D" parent="." unique_id=1272627557]
+
+[node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1223136786 node_paths=PackedStringArray("camera")]
+visible = false
+position = Vector2(-168, -96)
+scale = Vector2(0.825, 0.825)
+offset = Vector2(0, 0.5)
+zoom = Vector2(3.81, 3.75)
+limit_enabled = false
+script = ExtResource("3_h03bg")
+camera = NodePath("..")
+
+[node name="Up" type="Area2D" parent="Camera" unique_id=1321149382]
+position = Vector2(-168, -207)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Up" unique_id=1567050134]
+shape = SubResource("RectangleShape2D_0egkp")
+
+[node name="Left" type="Area2D" parent="Camera" unique_id=694997448]
+position = Vector2(-10, -97)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Left" unique_id=1256374539]
+position = Vector2(-336, 0)
+shape = SubResource("RectangleShape2D_mlh8f")
+
+[node name="Down" type="Area2D" parent="Camera" unique_id=1773177995]
+position = Vector2(-168, -4.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Down" unique_id=1829637948]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_3xja6")
+metadata/_edit_group_ = true
+
+[node name="Right" type="Area2D" parent="Camera" unique_id=1629981732]
+position = Vector2(10, -97)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Right" unique_id=1378671827]
+shape = SubResource("RectangleShape2D_bw5o7")
+
+[node name="enemy detector" type="Area2D" parent="Camera" unique_id=681950704]
+position = Vector2(-1, 0)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_k3b38")
+
+[node name="detector" type="CollisionShape2D" parent="Camera/enemy detector" unique_id=1137361213]
+position = Vector2(-167, -96)
+shape = SubResource("RectangleShape2D_2o40l")
+
+[node name="Invis Borders" type="StaticBody2D" parent="Camera" unique_id=626604209]
+
+[node name="Up" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=188315550]
+position = Vector2(-168, -193.5)
+shape = SubResource("RectangleShape2D_k0su8")
+disabled = true
+
+[node name="Down" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=1886697909]
+position = Vector2(-168, 2)
+shape = SubResource("RectangleShape2D_1shxj")
+disabled = true
+
+[node name="Right" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=1667743260]
+position = Vector2(1, -97)
+shape = SubResource("RectangleShape2D_mbohb")
+disabled = true
+
+[node name="Left" type="CollisionShape2D" parent="Camera/Invis Borders" unique_id=1346046623]
+position = Vector2(-337.5, -97)
+shape = SubResource("RectangleShape2D_5htxp")
+disabled = true
+
+[connection signal="body_entered" from="Camera/Up" to="Camera/Camera2D" method="_on_up_body_entered"]
+[connection signal="body_entered" from="Camera/Left" to="Camera/Camera2D" method="_on_left_body_entered"]
+[connection signal="body_entered" from="Camera/Down" to="Camera/Camera2D" method="_on_down_body_entered"]
+[connection signal="body_entered" from="Camera/Right" to="Camera/Camera2D" method="_on_right_body_entered"]
+[connection signal="body_entered" from="Camera/enemy detector" to="Camera/enemy detector" method="_on_body_entered"]
+[connection signal="body_exited" from="Camera/enemy detector" to="Camera/enemy detector" method="_on_body_exited"]

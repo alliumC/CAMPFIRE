@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dussugdqlujc7"]
 
-[ext_resource type="Script" uid="uid://c60sqx885t4x7" path="res://scripts/chest.gd" id="1_kpaji"]
-[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://scenes/interactions/interactable.tscn" id="2_bp1or"]
-[ext_resource type="Texture2D" uid="uid://dk5rcgtjp87oq" path="res://Assets/Dungeon/PNG/chest_anim.png" id="2_kpaji"]
+[ext_resource type="Script" uid="uid://c60sqx885t4x7" path="res://Scripts/Dungeon/chest.gd" id="1_kpaji"]
+[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://Scenes/Interation/interactable.tscn" id="2_bp1or"]
+[ext_resource type="Texture2D" uid="uid://dk5rcgtjp87oq" path="res://Assets/Dungeon/Sprites-Anims/chest_anim.png" id="2_kpaji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_631qo"]
 atlas = ExtResource("2_kpaji")

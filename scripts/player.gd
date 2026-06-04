@@ -10,10 +10,8 @@ class_name Player
 
 
 var currentHealth: int = maxHealth
-var lastDirection=0
-var attack=false
-var cooldown=false
-
+var lastDirection: String = "down"
+var attack = false
 
 func _ready() -> void:
 	hp_barr.max_value = maxHealth
@@ -47,14 +45,15 @@ func get_player_input() -> void:
 				sprite.play("idle down")	
 			
 	if Input.is_action_just_pressed("attack"):
-			if cooldown==false:
-				attack=true
-				sprite.play("attack")
-				await sprite.animation_finished
-				sprite.play("idle")
-				attack=false
-				cooldown=true
-				$attack.start()
+		pass
+			#if cooldown == false:
+				#attack = true
+				#sprite.play("attack")
+				#await sprite.animation_finished
+				#sprite.play("idle")
+				#attack=false
+				#cooldown=true
+				#$attack.start()
 
 func _physics_process(_delta):
 	get_player_input()
