@@ -1,8 +1,7 @@
 extends Node
-const DIALOGUE_SYSTEM = preload("uid://bdeitmfdw0a3s")
 @onready var canvas_layer: CanvasLayer = $Map/Player/CanvasLayer
+@onready var dialogue_system = GameSystemsScript.instantiateDialogueSystem(canvas_layer)
 
 func _ready() -> void:
-	var dialogue_system = DIALOGUE_SYSTEM.instantiate()
-	canvas_layer.add_child(dialogue_system)
-	dialogue_system.show_dialogue_box("Cassius", "Lorem ipsum [wave] meow [/wave]", 0.05)
+	dialogue_system.show_dialogue_box("Cassius", "Lorem ipsum dolor sit amet, [shake] consectetur adipiscing elit [/shake]. In vel sapien nec ligula lobortis varius vel sit amet justo. Pellentesque sodales faucibus odio", 0.05)
+	
