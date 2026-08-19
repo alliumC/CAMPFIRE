@@ -29,12 +29,19 @@ func _input(event: InputEvent) -> void:
 
 #img_path: Texture2D, 
 
-func show_dialogue_box(char_name: String, text: String, speed: float):
+func show_dialogue_box(char_name: String, dialogue: Array, speed: float):
 	#speaker_profile.texture = img_path
 	character_name.text = char_name
-	dialogue_speed.wait_time = speed
-	character_dialogue.bbcode_text = text
-	dialogue_speed.start()
+	dialogue_speed.wait_time = speed	
+	for i in dialogue:
+		skip_button.visible = false
+		character_dialogue.bbcode_text = i
+		dialogue_speed.start()
+		await dialogue_ended
+		if dialogue.find(i, 0) == dialogue.size() - 1:
+			self.queue_free()
+		else:
+			character_dialogue.visible_characters = 0
 	
 func _on_dialogue_speed_timeout() -> void:
 	if character_dialogue.visible_characters < character_dialogue.text.length():
@@ -45,8 +52,8 @@ func _on_dialogue_speed_timeout() -> void:
 
 func _on_dialogue_ended() -> void:
 	skip_button.visible = true
-	self.queue_free()
 
 func _on_dialogue_skipped() -> void:
 	character_dialogue.visible_characters = -1
 	dialogue_speed.stop()
+	skip_button.visible = true
