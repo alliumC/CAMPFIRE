@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://chgdopktb0d2w"]
+
+[ext_resource type="Script" uid="uid://c5gy7si52iahk" path="res://scripts/loading_screen.gd" id="1_qregr"]
+
+[sub_resource type="Animation" id="Animation_kstye"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeScreen:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.03333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kddo8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xoop3"]
+_data = {
+&"FadeIn": SubResource("Animation_kstye"),
+&"RESET": SubResource("Animation_kddo8")
+}
+
+[node name="LoadingScreen" type="Node2D" unique_id=2017146105 node_paths=PackedStringArray("animation_player")]
+process_mode = 3
+z_index = 4096
+script = ExtResource("1_qregr")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="FadeScreen" type="ColorRect" parent="." unique_id=2124430119]
+z_index = 4096
+offset_left = -69348.93
+offset_top = -40108.0
+offset_right = 70627.93
+offset_bottom = 40831.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=460460859]
+libraries/ = SubResource("AnimationLibrary_xoop3")
+autoplay = &"FadeIn"
