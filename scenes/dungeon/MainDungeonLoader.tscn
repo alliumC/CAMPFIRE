@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cd2ekv3lcnfgt"]
 
-[ext_resource type="PackedScene" uid="uid://buindt4q6wkcb" path="res://Scenes/Dungeon/Dungeon1.tscn" id="1_endrc"]
+[ext_resource type="PackedScene" uid="uid://buindt4q6wkcb" path="res://scenes/dungeon/Dungeon1.tscn" id="1_endrc"]
 
 [sub_resource type="Gradient" id="Gradient_etlrv"]
 colors = PackedColorArray(0.05490196, 0.050980393, 0.078431375, 1, 0.05490196, 0.050980393, 0.078431375, 1)

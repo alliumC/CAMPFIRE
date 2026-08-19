@@ -4,6 +4,7 @@ extends Control
 @onready var settings: Panel = $Settings
 @onready var button_bg: TextureRect = $"Button BG"
 @onready var title: Label = $Title
+const OVERWORLD = preload("uid://byk555wkqyfg6")
 
 func _ready():
 	title.visible = true
@@ -13,7 +14,8 @@ func _ready():
 	lower_pitch_loop()
 
 func _on_start_pressed() -> void:
-	SceneLoader.load_scene("uid://byk555wkqyfg6", 1)
+	var overworld_path : String = OVERWORLD.resource_path
+	SceneLoader.load_scene(overworld_path, 1)
 
 func _on_options_pressed() -> void:
 	title.visible = false
