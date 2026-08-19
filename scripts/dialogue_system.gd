@@ -29,18 +29,18 @@ func _input(event: InputEvent) -> void:
 
 #img_path: Texture2D, 
 
-func show_dialogue_box(dialogue: Dictionary, speed: float):
+func show_dialogue_box(dialogue: Array, speed: float):
 	#speaker_profile.texture = img_path
-	dialogue_speed.wait_time = speed	
 	for i in dialogue.size():
 		character_dialogue.visible_characters = 0
 		skip_button.visible = false
-		character_name.text = dialogue.keys()[i]
-		character_dialogue.bbcode_text = dialogue.values()[i]
+		character_name.text = dialogue[i].keys()[0]
+		character_dialogue.bbcode_text = dialogue[i].values()[0][0]
+		dialogue_speed.wait_time = dialogue[i].values()[0][1]	
 		self.modulate.a = 1
 		dialogue_speed.start()
 		await dialogue_ended
-		if dialogue.keys().find(dialogue.keys()[i], 0) == dialogue.size() - 1:
+		if dialogue.find(dialogue[i], 0) == dialogue.size() - 1:
 			self.modulate.a = 0
 		else:
 			character_dialogue.visible_characters = 0
@@ -51,6 +51,7 @@ func _on_dialogue_speed_timeout() -> void:
 	else:
 		character_dialogue.visible_characters = -1
 		dialogue_speed.stop()
+		skip_button.visible = true
 
 func _on_dialogue_ended() -> void:
 	skip_button.visible = true
