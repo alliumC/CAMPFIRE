@@ -1,5 +1,6 @@
 extends Node
 @onready var canvas_layer: CanvasLayer = $Map/Player/CanvasLayer
+@onready var canvas_layer: CanvasLayer = $Map/Player/DialogueLayer
 @onready var dialogue_system = GameSystemsScript.instantiateDialogueSystem(canvas_layer)
 var dialogue = {
 	"Dialogue1" = {
@@ -15,5 +16,6 @@ var dialogue = {
 
 func _ready() -> void:
 	dialogue_system.show_dialogue_box(dialogue["Dialogue1"], 0.05)
+	await dialogue_system.show_dialogue_box(dialogue["Dialogue1"], 0.05)
 	
 	
