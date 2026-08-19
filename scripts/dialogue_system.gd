@@ -29,16 +29,16 @@ func _input(event: InputEvent) -> void:
 
 #img_path: Texture2D, 
 
-func show_dialogue_box(char_name: String, dialogue: Array, speed: float):
+func show_dialogue_box(dialogue: Dictionary, speed: float):
 	#speaker_profile.texture = img_path
-	character_name.text = char_name
 	dialogue_speed.wait_time = speed	
-	for i in dialogue:
+	for i in dialogue.size():
 		skip_button.visible = false
-		character_dialogue.bbcode_text = i
+		character_name.text = dialogue.keys()[i]
+		character_dialogue.bbcode_text = dialogue.values()[i]
 		dialogue_speed.start()
 		await dialogue_ended
-		if dialogue.find(i, 0) == dialogue.size() - 1:
+		if dialogue.keys().find(dialogue.keys()[i], 0) == dialogue.size() - 1:
 			self.queue_free()
 		else:
 			character_dialogue.visible_characters = 0
