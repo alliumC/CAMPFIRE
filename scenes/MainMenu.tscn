@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://b20ypjk246783"]
 
-[ext_resource type="FontFile" uid="uid://dkpketnay57ig" path="res://Assets/Font/Star Crush.ttf" id="1_brnl1"]
-[ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://Scripts/main_menu.gd" id="1_cyejb"]
+[ext_resource type="FontFile" uid="uid://dkpketnay57ig" path="res://Assets/font/Star Crush.ttf" id="1_brnl1"]
+[ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://scripts/main_menu.gd" id="1_cyejb"]
 [ext_resource type="Texture2D" uid="uid://cld3g84ma7v7n" path="res://Assets/Main Menu/Menu 1.png" id="2_qqsp2"]
 [ext_resource type="Texture2D" uid="uid://d32y5tblmd2vp" path="res://Assets/Main Menu/default menu panel.png" id="3_lyibd"]
 [ext_resource type="AudioStream" uid="uid://dbx4s70r65uj1" path="res://Sounds/Music/DAISY BELL.mp3" id="5_onb27"]
-[ext_resource type="Script" uid="uid://dbsae8ldno6ia" path="res://Scripts/music_control.gd" id="6_rtw2f"]
+[ext_resource type="Script" uid="uid://dbsae8ldno6ia" path="res://scripts/music_control.gd" id="6_rtw2f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brnl1"]
 bg_color = Color(0.24705882, 0.24313726, 0.34509805, 0)
@@ -101,7 +101,7 @@ offset_right = 324.0
 offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_cp0ys")
+theme_override_fonts/font = ExtResource("1_brnl1")
 theme_override_font_sizes/font_size = 203
 text = "VENOR"
 horizontal_alignment = 1
@@ -170,8 +170,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_brnl1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cyejb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
-text = "Quit
-"
+text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1851502596]
 stream = ExtResource("5_onb27")
@@ -219,8 +218,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cyejb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
-text = "Quit
-"
+text = "Quit"
 
 [node name="MusicControl" type="HSlider" parent="Settings" unique_id=1183522404]
 layout_mode = 1
