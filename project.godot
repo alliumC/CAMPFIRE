@@ -27,6 +27,7 @@ buses/default_bus_layout="uid://ciiqfqx5p7lo7"
 
 GameSystemsScript="*uid://cql07ojn57fbi"
 SceneLoader="*uid://bcead5nfi2qjr"
+GlobalScript="*uid://cj4lol1ri1a8s"
 
 [display]
 

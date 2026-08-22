@@ -46,6 +46,7 @@ func get_player_input() -> void:
 			sprite.play("idle down")	
 			
 	if Input.is_action_just_pressed("attack"):
+		if GlobalScript.item1_equipped:
 			if cooldown == false:
 				cool_down.start()
 				cooldown = true
@@ -62,6 +63,8 @@ func get_player_input() -> void:
 						atbox.global_position = self.position + Vector2(-15, -10)
 				
 				get_tree().current_scene.add_child(atbox)
+		elif GlobalScript.item2_equipped:
+			currentHealth
 
 func _physics_process(_delta):
 	if not attack:

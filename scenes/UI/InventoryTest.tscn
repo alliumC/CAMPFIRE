@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dltkt4ue6j18h"]
 
-[ext_resource type="Script" uid="uid://hau68i1yimxo" path="res://Scripts/UI/inventory_test.gd" id="1_vulpr"]
+[ext_resource type="Script" uid="uid://hau68i1yimxo" path="res://scripts/UI/inventory_test.gd" id="1_vulpr"]
 [ext_resource type="Texture2D" uid="uid://d38k24jvd3bxl" path="res://Assets/Item/Item__00.png" id="2_il07w"]
 [ext_resource type="Texture2D" uid="uid://7w21dil3nlnu" path="res://Assets/Item/Item__29.png" id="3_wyh3j"]
 [ext_resource type="Texture2D" uid="uid://bei1m4vgom31v" path="res://Assets/Item/Item__70.png" id="4_71ijl"]
@@ -24,6 +24,7 @@ border_width_bottom = 5
 bg_color = Color(0.14901961, 0.15294118, 0.15686275, 0.7529412)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_yoejk"]
+allow_unpress = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_w8af0"]
 device = -1
