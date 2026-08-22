@@ -64,7 +64,10 @@ func get_player_input() -> void:
 				
 				get_tree().current_scene.add_child(atbox)
 		elif GlobalScript.item2_equipped:
-			currentHealth
+			currentHealth += 30
+			
+			if currentHealth > maxHealth:
+				currentHealth = maxHealth
 
 func _physics_process(_delta):
 	if not attack:
