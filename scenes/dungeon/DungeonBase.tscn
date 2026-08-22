@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dah80ulbndvh4"]
 
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="1_dqepy"]
-[ext_resource type="PackedScene" uid="uid://botogx5t4m7as" path="res://Scenes/Interation/interaction_component.tscn" id="2_t4d24"]
-[ext_resource type="Script" uid="uid://d0m7fkucwkfuy" path="res://Scripts/Dungeon/dungeon_camera.gd" id="3_h03bg"]
-[ext_resource type="Script" uid="uid://chasuldimtc4n" path="res://Scripts/Dungeon/enemy_detector.gd" id="4_k3b38"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="1_dqepy"]
+[ext_resource type="PackedScene" uid="uid://botogx5t4m7as" path="res://scenes/Interation/interaction_component.tscn" id="2_t4d24"]
+[ext_resource type="Script" uid="uid://d0m7fkucwkfuy" path="res://scripts/Dungeon/dungeon_camera.gd" id="3_h03bg"]
+[ext_resource type="Script" uid="uid://chasuldimtc4n" path="res://scripts/Dungeon/enemy_detector.gd" id="4_k3b38"]
 
 [sub_resource type="Gradient" id="Gradient_syqex"]
 offsets = PackedFloat32Array(0, 0.09146342, 0.6707317, 1)

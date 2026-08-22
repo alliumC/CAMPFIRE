@@ -13,7 +13,7 @@ func _ready():
 	lower_pitch_loop()
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/world.tscn")
+	SceneLoader.load_scene("uid://clytsc0uwupa1", 1)
 
 func _on_options_pressed() -> void:
 	title.visible = false

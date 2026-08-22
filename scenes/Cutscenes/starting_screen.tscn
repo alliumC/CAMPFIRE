@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://clytsc0uwupa1"]
+
+[ext_resource type="Script" uid="uid://lq7iw2tj7sm0" path="res://scripts/Cutscene/intro_scene.gd" id="1_s5ibo"]
+
+[node name="StartingScreen" type="Control" unique_id=980045535]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5ibo")
+
+[node name="BG" type="ColorRect" parent="." unique_id=461614414]
+layout_mode = 0
+offset_left = -1143.0
+offset_top = -642.0
+offset_right = 1386.0
+offset_bottom = 990.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=180124267]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -588.0
+offset_top = -290.0
+offset_right = 588.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 92
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Skip" type="RichTextLabel" parent="." unique_id=1437817250]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = 261.0
+offset_right = 933.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "Press 'E' to Proceed"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeUntilSkip" type="Timer" parent="." unique_id=893815362]
+wait_time = 2.0
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=606086381]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1222766210]
+follow_viewport_enabled = true

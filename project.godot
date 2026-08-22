@@ -14,14 +14,19 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Venor"
-run/main_scene="uid://byk555wkqyfg6"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/name="Venor (4.6)"
+run/main_scene="uid://b20ypjk246783"
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [audio]
 
 buses/default_bus_layout="uid://ciiqfqx5p7lo7"
+
+[autoload]
+
+GameSystemsScript="*uid://cql07ojn57fbi"
+SceneLoader="*uid://bcead5nfi2qjr"
 
 [display]
 

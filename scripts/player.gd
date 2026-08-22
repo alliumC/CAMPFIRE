@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-
 @export var maxHealth: int = 100
 @export var speed:float =200
 @onready var sprite=$AnimatedSprite2D
