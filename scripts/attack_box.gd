@@ -10,5 +10,5 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is enemy:
+	if body is enemy or body is BOSS:
 		body.health -= 10

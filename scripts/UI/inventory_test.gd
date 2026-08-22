@@ -11,9 +11,6 @@ func _ready() -> void:
 	$"Slot 1".modulate.a = 0.7
 	$"Slot 2".modulate.a = 0.7
 	$"Slot 3".modulate.a = 0.7
-	inv_1_cooldown.grow_vertical = Control.GROW_DIRECTION_END
-	inv_2_cooldown.grow_vertical = Control.GROW_DIRECTION_END
-	inv_3_cooldown.grow_vertical = Control.GROW_DIRECTION_END
 
 
 func _on_button_toggled(toggled_on: bool) -> void:

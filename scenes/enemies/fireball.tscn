@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bm1v8065l461v"]
+
+[ext_resource type="Texture2D" uid="uid://cqo1nssg4teqr" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_01.png" id="1_7anrs"]
+[ext_resource type="Script" uid="uid://lm0gnkrbkqxx" path="res://scripts/enemies/fireball.gd" id="1_x51e1"]
+[ext_resource type="Texture2D" uid="uid://pcm5a135dbbs" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_02.png" id="2_x51e1"]
+[ext_resource type="Texture2D" uid="uid://bf0ys5nde7wfk" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_03.png" id="3_kd26j"]
+[ext_resource type="Texture2D" uid="uid://dm7s2hufah62d" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_04.png" id="4_pv7kr"]
+[ext_resource type="Texture2D" uid="uid://nnw3te5ojdpd" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_05.png" id="5_dxt00"]
+[ext_resource type="Texture2D" uid="uid://btrl1ou8g1yn6" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_06.png" id="6_pka6c"]
+[ext_resource type="Texture2D" uid="uid://rhu6w1pwvk7w" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_07.png" id="7_n1kss"]
+[ext_resource type="Texture2D" uid="uid://cvi2210mnvdcg" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_08.png" id="8_wkwu1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08i74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7anrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x51e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kd26j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pv7kr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dxt00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pka6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n1kss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wkwu1")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
+radius = 20.024984
+
+[node name="Fireball" type="Area2D" unique_id=2080682617]
+script = ExtResource("1_x51e1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=605651332]
+scale = Vector2(0.043, 0.043)
+sprite_frames = SubResource("SpriteFrames_08i74")
+animation = &"fire"
+frame_progress = 0.77512294
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563684156]
+scale = Vector2(0.408, 0.408)
+shape = SubResource("CircleShape2D_08i74")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

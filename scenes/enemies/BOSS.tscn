@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm8dvtbhkt2v5"]
 
-[ext_resource type="Script" uid="uid://i8j82s0r6eyl" path="res://Scripts/Dungeon/Boss/boss.gd" id="1_7aoto"]
+[ext_resource type="Script" uid="uid://i8j82s0r6eyl" path="res://scripts/Dungeon/Boss/boss.gd" id="1_7aoto"]
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="2_0p1ha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8bx4"]
@@ -53,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f8bx4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -64,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kqsdy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk down",
 "speed": 3.0
 }, {
@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_01an8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk left",
 "speed": 4.0
 }, {
@@ -98,7 +98,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u04tx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk right",
 "speed": 4.0
 }, {
@@ -109,21 +109,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e8r0w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk up",
 "speed": 3.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1nmwe"]
-radius = 14.0
+radius = 33.01515
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ob1c7"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qts3d"]
 radius = 12.0
+height = 46.0
 
 [node name="BOSS" type="CharacterBody2D" unique_id=1741310870]
 z_index = 1
-collision_layer = 4
-collision_mask = 4
+collision_layer = 13
+collision_mask = 5
 script = ExtResource("1_7aoto")
 damage = 20
 
@@ -132,20 +133,19 @@ position = Vector2(-6.018531e-36, -28)
 scale = Vector2(0.9166667, 0.875)
 sprite_frames = SubResource("SpriteFrames_f8bx4")
 animation = &"death"
-frame_progress = 0.8233208
 
 [node name="hitbox" type="Area2D" parent="." unique_id=619706072]
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=282739793]
-position = Vector2(0, -12)
+position = Vector2(0, -23)
 shape = SubResource("CircleShape2D_1nmwe")
 debug_color = Color(1, 0.0032462266, 0.091528974, 0.41960785)
 
 [node name="collisons" type="CollisionShape2D" parent="." unique_id=74390446]
-position = Vector2(0, -12)
-shape = SubResource("CircleShape2D_ob1c7")
+position = Vector2(0, -23)
+shape = SubResource("CapsuleShape2D_qts3d")
 
 [node name="DamageTime" type="Timer" parent="." unique_id=1812740064]
 wait_time = 1.5
@@ -154,4 +154,10 @@ one_shot = true
 [node name="Timer" type="Timer" parent="." unique_id=1003885745]
 one_shot = true
 
+[node name="AttackTimer" type="Timer" parent="." unique_id=1182859674]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
