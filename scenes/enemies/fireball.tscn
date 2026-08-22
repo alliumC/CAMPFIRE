@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm1v8065l461v"]
 
 [ext_resource type="Texture2D" uid="uid://cqo1nssg4teqr" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_01.png" id="1_7anrs"]
-[ext_resource type="Script" uid="uid://lm0gnkrbkqxx" path="res://scripts/enemies/fireball.gd" id="1_x51e1"]
+[ext_resource type="Script" uid="uid://lm0gnkrbkqxx" path="res://Scripts/Enemies/fireball.gd" id="1_x51e1"]
 [ext_resource type="Texture2D" uid="uid://pcm5a135dbbs" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_02.png" id="2_x51e1"]
 [ext_resource type="Texture2D" uid="uid://bf0ys5nde7wfk" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_03.png" id="3_kd26j"]
 [ext_resource type="Texture2D" uid="uid://dm7s2hufah62d" path="res://Assets/Enemies/BossAttack/Fireball/Fire Ball_Frame_04.png" id="4_pv7kr"]
@@ -45,6 +45,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_08i74"]
 radius = 20.024984
 
+[sub_resource type="Gradient" id="Gradient_l4kwt"]
+offsets = PackedFloat32Array(0, 0.42356688, 0.60509557, 0.89634144)
+colors = PackedColorArray(1, 0.9098039, 0.6, 1, 0.09345794, 0.08502841, 0.05607474, 1, 0.0267253, 0.024314787, 0.016035173, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_05frq"]
+gradient = SubResource("Gradient_l4kwt")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Fireball" type="Area2D" unique_id=2080682617]
 script = ExtResource("1_x51e1")
 
@@ -57,5 +66,9 @@ frame_progress = 0.77512294
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563684156]
 scale = Vector2(0.408, 0.408)
 shape = SubResource("CircleShape2D_08i74")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1394672956]
+energy = 0.5
+texture = SubResource("GradientTexture2D_05frq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

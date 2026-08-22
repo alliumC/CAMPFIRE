@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://byk555wkqyfg6"]
 
-[ext_resource type="Script" uid="uid://b7fsfj8c03v8d" path="res://scripts/Overworld/overworld.gd" id="1_gacct"]
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="1_puia7"]
+[ext_resource type="Script" uid="uid://b7fsfj8c03v8d" path="res://Scripts/Overworld/overworld.gd" id="1_gacct"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="1_puia7"]
 [ext_resource type="Texture2D" uid="uid://cytu7cwip8jd8" path="res://Assets/Home/Tiled_files/exterior.png" id="2_gacct"]
 [ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Home/Sprites-Anims/Cave.png" id="3_bos8a"]
-[ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://scripts/cave.gd" id="3_w51ix"]
+[ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://Scripts/cave.gd" id="3_w51ix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
 texture = ExtResource("2_gacct")
@@ -1363,7 +1363,7 @@ y_sort_enabled = true
 [node name="Cave" type="Sprite2D" parent="Map/TileMaps" unique_id=280667370]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(35, -588)
+position = Vector2(39, -588)
 scale = Vector2(1.125, 1.125)
 texture = ExtResource("3_bos8a")
 
@@ -1390,11 +1390,11 @@ tile_map_data = PackedByteArray("AAD3/w8AAAAIACcAAADo/wgAAAAIACcAAAANAPz/AAAIACc
 tile_set = SubResource("TileSet_7yui6")
 
 [node name="Area2D" type="Area2D" parent="Map" unique_id=2089352337]
-position = Vector2(-27, 292)
+position = Vector2(-22, 293)
 script = ExtResource("3_w51ix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Area2D" unique_id=618690877]
-position = Vector2(61, -883)
+position = Vector2(63, -883)
 shape = SubResource("RectangleShape2D_q7frw")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=53847958]

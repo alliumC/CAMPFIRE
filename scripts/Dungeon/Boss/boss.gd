@@ -27,6 +27,9 @@ func _process(_delta: float) -> void:
 	
 	if health <= 0:
 		self.queue_free()
+		var tween = create_tween()
+		tween.tween_property(Music.dungeon, "volume_db", -80, 0.75)
+		Music.dungeon.stop()
 		SceneLoader.load_scene("uid://qswdei13wm0i", 1)
 
 

@@ -24,11 +24,9 @@ func _on_options_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
-
-
 func lower_pitch_loop():
 	while true:
-		await get_tree().create_timer(32.65).timeout
+		await get_tree().create_timer(32.75).timeout
 		if $AudioStreamPlayer.pitch_scale > 0.7:
 			$AudioStreamPlayer.pitch_scale -= 0.03
 

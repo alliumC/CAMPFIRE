@@ -505,6 +505,9 @@ shape = SubResource("RectangleShape2D_8phvx")
 [node name="Chest" parent="Map" parent_id_path=PackedInt32Array(132261497) index="8" unique_id=217911783 instance=ExtResource("13_rrfo1")]
 position = Vector2(-189.00002, -277)
 
+[node name="Player" parent="." index="1" unique_id=1052419685]
+position = Vector2(-698, 99)
+
 [node name="Camera2D" parent="Camera" parent_id_path=PackedInt32Array(1272627557) index="0" unique_id=1223136786]
 visible = true
 

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dbead4up2nkyc"]
+
+[ext_resource type="Script" uid="uid://cy0x3crdx0fn0" path="res://Scripts/music.gd" id="1_0chwm"]
+[ext_resource type="AudioStream" uid="uid://c2r3yewefr6rm" path="res://Sounds/Music/Boss.mp3" id="2_0chwm"]
+[ext_resource type="AudioStream" uid="uid://dbx4s70r65uj1" path="res://Sounds/Music/Daisy Bell.mp3" id="3_y5tgq"]
+[ext_resource type="AudioStream" uid="uid://bbvytccmfewku" path="res://Sounds/Music/Dungeon.mp3" id="4_u1a1w"]
+
+[node name="Music" type="Node" unique_id=768936498]
+script = ExtResource("1_0chwm")
+
+[node name="Boss" type="AudioStreamPlayer" parent="." unique_id=1867193749]
+stream = ExtResource("2_0chwm")
+bus = &"Music"
+
+[node name="DaisyBell" type="AudioStreamPlayer" parent="." unique_id=27657245]
+stream = ExtResource("3_y5tgq")
+bus = &"Music"
+
+[node name="Dungeon" type="AudioStreamPlayer" parent="." unique_id=1819906411]
+stream = ExtResource("4_u1a1w")
+bus = &"Music"

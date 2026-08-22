@@ -4,6 +4,7 @@ extends Node2D
 @onready var dialogue_system = GameSystemsScript.instantiateDialogueSystem(canvas_layer)
 @onready var title: RichTextLabel = $Title
 @onready var sub: RichTextLabel = $sub
+@onready var sub2: RichTextLabel = $sub2
 var dialogue1 = [
 	{ "Cassius" : ["Rene?", 0.3] },
 ]
@@ -46,3 +47,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1).timeout
 	
 	create_tween().tween_property(sub, "modulate:a", 1, 2).set_ease(Tween.EASE_IN_OUT)
+	
+	await get_tree().create_timer(3). timeout
+	
+	create_tween().tween_property(sub2, "modulate:a", 1, 2).set_ease(Tween.EASE_IN_OUT)

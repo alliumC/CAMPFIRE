@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://bdeitmfdw0a3s"]
 
-[ext_resource type="Script" uid="uid://db3mlpp4hc1bj" path="res://scripts/dialogue_system.gd" id="1_sofqc"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sofqc"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3421h"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_a8p2u"]
+[ext_resource type="Script" uid="uid://db3mlpp4hc1bj" path="res://Scripts/dialogue_system.gd" id="1_sofqc"]
+[ext_resource type="Texture2D" uid="uid://cjcrjmxsbims7" path="res://Assets/DialogueBox.png" id="2_tgreg"]
+[ext_resource type="Texture2D" uid="uid://bge6vqjha1lnh" path="res://icon.svg" id="3_i2efg"]
+[ext_resource type="Texture2D" uid="uid://dc3k3yxj3b7hc" path="res://Assets/arrow.png" id="4_i2efg"]
 
 [node name="DialogueSystem" type="Control" unique_id=1124796771]
 z_index = 100
@@ -25,31 +22,32 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -572.0
-offset_top = -211.0
-offset_right = 572.0
-offset_bottom = -38.23999
+offset_left = -640.0
+offset_top = -191.0
+offset_right = 640.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = SubResource("PlaceholderTexture2D_sofqc")
+texture = ExtResource("2_tgreg")
 
 [node name="SpeakerProfile" type="TextureRect" parent="DialogueBox" unique_id=466465580]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 11.4
-offset_top = -74.98
-offset_right = 161.4
-offset_bottom = 75.01999
+offset_left = 109.0
+offset_top = -72.50002
+offset_right = 259.0
+offset_bottom = 77.49997
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_3421h")
+texture = ExtResource("3_i2efg")
 
 [node name="TextContainer" type="VBoxContainer" parent="DialogueBox" unique_id=1337528278]
 layout_mode = 0
-offset_left = 172.0
-offset_right = 1118.0
-offset_bottom = 172.76
+offset_left = 264.0
+offset_top = 38.0
+offset_right = 1117.0
+offset_bottom = 158.0
 alignment = 1
 
 [node name="CharacterName" type="RichTextLabel" parent="DialogueBox/TextContainer" unique_id=860288337]
@@ -73,13 +71,13 @@ visible_characters_behavior = 1
 visible_ratio = 0.0
 
 [node name="SkipButton" type="TextureRect" parent="DialogueBox" unique_id=2077905876]
-visible = false
 layout_mode = 0
-offset_left = 1109.0
-offset_top = 138.0
-offset_right = 1137.0
-offset_bottom = 166.0
-texture = SubResource("PlaceholderTexture2D_a8p2u")
+offset_left = 1116.0
+offset_top = 124.0
+offset_right = 1836.0
+offset_bottom = 844.0
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("4_i2efg")
 
 [node name="DialogueSpeed" type="Timer" parent="." unique_id=1015766506]
 wait_time = 0.05
