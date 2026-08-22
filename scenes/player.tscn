@@ -253,11 +253,12 @@ player = NodePath("../../../..")
 [node name="VBoxContainer" parent="PlayerHurtbox/CollisionShape2D/CanvasLayer" unique_id=1772833902 instance=ExtResource("4_cw2d6")]
 
 [node name="HealCool" type="Timer" parent="." unique_id=392474417]
-wait_time = 1.4779999999999998
+wait_time = 20.0
 one_shot = true
 
 [node name="CoolDown" type="Timer" parent="." unique_id=612230814]
 wait_time = 0.4
 
 [connection signal="area_entered" from="PlayerHurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="HealCool" to="." method="_on_heal_cool_timeout"]
 [connection signal="timeout" from="CoolDown" to="." method="_on_cool_down_timeout"]

@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const ATTACK_BOX = preload("uid://djx3aqrh0dlu5")
+@onready var inv: VBoxContainer = $PlayerHurtbox/CollisionShape2D/CanvasLayer/VBoxContainer
 
 @export var maxHealth: int = 100
 @export var speed:float =200
@@ -10,10 +11,12 @@ const ATTACK_BOX = preload("uid://djx3aqrh0dlu5")
 @onready var heal_cooldown: Timer = $HealCool
 
 @onready var cool_down: Timer = $CoolDown
+@onready var heal_cool: Timer = $HealCool
 var currentHealth: int = maxHealth
 var lastDirection: String = "down"
 var attack = false
 var cooldown = false
+var cooldown_heal = false
 
 func _ready() -> void:
 	hp_barr.max_value = maxHealth
@@ -63,11 +66,17 @@ func get_player_input() -> void:
 						atbox.global_position = self.position + Vector2(-15, -10)
 				
 				get_tree().current_scene.add_child(atbox)
+				inv.cooldown(inv.inv_1_cooldown, 0.4)
 		elif GlobalScript.item2_equipped:
-			currentHealth += 30
-			
-			if currentHealth > maxHealth:
-				currentHealth = maxHealth
+			if cooldown_heal == false:
+				cooldown_heal = true
+				heal_cool.start()
+				currentHealth += 30
+				
+				if currentHealth > maxHealth:
+					currentHealth = maxHealth
+					
+				inv.cooldown(inv.inv_2_cooldown, 20)
 
 func _physics_process(_delta):
 	if not attack:
@@ -78,3 +87,7 @@ func _physics_process(_delta):
 func _on_cool_down_timeout() -> void:
 	cooldown = false
 	attack = false
+
+
+func _on_heal_cool_timeout() -> void:
+	cooldown_heal = false
