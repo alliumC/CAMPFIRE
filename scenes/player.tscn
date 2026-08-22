@@ -243,12 +243,11 @@ debug_color = Color(0.9968608, 0, 0.1874525, 0.41960785)
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerHurtbox/CollisionShape2D" unique_id=1708496629]
 visible = false
 
-[node name="HPBarr" parent="PlayerHurtbox/CollisionShape2D/CanvasLayer" unique_id=854388712 node_paths=PackedStringArray("player") instance=ExtResource("3_70d11")]
+[node name="HPBarr" parent="PlayerHurtbox/CollisionShape2D/CanvasLayer" unique_id=854388712 instance=ExtResource("3_70d11")]
 offset_left = 25.0
 offset_top = 17.999992
 offset_right = -365.0
 offset_bottom = -662.0
-player = NodePath("../../../..")
 
 [node name="VBoxContainer" parent="PlayerHurtbox/CollisionShape2D/CanvasLayer" unique_id=1772833902 instance=ExtResource("4_cw2d6")]
 

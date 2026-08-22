@@ -21,7 +21,8 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(2).timeout
 	
-	for i in 150:
+	Sfx.riser.play(1)
+	for i in 220:
 		var text = lastText[randi_range(0, 4)]
 		
 		var textCont = RichTextLabel.new()

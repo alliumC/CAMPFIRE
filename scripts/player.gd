@@ -51,6 +51,7 @@ func get_player_input() -> void:
 	if Input.is_action_just_pressed("attack"):
 		if GlobalScript.item1_equipped:
 			if cooldown == false:
+				Sfx.sword.play()
 				cool_down.start()
 				cooldown = true
 				attack = true
@@ -69,6 +70,7 @@ func get_player_input() -> void:
 				inv.cooldown(inv.inv_1_cooldown, 0.4)
 		elif GlobalScript.item2_equipped:
 			if cooldown_heal == false:
+				Sfx.potion.play()
 				cooldown_heal = true
 				heal_cool.start()
 				currentHealth += 30

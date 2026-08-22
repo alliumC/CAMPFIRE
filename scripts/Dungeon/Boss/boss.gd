@@ -63,3 +63,4 @@ func _on_attack_timer_timeout() -> void:
 	var fball = FIREBALL.instantiate()
 	fball.playerpos = player.global_position
 	add_child(fball)
+	Sfx.fireball.play()
