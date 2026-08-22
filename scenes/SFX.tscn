@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c030diahpwqub"]
+
+[ext_resource type="Script" uid="uid://b6dcoqm83c18b" path="res://scripts/sfx.gd" id="1_84khp"]
+[ext_resource type="AudioStream" uid="uid://dnqkmafb2hyq0" path="res://Sounds/sword.mp3" id="2_krya2"]
+[ext_resource type="AudioStream" uid="uid://b6fukwslf783g" path="res://Sounds/fireball.mp3" id="3_voggf"]
+[ext_resource type="AudioStream" uid="uid://bpy6k2ptemxs0" path="res://Sounds/riser.mp3" id="4_0jrv7"]
+[ext_resource type="AudioStream" uid="uid://c0mnr44naag1i" path="res://Sounds/potion.mp3" id="5_1pw5g"]
+
+[node name="Sfx" type="Node" unique_id=930713613]
+script = ExtResource("1_84khp")
+
+[node name="Sword" type="AudioStreamPlayer" parent="." unique_id=612962165]
+stream = ExtResource("2_krya2")
+
+[node name="Fireball" type="AudioStreamPlayer" parent="." unique_id=747780022]
+stream = ExtResource("3_voggf")
+
+[node name="Riser" type="AudioStreamPlayer" parent="." unique_id=1401713733]
+stream = ExtResource("4_0jrv7")
+
+[node name="Potion" type="AudioStreamPlayer" parent="." unique_id=640862365]
+stream = ExtResource("5_1pw5g")

@@ -1,3 +1,3 @@
 extends TextureProgressBar
 
-@export var player: Player
+@export var boss : BOSS

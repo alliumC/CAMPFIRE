@@ -5,6 +5,7 @@ class_name enemy
 @export var limit = 0.5
 @export var endPoint: Marker2D 
 @export var damage: int = 10
+@export var health : int = 50
 
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
@@ -21,11 +22,6 @@ func _ready():
 	
 	detection_shape.shape = $Spot/detection.shape.duplicate()
 
-func _process(delta: float) -> void:
-	await(get_tree().create_timer(5).timeout)
-	queue_free()
-
-
 func _physics_process(_delta):
 	if not chase:
 		move_and_slide()
@@ -33,6 +29,9 @@ func _physics_process(_delta):
 		updateAnim()
 	elif chase:
 		position += (player.position - position) / speed
+		
+	if health <= 0:
+		self.queue_free()
 
 
 func changeDirection():

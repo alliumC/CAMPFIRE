@@ -1,50 +1,33 @@
 extends CharacterBody2D
 class_name BOSS
+@export var player : Player
 
-@export var speed = 30
-@export var limit = 0.5
-@export var endPoint: Marker2D 
+@export var speed: float = 20
 @export var damage: int = 10
 
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
-@onready var player: Player = $"../Player"
+@onready var hp_barr: TextureProgressBar = $"../CanvasLayer/HPBarr"
+@onready var attack_timer: Timer = $AttackTimer
+const FIREBALL = preload("uid://bm1v8065l461v")
 
-var chase: bool = false
-var startPos
-var endPos
-var player_status = null
-
-func _ready():
-	startPos = position
-	endPos = player.global_position
-	
-
-
-func _process(_delta: float) -> void:
-	endPos = player.global_position
+var maxHealth : float = 200
+var health : float = maxHealth
 
 func _physics_process(_delta):
-	if not chase:
-		move_and_slide()
-		updateVelocity()
-		updateAnim()
-	elif chase:
-		position += (player.position - position) / speed
+	var direction = global_position.direction_to(player.global_position)
 
+	velocity = direction * speed
 
-func changeDirection():
-	var tempEnd = endPos
-	endPos = startPos
-	startPos = tempEnd
-
-
-func updateVelocity():
-	var moveDirection = endPos - position
-	if moveDirection.length() < limit:
-		changeDirection()
-		
-	velocity = moveDirection.normalized()*speed
+	move_and_slide()
+	updateAnim()
+	
+func _process(_delta: float) -> void:
+	hp_barr.value = health
+	
+	if health <= 0:
+		self.queue_free()
+		SceneLoader.load_scene("uid://qswdei13wm0i", 1)
 
 
 func updateAnim():
@@ -53,36 +36,31 @@ func updateAnim():
 			animations.stop()
 	else:
 		var direction = "down"
-		if velocity.x < -1: direction = "left"
-		elif velocity.x > 1: direction = "right"
-		elif velocity.y < 0: direction = "up"
-		
+
+		if velocity.x < -1:
+			direction = "left"
+		elif velocity.x > 1:
+			direction = "right"
+		elif velocity.y < 0:
+			direction = "up"
+
 		animations.play("walk " + direction)
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player:
-		damage_player(body)
+		set_physics_process(false)
+		speed = 0
+		animations.stop()
 
-
-func _on_spot_body_entered(body: Node2D) -> void:
+func _on_hitbox_body_exited(body: Node2D) -> void:
 	if body is Player:
-		chase = true
-		player_status = body
-		$Spot/detection.shape.radius = 85.0
+		set_physics_process(true)
+		speed = 20
 
 
-func _on_spot_body_exited(body: Node2D) -> void:
-	if body is Player:
-		chase = false
-		player_status = null
-		$Spot/detection.shape.radius = 30.0
-
-
-func damage_player(target: Player):
-	if damage_time.is_stopped():
-		target.currentHealth -= damage
-		damage_time.start()
-	else: 
-		await damage_time.timeout
-		damage_player(target)
+func _on_attack_timer_timeout() -> void:
+	var fball = FIREBALL.instantiate()
+	fball.playerpos = player.global_position
+	add_child(fball)
+	Sfx.fireball.play()

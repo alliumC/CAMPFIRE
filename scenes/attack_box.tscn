@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://djx3aqrh0dlu5"]
+
+[ext_resource type="Script" uid="uid://b8lttpntrrci2" path="res://scripts/attack_box.gd" id="1_18qwn"]
+[ext_resource type="Texture2D" uid="uid://b8d2w1w2eissg" path="res://Assets/Home/MC Sprites/Attack Anim/Alternative_2_01.png" id="2_ndw8a"]
+[ext_resource type="Texture2D" uid="uid://c1087ehejvj6p" path="res://Assets/Home/MC Sprites/Attack Anim/Alternative_2_02.png" id="3_412ie"]
+[ext_resource type="Texture2D" uid="uid://bt6wwxlasbue" path="res://Assets/Home/MC Sprites/Attack Anim/Alternative_2_03.png" id="4_oty10"]
+[ext_resource type="Texture2D" uid="uid://dye72sma06186" path="res://Assets/Home/MC Sprites/Attack Anim/Alternative_2_04.png" id="5_vv6an"]
+[ext_resource type="Texture2D" uid="uid://btt4u5rb8xexa" path="res://Assets/Home/MC Sprites/Attack Anim/Alternative_2_05.png" id="6_lyaxb"]
+[ext_resource type="Texture2D" uid="uid://b14vn11pssd7l" path="res://Assets/Home/MC Sprites/Attack Anim/Alternative_2_06.png" id="7_2ciqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08i74"]
+size = Vector2(14, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08i74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ndw8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_412ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oty10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vv6an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lyaxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ciqy")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 16.0
+}]
+
+[node name="AttackBox" type="Area2D" unique_id=1011832565]
+z_index = 10
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_18qwn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=528495541]
+shape = SubResource("RectangleShape2D_08i74")
+debug_color = Color(0.96862745, 0, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1034764552]
+scale = Vector2(0.272, 0.272)
+sprite_frames = SubResource("SpriteFrames_08i74")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+speed_scale = 1.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

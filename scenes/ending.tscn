@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://qswdei13wm0i"]
+
+[ext_resource type="Script" uid="uid://cv4x1d4tkx0pt" path="res://scripts/ending.gd" id="1_mqjok"]
+[ext_resource type="FontFile" uid="uid://djw05hacej3es" path="res://Assets/font/Star Crush.otf" id="2_2x1jc"]
+[ext_resource type="FontFile" uid="uid://dkpketnay57ig" path="res://Assets/font/Star Crush.ttf" id="3_nfmnx"]
+
+[node name="Ending" type="Node2D" unique_id=348425525]
+script = ExtResource("1_mqjok")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1296042136]
+offset_left = -114.0
+offset_top = -84.0
+offset_right = 1400.0
+offset_bottom = 838.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1188162752]
+anchor_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1173310722]
+
+[node name="Node" type="Node" parent="." unique_id=1818827381]
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=493010219]
+visible = false
+offset_left = 166.0
+offset_top = 199.0
+offset_right = 1125.8336
+offset_bottom = 609.0
+theme_override_fonts/normal_font = ExtResource("2_2x1jc")
+theme_override_font_sizes/normal_font_size = 251
+text = "VENOR"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="sub" type="RichTextLabel" parent="." unique_id=1201697340]
+modulate = Color(1, 1, 1, 0)
+offset_left = 120.0
+offset_top = 420.0
+offset_right = 1181.0
+offset_bottom = 680.0
+theme_override_fonts/normal_font = ExtResource("3_nfmnx")
+theme_override_font_sizes/normal_font_size = 58
+text = "(The very unfinished) Prototype"
+fit_content = true
+horizontal_alignment = 1

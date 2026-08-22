@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dltkt4ue6j18h"]
 
-[ext_resource type="Script" uid="uid://hau68i1yimxo" path="res://Scripts/UI/inventory_test.gd" id="1_vulpr"]
+[ext_resource type="Script" uid="uid://hau68i1yimxo" path="res://scripts/UI/inventory_test.gd" id="1_vulpr"]
 [ext_resource type="Texture2D" uid="uid://d38k24jvd3bxl" path="res://Assets/Item/Item__00.png" id="2_il07w"]
 [ext_resource type="Texture2D" uid="uid://7w21dil3nlnu" path="res://Assets/Item/Item__29.png" id="3_wyh3j"]
 [ext_resource type="Texture2D" uid="uid://bei1m4vgom31v" path="res://Assets/Item/Item__70.png" id="4_71ijl"]
@@ -24,6 +24,7 @@ border_width_bottom = 5
 bg_color = Color(0.14901961, 0.15294118, 0.15686275, 0.7529412)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_yoejk"]
+allow_unpress = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_w8af0"]
 device = -1
@@ -82,6 +83,13 @@ icon = ExtResource("2_il07w")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Inv1Cooldown" type="ColorRect" parent="Slot 1" unique_id=1094833261]
+visible = false
+modulate = Color(1, 1, 1, 0.32156864)
+layout_mode = 1
+offset_right = 83.0
+offset_bottom = 83.0
+
 [node name="Slot 2" type="Button" parent="." unique_id=806084735]
 modulate = Color(1, 1, 1, 0.78431374)
 layout_mode = 2
@@ -98,6 +106,13 @@ icon = ExtResource("3_wyh3j")
 icon_alignment = 1
 expand_icon = true
 
+[node name="Inv2Cooldown" type="ColorRect" parent="Slot 2" unique_id=1534152455]
+visible = false
+modulate = Color(1, 1, 1, 0.32156864)
+layout_mode = 0
+offset_right = 83.0
+offset_bottom = 83.0
+
 [node name="Slot 3" type="Button" parent="." unique_id=895327839]
 modulate = Color(1, 1, 1, 0.78431374)
 layout_mode = 2
@@ -113,6 +128,13 @@ shortcut = SubResource("Shortcut_b186q")
 icon = ExtResource("4_71ijl")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Inv3Cooldown" type="ColorRect" parent="Slot 3" unique_id=557411290]
+visible = false
+modulate = Color(1, 1, 1, 0.3254902)
+layout_mode = 0
+offset_right = 83.0
+offset_bottom = 83.0
 
 [connection signal="toggled" from="Slot 1" to="." method="_on_button_toggled"]
 [connection signal="toggled" from="Slot 2" to="." method="_on_button_2_toggled"]
