@@ -30,6 +30,7 @@ func _input(event: InputEvent) -> void:
 #img_path: Texture2D, 
 
 func show_dialogue_box(dialogue: Array, speed: float):
+	self.visible = true
 	#speaker_profile.texture = img_path
 	for i in dialogue.size():
 		character_dialogue.visible_characters = 0

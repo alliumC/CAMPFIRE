@@ -1,10 +1,9 @@
-extends Node
-@onready var canvas_layer: CanvasLayer = $Map/Player/DialogueLayer
+extends Node2D
+@onready var canvas_layer: CanvasLayer = $Camera/CanvasLayer
 @onready var dialogue_system = GameSystemsScript.instantiateDialogueSystem(canvas_layer)
 var dialogue1 = [
-	{ "Cassius" : ["...", 0.7] },
-	{ "Cassius" : ["...[shake]Where am I?[/shake]", 0.05] },
-	{ "Cassius" : ["Is this the [i]village's forest grounds?[/i]", 0.05] }
+	{ "Cassius" : ["Rene?", 0.1] },
+	{ "Cassius" : ["Where are you?", 0.1] }
 ]
 
 func _ready() -> void:
