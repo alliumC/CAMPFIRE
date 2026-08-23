@@ -2,10 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://yc06lkicyjiq" path="res://Assets/Progress Bar/Under.png" id="1_lakte"]
 [ext_resource type="Texture2D" uid="uid://dj60we8pnw4ft" path="res://Assets/Progress Bar/Progress_Boss.png" id="2_lakte"]
-[ext_resource type="Script" uid="uid://dyygwld873boy" path="res://scripts/UI/hp_bar.gd" id="3_3g043"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ev11e"]
-load_path = "res://.godot/imported/Outline.png-e767456d5c5751123deaa8312e6af18c.ctex"
+[ext_resource type="Script" uid="uid://dyygwld873boy" path="res://Scripts/UI/hp_bar.gd" id="3_3g043"]
+[ext_resource type="Texture2D" uid="uid://22rvws10gfly" path="res://Assets/Progress Bar/Outline.png" id="4_6csbe"]
 
 [node name="HPBarr" type="TextureProgressBar" unique_id=854388712]
 anchors_preset = 8
@@ -26,4 +24,4 @@ script = ExtResource("3_3g043")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=124261697]
 position = Vector2(446.345, 20.66)
-texture = SubResource("CompressedTexture2D_ev11e")
+texture = ExtResource("4_6csbe")

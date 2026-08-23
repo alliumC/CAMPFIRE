@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://umcboacvy6ks"
-path="res://.godot/imported/Item__10.png-9877b1554697f9709938b2e60e3ffd25.ctex"
+uid="uid://cme3s00ipctdr"
+path="res://.godot/imported/L_Death.png-d96f39c5d038add3f8e74ae8ee27e821.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Item/Item__10.png"
-dest_files=["res://.godot/imported/Item__10.png-9877b1554697f9709938b2e60e3ffd25.ctex"]
+source_file="res://Assets/Enemies/Goblin/L_Death.png"
+dest_files=["res://.godot/imported/L_Death.png-d96f39c5d038add3f8e74ae8ee27e821.ctex"]
 
 [params]
 
