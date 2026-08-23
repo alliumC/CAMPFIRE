@@ -10,6 +10,30 @@ This project is very dear to us; as it's one of the first ever games we have dev
 1. Visit the game's itch page: https://akioo1997.itch.io/venor; no need to install anything on your local computer.
 2. Feel free to take around 5 minutes of your time to just check it out; again, it's still very unfinished, but we'd appreciate if you give it a crack anyway!
 
+### Controls
+<table>
+  <tr>
+    <th>KEYBINDS</th>
+    <th>ACTIONS</th>
+  </tr>
+  <tr>
+    <td>WASD</td>
+    <td>Move</td>
+  </tr>
+  <tr>
+    <td>E</td>
+    <td>Interact</td>
+  </tr>
+  <tr>
+    <td>Left Mouse Button</td>
+    <td>Use Item/Attack</td>
+  </tr>
+  <tr>
+    <td>1, 2, 3</td>
+    <td>Select Inventory Slot</td>
+  </tr>
+</table>
+
 ### Updates
 **August 22, 2026: Prototype**
 - A very VERY unpolished version of Venor was shipped to Macondo. It does have *some* of our intended features, but they are nowhere near the quality we hoped to achieve with this project. That being said, it's still playable, as it includes:
@@ -23,10 +47,10 @@ This project is very dear to us; as it's one of the first ever games we have dev
 All in all, it's not as high quality as we would like for it to be yet, but we'll strive to work more towards it in the future. more updates to be posted here!
 
 ### Acknowledgements/Credits
-RaphlTicket for the lore, main menu art, and overall idea of the game<br>
-alliumC for being one of the coders and the GOAT in godot<br>
-Akiostentar for being one of the other coders and for producing the music for the game<br>
-And IgniFyris for helping me continue this project!
+- RaphlTicket for the lore, main menu art, and overall idea of the game<br>
+- alliumC for being one of the coders and the GOAT in godot<br>
+- Akiostentar for being one of the other coders and for producing the music for the game<br>
+- And IgniFyris for helping me continue this project!
 
 ### Screenshots
 ![Venor Main Menu](image.png)
