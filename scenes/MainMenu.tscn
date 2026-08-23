@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b20ypjk246783"]
 
-[ext_resource type="FontFile" uid="uid://dkpketnay57ig" path="res://Assets/font/Star Crush.ttf" id="1_brnl1"]
-[ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://scripts/main_menu.gd" id="1_cyejb"]
+[ext_resource type="FontFile" uid="uid://dkpketnay57ig" path="res://Assets/Font/Star Crush.ttf" id="1_brnl1"]
+[ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://Scripts/main_menu.gd" id="1_cyejb"]
 [ext_resource type="Texture2D" uid="uid://cld3g84ma7v7n" path="res://Assets/Main Menu/Menu 1.png" id="2_qqsp2"]
 [ext_resource type="Texture2D" uid="uid://d32y5tblmd2vp" path="res://Assets/Main Menu/default menu panel.png" id="3_lyibd"]
-[ext_resource type="AudioStream" uid="uid://dbx4s70r65uj1" path="res://Sounds/Music/DAISY BELL.mp3" id="5_onb27"]
-[ext_resource type="Script" uid="uid://dbsae8ldno6ia" path="res://scripts/music_control.gd" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://dbx4s70r65uj1" path="res://Sounds/Music/Daisy Bell.mp3" id="5_xim88"]
+[ext_resource type="Script" uid="uid://dbsae8ldno6ia" path="res://Scripts/music_control.gd" id="6_rtw2f"]
+[ext_resource type="Script" uid="uid://by5i0wbjtag5w" path="res://Scripts/sfx_control.gd" id="7_xim88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brnl1"]
 bg_color = Color(0.24705882, 0.24313726, 0.34509805, 0)
@@ -42,6 +43,17 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
 font_size = 64
 
+[sub_resource type="LabelSettings" id="LabelSettings_8um5k"]
+font_size = 32
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rtw2f"]
+color = Color(0.20698509, 0.24254331, 0.40318447, 1)
+thickness = 6
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
 bg_color = Color(0.05882353, 0.05882353, 0.05882353, 1)
 border_width_left = 5
@@ -53,14 +65,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
-color = Color(1, 1, 1, 1)
-thickness = 6
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_rtw2f"]
-color = Color(0.20698509, 0.24254331, 0.40318447, 1)
-thickness = 6
 
 [node name="MainMenu" type="Control" unique_id=662439715]
 layout_mode = 3
@@ -126,6 +130,11 @@ texture = ExtResource("3_lyibd")
 expand_mode = 1
 stretch_mode = 3
 
+[node name="Daisy Bell" type="AudioStreamPlayer" parent="." unique_id=1421295755]
+stream = ExtResource("5_xim88")
+autoplay = true
+bus = &"Music"
+
 [node name="Main Buttons" type="VBoxContainer" parent="." unique_id=1388513150]
 visible = false
 layout_mode = 1
@@ -172,11 +181,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
 text = "Quit"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1851502596]
-stream = ExtResource("5_onb27")
-autoplay = true
-bus = &"Music"
-
 [node name="Settings" type="Panel" parent="." unique_id=2002182552]
 layout_mode = 1
 anchors_preset = 8
@@ -201,6 +205,70 @@ text = "Options"
 label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 
+[node name="Music" type="Label" parent="Settings" unique_id=649490090]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 110.0
+offset_bottom = 155.0
+grow_horizontal = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_8um5k")
+horizontal_alignment = 1
+
+[node name="MusicControl" type="HSlider" parent="Settings" unique_id=1183522404]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -197.0
+offset_right = 295.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_8ln24")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
+max_value = 2.0
+step = 0.05
+value = 1.5
+script = ExtResource("6_rtw2f")
+
+[node name="SFX" type="Label" parent="Settings" unique_id=1012660593]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 218.0
+offset_bottom = 263.0
+grow_horizontal = 2
+text = "Sound Effects Volume"
+label_settings = SubResource("LabelSettings_8um5k")
+horizontal_alignment = 1
+
+[node name="SFXControl" type="HSlider" parent="Settings" unique_id=1718658175]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -89.0
+offset_right = 295.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_8ln24")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
+max_value = 0.75
+step = 0.05
+value = 0.55
+script = ExtResource("7_xim88")
+
 [node name="back" type="Button" parent="Settings" unique_id=483061244]
 layout_mode = 1
 anchors_preset = 12
@@ -220,30 +288,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
 text = "Quit"
 
-[node name="MusicControl" type="HSlider" parent="Settings" unique_id=1183522404]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.0
-offset_top = -220.0
-offset_right = 295.0
-offset_bottom = -162.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/slider = SubResource("StyleBoxLine_8ln24")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
-max_value = 3.0
-step = 0.05
-value = 1.0
-script = ExtResource("6_rtw2f")
-audio_bus_name = "Music"
-
 [connection signal="pressed" from="Main Buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Main Buttons/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Main Buttons/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Settings/back" to="." method="_on_back_options_pressed"]
 [connection signal="value_changed" from="Settings/MusicControl" to="Settings/MusicControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/SFXControl" to="Settings/SFXControl" method="_on_value_changed"]
+[connection signal="pressed" from="Settings/back" to="." method="_on_back_options_pressed"]

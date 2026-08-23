@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cweb57j5vgjfq"]
 
-[ext_resource type="Script" uid="uid://k8yo23fmtgwt" path="res://scripts/player.gd" id="1_mdl7e"]
+[ext_resource type="Script" uid="uid://k8yo23fmtgwt" path="res://Scripts/player.gd" id="1_mdl7e"]
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="2_qu4a1"]
-[ext_resource type="PackedScene" uid="uid://c6aob5hrbqegr" path="res://scenes/UI/HealthBar.tscn" id="3_70d11"]
-[ext_resource type="PackedScene" uid="uid://dltkt4ue6j18h" path="res://scenes/UI/InventoryTest.tscn" id="4_cw2d6"]
+[ext_resource type="PackedScene" uid="uid://c6aob5hrbqegr" path="res://Scenes/UI/HealthBar.tscn" id="3_70d11"]
+[ext_resource type="PackedScene" uid="uid://dltkt4ue6j18h" path="res://Scenes/UI/InventoryTest.tscn" id="4_cw2d6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_qu4a1")
@@ -223,7 +223,7 @@ visibility_layer = 2
 position = Vector2(-17.00405, -34.0081)
 scale = Vector2(0.526, 0.526)
 sprite_frames = SubResource("SpriteFrames_rj586")
-animation = &"attack "
+animation = &"idle down"
 autoplay = "idle down"
 centered = false
 

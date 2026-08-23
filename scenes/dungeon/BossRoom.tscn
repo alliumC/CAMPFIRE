@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://13uvevqqwlpf"]
 
+[ext_resource type="Script" uid="uid://bv81qrwpl3v8g" path="res://Scenes/Dungeon/boss_room.gd" id="1_725q6"]
 [ext_resource type="TileSet" uid="uid://tyrhxra0mp52" path="res://Assets/Dungeon/dungeont tile set.tres" id="1_x1i17"]
-[ext_resource type="PackedScene" uid="uid://dm8dvtbhkt2v5" path="res://scenes/enemies/BOSS.tscn" id="2_725q6"]
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://scenes/player.tscn" id="3_xkndn"]
-[ext_resource type="PackedScene" uid="uid://bef8ss0co4pc4" path="res://scenes/UI/BossBar.tscn" id="4_x3syg"]
+[ext_resource type="PackedScene" uid="uid://dm8dvtbhkt2v5" path="res://Scenes/Enemies/BOSS.tscn" id="2_725q6"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="3_xkndn"]
+[ext_resource type="PackedScene" uid="uid://bef8ss0co4pc4" path="res://Scenes/UI/BossBar.tscn" id="4_x3syg"]
 
 [sub_resource type="Gradient" id="Gradient_syqex"]
 offsets = PackedFloat32Array(0, 0.09146342, 0.6707317, 1)
@@ -15,6 +16,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Boss Room" type="Node2D" unique_id=1960524575]
+script = ExtResource("1_725q6")
 
 [node name="Map" type="Node2D" parent="." unique_id=132261497]
 position = Vector2(22.000015, 2)
@@ -31,22 +33,17 @@ tile_set = ExtResource("1_x1i17")
 
 [node name="Top" type="TileMapLayer" parent="Map" unique_id=1415312091]
 position = Vector2(-22.000015, -2)
-tile_map_data = PackedByteArray("AADv/wMAAQAFAAIAAADv/wYAAQAHAAIAAAAQAPz/AQAAAAIAAADv/wUAAQAFAAIAAADw/wgAAQACAAYAAADz/wgAAQAAAAYAAAD5/wgAAQAAAAYAAAD7/wgAAQAAAAYAAAD+/wgAAQACAAYAAAAEAAgAAQACAAYAAAAFAAgAAQAAAAYAAAAGAAgAAQABAAYAAAALAAgAAQABAAYAAAD1//b/AQAGAAYAAAD2//b/AAAFAAQAAQD6//b/AQAGAAYAAAD+//b/AQAFAAYAAAAGAPb/AQAEAAYAAAAHAPb/AQAFAAYAAAAPAPb/AQAEAAYAAADw//b/AAAFAAQAAQD0//b/AAAFAAQAAQD0//f/AQADAAAAAAD1//f/AQACAAAAAAD1//j/AQAGAAAAAAD2//f/AQAAAAAAAAD2//j/AQAHAAAAAAD6//f/AQAAAAAAAAD6//j/AQAHAAAAAAD7//b/AQAEAAYAAAD8//b/AQAHAAYAAAD+//f/AQADAAAAAAD+//j/AQAHAAAAAAACAPb/AQAHAAYAAAADAPb/AQAHAAYAAAAEAPf/AQACAAAAAAAEAPj/AQAEAAAAAAAFAPf/AQACAAAAAAAGAPj/AQAFAAAAAAAHAPf/AQABAAAAAAAHAPj/AQAGAAAAAAAIAPj/AQAGAAAAAAAJAPb/AQAGAAYAAAALAPb/AQAFAAYAAAAOAPj/AQAGAAAAAAAPAPf/AQABAAAAAAAPAPj/AQAEAAAAAAAQAAMAAQABAAIAAAAQAAQAAQACAAIAAAAQAAUAAQACAAIAAADl//n/AAAEAAQAAADl//r/AAACAAEAAADl//v/AAACAAEAAADl//z/AAACAAEAAADu//7/AAAFAAQAAADu////AAAFAAQAAADu/wAAAAAFAAQAAAA=")
+tile_map_data = PackedByteArray("AADv/wMAAQAFAAIAAADv/wYAAQAHAAIAAAAQAPz/AQAAAAIAAADv/wUAAQAFAAIAAADw/wgAAQACAAYAAADz/wgAAQAAAAYAAAD5/wgAAQAAAAYAAAD7/wgAAQAAAAYAAAD+/wgAAQACAAYAAAAEAAgAAQACAAYAAAAFAAgAAQAAAAYAAAAGAAgAAQABAAYAAAALAAgAAQABAAYAAAD1//b/AQAGAAYAAAD2//b/AAAFAAQAAQD6//b/AQAGAAYAAAD+//b/AQAFAAYAAAAGAPb/AQAEAAYAAAAHAPb/AQAFAAYAAAAPAPb/AQAEAAYAAADw//b/AAAFAAQAAQD0//b/AAAFAAQAAQD0//f/AQADAAAAAAD1//f/AQACAAAAAAD1//j/AQAGAAAAAAD2//f/AQAAAAAAAAD2//j/AQAHAAAAAAD6//f/AQAAAAAAAAD6//j/AQAHAAAAAAD7//b/AQAEAAYAAAD8//b/AQAHAAYAAAD+//f/AQADAAAAAAD+//j/AQAHAAAAAAACAPb/AQAHAAYAAAADAPb/AQAHAAYAAAAEAPf/AQACAAAAAAAEAPj/AQAEAAAAAAAFAPf/AQACAAAAAAAGAPj/AQAFAAAAAAAHAPf/AQABAAAAAAAHAPj/AQAGAAAAAAAIAPj/AQAGAAAAAAAJAPb/AQAGAAYAAAALAPb/AQAFAAYAAAAOAPj/AQAGAAAAAAAPAPf/AQABAAAAAAAPAPj/AQAEAAAAAAAQAAMAAQABAAIAAAAQAAQAAQACAAIAAAAQAAUAAQACAAIAAADu//7/AAAFAAQAAADu////AAAFAAQAAADu/wAAAAAFAAQAAAA=")
 tile_set = ExtResource("1_x1i17")
 
 [node name="BOSS" parent="." unique_id=422566797 node_paths=PackedStringArray("player") instance=ExtResource("2_725q6")]
 position = Vector2(-6, 3)
 player = NodePath("../Player")
-speed = 20.0
+speed = 50.0
 damage = 1
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1759164822]
-position = Vector2(0, -9)
-scale = Vector2(0.825, 0.825)
-zoom = Vector2(2.35, 2.35)
-
 [node name="Player" parent="." unique_id=1052419685 instance=ExtResource("3_xkndn")]
-position = Vector2(-214, 2)
+position = Vector2(-211, 9)
 scale = Vector2(0.825, 0.825)
 metadata/_edit_group_ = true
 
@@ -61,3 +58,14 @@ texture = SubResource("GradientTexture2D_rtveb")
 [node name="HPBarr" parent="CanvasLayer" unique_id=854388712 node_paths=PackedStringArray("boss") instance=ExtResource("4_x3syg")]
 max_value = 200.0
 boss = NodePath("../../BOSS")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=907029734]
+color = Color(0.7312715, 0.7357062, 0.7478415, 1)
+energy = 0.72
+blend_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1759164822]
+position = Vector2(0, -8)
+scale = Vector2(0.825, 0.825)
+zoom = Vector2(2.355, 2.37)
+limit_enabled = false

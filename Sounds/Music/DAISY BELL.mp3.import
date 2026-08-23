@@ -3,16 +3,16 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dbx4s70r65uj1"
-path="res://.godot/imported/DAISY BELL.mp3-4ea9e03d6c7b820a2b562cdd0eb39986.mp3str"
+path="res://.godot/imported/Daisy Bell.mp3-0e57bd3bd1e14cf624f4f09b78a480bc.mp3str"
 
 [deps]
 
-source_file="res://Sounds/Music/DAISY BELL.mp3"
-dest_files=["res://.godot/imported/DAISY BELL.mp3-4ea9e03d6c7b820a2b562cdd0eb39986.mp3str"]
+source_file="res://Sounds/Music/Daisy Bell.mp3"
+dest_files=["res://.godot/imported/Daisy Bell.mp3-0e57bd3bd1e14cf624f4f09b78a480bc.mp3str"]
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
 bpm=0.0
 beat_count=0
