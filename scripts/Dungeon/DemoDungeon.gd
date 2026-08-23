@@ -9,10 +9,6 @@ var dialogue1 = [
 
 func _ready() -> void:
 	await get_tree().create_timer(2.0).timeout
-	Music.dungeon.volume_db = -80.0
 	Music.dungeon.play()
-	var tween = create_tween()
-	tween.tween_property(Music.dungeon, "volume_db", 0.0, 0.5)
-	
 	dialogue_system.visible = false
 	await dialogue_system.show_dialogue_box(dialogue1, 0.05)

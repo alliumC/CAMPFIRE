@@ -9,6 +9,7 @@ class_name BOSS
 @onready var damage_time: Timer = $DamageTime
 @onready var hp_barr: TextureProgressBar = $"../CanvasLayer/HPBarr"
 @onready var attack_timer: Timer = $AttackTimer
+
 const FIREBALL = preload("uid://bm1v8065l461v")
 
 var maxHealth : float = 200
@@ -28,8 +29,8 @@ func _process(_delta: float) -> void:
 	if health <= 0:
 		self.queue_free()
 		var tween = create_tween()
-		tween.tween_property(Music.dungeon, "volume_db", -80, 0.75)
-		Music.dungeon.stop()
+		tween.tween_property(Music.boss, "volume_db", -80, 0.75)
+		Music.boss.stop()
 		SceneLoader.load_scene("uid://qswdei13wm0i", 1)
 
 
@@ -46,8 +47,11 @@ func updateAnim():
 			direction = "right"
 		elif velocity.y < 0:
 			direction = "up"
-
+		
 		animations.play("walk " + direction)
+		
+	if health <= 0:
+		animations.play("death")
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
@@ -66,4 +70,5 @@ func _on_attack_timer_timeout() -> void:
 	var fball = FIREBALL.instantiate()
 	fball.playerpos = player.global_position
 	add_child(fball)
+	fball.visible = true
 	Sfx.fireball.play()

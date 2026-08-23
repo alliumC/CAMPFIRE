@@ -5,7 +5,7 @@ const ATTACK_BOX = preload("uid://djx3aqrh0dlu5")
 @onready var inv: VBoxContainer = $PlayerHurtbox/CollisionShape2D/CanvasLayer/VBoxContainer
 
 @export var maxHealth: int = 100
-@export var speed:float =200
+@export var speed:float = 200
 @onready var sprite=$AnimatedSprite2D
 @onready var hp_barr: TextureProgressBar = $PlayerHurtbox/CollisionShape2D/CanvasLayer/HPBarr
 @onready var heal_cooldown: Timer = $HealCool
@@ -17,6 +17,8 @@ var lastDirection: String = "down"
 var attack = false
 var cooldown = false
 var cooldown_heal = false
+
+var ppos = global_position
 
 func _ready() -> void:
 	hp_barr.max_value = maxHealth

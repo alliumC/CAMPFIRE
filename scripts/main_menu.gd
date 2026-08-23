@@ -4,12 +4,15 @@ extends Control
 @onready var settings: Panel = $Settings
 @onready var button_bg: TextureRect = $"Button BG"
 @onready var title: Label = $Title
+@onready var daisy_bell: AudioStreamPlayer = $"Daisy Bell"
+
 
 func _ready():
 	title.visible = true
 	main_buttons.visible = true
 	button_bg.visible = true
 	settings.visible = false
+	daisy_bell.play()
 	lower_pitch_loop()
 
 func _on_start_pressed() -> void:
@@ -27,8 +30,10 @@ func _on_quit_pressed() -> void:
 func lower_pitch_loop():
 	while true:
 		await get_tree().create_timer(32.75).timeout
-		if $AudioStreamPlayer.pitch_scale > 0.7:
-			$AudioStreamPlayer.pitch_scale -= 0.03
+		if daisy_bell.pitch_scale > 0.7:
+			daisy_bell.pitch_scale -= 0.03
+		else: 
+			daisy_bell.pitch_scale = 1
 
 func _on_back_options_pressed() -> void:
 	title.visible = true

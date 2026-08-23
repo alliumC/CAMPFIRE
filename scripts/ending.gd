@@ -21,7 +21,7 @@ func _ready() -> void:
 	await dialogue_system.show_dialogue_box(dialogue1, 0.05)
 	
 	await get_tree().create_timer(2).timeout
-	
+	Sfx.riser.volume_db = 0
 	Sfx.riser.play(1)
 	for i in 220:
 		var text = lastText[randi_range(0, 4)]

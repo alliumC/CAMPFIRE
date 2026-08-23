@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://13uvevqqwlpf"]
 
-[ext_resource type="Script" uid="uid://b6nndbco6xfxf" path="res://Scripts/Dungeon/boss_room.gd" id="1_725q6"]
+[ext_resource type="Script" uid="uid://bv81qrwpl3v8g" path="res://Scenes/Dungeon/boss_room.gd" id="1_725q6"]
 [ext_resource type="TileSet" uid="uid://tyrhxra0mp52" path="res://Assets/Dungeon/dungeont tile set.tres" id="1_x1i17"]
 [ext_resource type="PackedScene" uid="uid://dm8dvtbhkt2v5" path="res://Scenes/Enemies/BOSS.tscn" id="2_725q6"]
 [ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="3_xkndn"]
@@ -39,10 +39,11 @@ tile_set = ExtResource("1_x1i17")
 [node name="BOSS" parent="." unique_id=422566797 node_paths=PackedStringArray("player") instance=ExtResource("2_725q6")]
 position = Vector2(-6, 3)
 player = NodePath("../Player")
+speed = 50.0
 damage = 1
 
 [node name="Player" parent="." unique_id=1052419685 instance=ExtResource("3_xkndn")]
-position = Vector2(-214, 2)
+position = Vector2(-211, 9)
 scale = Vector2(0.825, 0.825)
 metadata/_edit_group_ = true
 

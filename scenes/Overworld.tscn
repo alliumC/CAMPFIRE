@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cytu7cwip8jd8" path="res://Assets/Home/Tiled_files/exterior.png" id="2_gacct"]
 [ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Home/Sprites-Anims/Cave.png" id="3_bos8a"]
 [ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://Scripts/cave.gd" id="3_w51ix"]
+[ext_resource type="Texture2D" uid="uid://sd2fnr06e8qw" path="res://Assets/Dungeon/Sprites-Anims/blood arrow.png" id="5_s7wd7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
 texture = ExtResource("2_gacct")
@@ -1345,7 +1346,7 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="Map" unique_id=1035596880 instance=ExtResource("1_puia7")]
 light_mask = 1
-z_index = 1
+z_index = 2
 z_as_relative = false
 y_sort_enabled = true
 position = Vector2(-182, 122)
@@ -1373,7 +1374,7 @@ tile_map_data = PackedByteArray("AAAzABQAAAADABMAAADe/+b/AAABABEAAADf/+b/AAACABE
 tile_set = SubResource("TileSet_5v1tr")
 
 [node name="FrontLayer" type="TileMapLayer" parent="Map/TileMaps" unique_id=500969525]
-z_index = 1
+z_index = 3
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AADg/xAAAAANABsAAADi/wsAAAAKACIAAADm/w0AAAAGACoAAADr/wsAAAAJABgAAADq/xIAAAANABIAAAD+/w8AAAANABsAAAACAA0AAAABABcAAAAIABAAAAAGACoAAAATABEAAAANABsAAAAeABEAAAAMACcAAAAkAA8AAAANABIAAAArAAoAAAAKACIAAAAxAAcAAAANABsAAAAwAPv/AAAJABgAAAAsAPz/AAAGACoAAAArAPj/AAANABsAAAAjAAcAAAAOABUAAAAmAAUAAAANABIAAAAjAAIAAAAMAA4AAAApAAIAAAAMAA4AAAAaAAkAAAAOABUAAAAaAP//AAAKACIAAAAQAAQAAAAKACIAAAD7/wMAAAAFABcAAAD9//z/AAABABcAAADx//7/AAAJABgAAADs//v/AAAOABUAAADm//r/AAANABsAAADh//3/AAAFABcAAAD6//j/AAANABIAAAD1//T/AAABABcAAADx//H/AAANABIAAADs//H/AAAMACcAAAAPAPj/AAAMACsAAAAJAOf/AAAMACcAAAAXAOL/AAAKACIAAAD6/+r/AAANABsAAAD1/+b/AAAFABcAAADk/+z/AAABABcAAADu/9//AAAOABUAAAASAO3/AAANABIAAAAPAOH/AAAGACoAAAD8/+D/AAAMACcAAAAVAAwAAAAEACIAAAA=")
 tile_set = SubResource("TileSet_ikia7")
@@ -1388,6 +1389,14 @@ z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD3/w8AAAAIACcAAADo/wgAAAAIACcAAAANAPz/AAAIACcAAAD5/+T/AAAIACcAAAAZAN3/AAAIACcAAAAsAAUAAAAIACcAAAALAAEAAAAMAC8AAAAXAOn/AAAMAC8AAADk/xEAAAAMAC8AAADz/xEAAAAKAB8AAADx//n/AAADACAAAAARAOb/AAADACAAAAAlAPz/AAAGAB4AAAAxAAwAAAAKABwAAAAIAPj/AAACABwAAAAbAOn/AAACABwAAADr/+j/AAACABwAAADf//f/AAACABwAAAAEABIAAAACABwAAAAOABAAAAAGABwAAAAWAP3/AAAGABwAAADx/w4AAAABADYAAAACAAgAAAABADYAAADv/+//AAABADYAAAAVAPT/AAADADYAAAAOAA0AAAADADYAAAAmABMAAAANADYAAAAdAAQAAAANADYAAADz/wQAAAAOADYAAAAJAOz/AAAOADYAAAAOAOH/AAANADQAAAD0/9//AAAJADYAAAAfAPv/AAAEADYAAADp/wAAAAAKADYAAADr//f/AAALADQAAAAWAAQAAAALADQAAAAKAN//AAAIADAAAAD9//P/AAABACkAAAAsABIAAAAKACcAAAD2////AAAKACcAAAA=")
 tile_set = SubResource("TileSet_7yui6")
+
+[node name="BloodArrow" type="Sprite2D" parent="Map/TileMaps" unique_id=622781743]
+self_modulate = Color(1, 0, 0.043137256, 0.30980393)
+z_index = 1
+y_sort_enabled = true
+position = Vector2(39, 25.999998)
+scale = Vector2(0.40000004, 0.45161295)
+texture = ExtResource("5_s7wd7")
 
 [node name="Area2D" type="Area2D" parent="Map" unique_id=2089352337]
 position = Vector2(-22, 293)

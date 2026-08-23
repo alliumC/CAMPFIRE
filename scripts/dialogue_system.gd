@@ -29,6 +29,7 @@ func _input(event: InputEvent) -> void:
 
 #img_path: Texture2D, 
 
+@warning_ignore("unused_parameter")
 func show_dialogue_box(dialogue: Array, speed: float):
 	self.visible = true
 	#speaker_profile.texture = img_path

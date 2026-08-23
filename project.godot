@@ -31,6 +31,8 @@ SceneLoader="*uid://bcead5nfi2qjr"
 GlobalScript="*uid://cj4lol1ri1a8s"
 Sfx="*uid://c030diahpwqub"
 Music="*uid://dbead4up2nkyc"
+MusicControl="*uid://dbsae8ldno6ia"
+SfxControl="*uid://by5i0wbjtag5w"
 
 [display]
 

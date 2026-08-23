@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://d1tn6t84d34kp" path="res://Scripts/main_menu.gd" id="1_cyejb"]
 [ext_resource type="Texture2D" uid="uid://cld3g84ma7v7n" path="res://Assets/Main Menu/Menu 1.png" id="2_qqsp2"]
 [ext_resource type="Texture2D" uid="uid://d32y5tblmd2vp" path="res://Assets/Main Menu/default menu panel.png" id="3_lyibd"]
-[ext_resource type="AudioStream" uid="uid://dbx4s70r65uj1" path="res://Sounds/Music/Daisy Bell.mp3" id="5_onb27"]
+[ext_resource type="AudioStream" uid="uid://dbx4s70r65uj1" path="res://Sounds/Music/Daisy Bell.mp3" id="5_xim88"]
 [ext_resource type="Script" uid="uid://dbsae8ldno6ia" path="res://Scripts/music_control.gd" id="6_rtw2f"]
 [ext_resource type="Script" uid="uid://by5i0wbjtag5w" path="res://Scripts/sfx_control.gd" id="7_xim88"]
 
@@ -130,6 +130,11 @@ texture = ExtResource("3_lyibd")
 expand_mode = 1
 stretch_mode = 3
 
+[node name="Daisy Bell" type="AudioStreamPlayer" parent="." unique_id=1421295755]
+stream = ExtResource("5_xim88")
+autoplay = true
+bus = &"Music"
+
 [node name="Main Buttons" type="VBoxContainer" parent="." unique_id=1388513150]
 visible = false
 layout_mode = 1
@@ -175,12 +180,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cyejb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
 text = "Quit"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1851502596]
-stream = ExtResource("5_onb27")
-volume_db = 1.043
-autoplay = true
-bus = &"Music"
 
 [node name="Settings" type="Panel" parent="." unique_id=2002182552]
 layout_mode = 1
@@ -235,9 +234,8 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
 max_value = 2.0
 step = 0.05
-value = 2.0
+value = 1.5
 script = ExtResource("6_rtw2f")
-audio_bus_name = "Music"
 
 [node name="SFX" type="Label" parent="Settings" unique_id=1012660593]
 layout_mode = 1
@@ -266,11 +264,10 @@ grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_8ln24")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
-max_value = 2.0
+max_value = 0.75
 step = 0.05
-value = 1.0
+value = 0.55
 script = ExtResource("7_xim88")
-audio_bus_name = "SFX"
 
 [node name="back" type="Button" parent="Settings" unique_id=483061244]
 layout_mode = 1

@@ -223,7 +223,7 @@ visibility_layer = 2
 position = Vector2(-17.00405, -34.0081)
 scale = Vector2(0.526, 0.526)
 sprite_frames = SubResource("SpriteFrames_rj586")
-animation = &"attack "
+animation = &"idle down"
 autoplay = "idle down"
 centered = false
 
