@@ -149,6 +149,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1ixlk")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=903640783]
 layout_mode = 2
+theme_override_constants/margin_right = 65
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1685890612]
 layout_mode = 2
@@ -174,22 +175,16 @@ size_flags_vertical = 3
 text = "Dialogue..."
 seconds_per_step = 0.05
 
-[node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1136806825]
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 0
-
-[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=418507161]
+[node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=418507161]
 custom_minimum_size = Vector2(20, 10)
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Control" unique_id=2091292889]
+[node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=2091292889]
 unique_name_in_owner = true
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/MarginContainer/Control" unique_id=1602634471]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/Control" unique_id=1602634471]
 libraries/ = SubResource("AnimationLibrary_1337t")
 autoplay = &"progress"
 

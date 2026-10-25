@@ -130,11 +130,6 @@ texture = ExtResource("3_lyibd")
 expand_mode = 1
 stretch_mode = 3
 
-[node name="Daisy Bell" type="AudioStreamPlayer" parent="." unique_id=1421295755]
-stream = ExtResource("5_xim88")
-autoplay = true
-bus = &"Music"
-
 [node name="Main Buttons" type="VBoxContainer" parent="." unique_id=1388513150]
 visible = false
 layout_mode = 1
@@ -205,30 +200,22 @@ text = "Options"
 label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 
-[node name="Music" type="Label" parent="Settings" unique_id=649490090]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 110.0
-offset_bottom = 155.0
-grow_horizontal = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings" unique_id=1109551021]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 94.0
+offset_right = 870.0
+offset_bottom = 584.0
+theme_override_constants/separation = 18
+
+[node name="Music" type="Label" parent="Settings/VBoxContainer" unique_id=649490090]
+layout_mode = 2
 text = "Music Volume"
 label_settings = SubResource("LabelSettings_8um5k")
 horizontal_alignment = 1
 
-[node name="MusicControl" type="HSlider" parent="Settings" unique_id=1183522404]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.0
-offset_top = -197.0
-offset_right = 295.0
-offset_bottom = -139.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MusicControl" type="HSlider" parent="Settings/VBoxContainer" unique_id=1183522404]
+layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_8ln24")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
@@ -237,30 +224,14 @@ step = 0.05
 value = 1.5
 script = ExtResource("6_rtw2f")
 
-[node name="SFX" type="Label" parent="Settings" unique_id=1012660593]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 218.0
-offset_bottom = 263.0
-grow_horizontal = 2
+[node name="SFX" type="Label" parent="Settings/VBoxContainer" unique_id=1012660593]
+layout_mode = 2
 text = "Sound Effects Volume"
 label_settings = SubResource("LabelSettings_8um5k")
 horizontal_alignment = 1
 
-[node name="SFXControl" type="HSlider" parent="Settings" unique_id=1718658175]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -295.0
-offset_top = -89.0
-offset_right = 295.0
-offset_bottom = -31.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SFXControl" type="HSlider" parent="Settings/VBoxContainer" unique_id=1718658175]
+layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxLine_8ln24")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_rtw2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_rtw2f")
@@ -269,17 +240,18 @@ step = 0.05
 value = 0.4
 script = ExtResource("7_xim88")
 
+[node name="CheckButton" type="CheckButton" parent="Settings/VBoxContainer" unique_id=584224982]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+button_pressed = true
+text = "Fullscreen"
+
 [node name="back" type="Button" parent="Settings" unique_id=483061244]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 238.0
-offset_top = -67.0
-offset_right = -238.0
-grow_horizontal = 2
-grow_vertical = 0
+layout_mode = 0
+offset_left = 3.0
+offset_top = 612.0
+offset_right = 870.0
+offset_bottom = 695.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ln24")
@@ -288,9 +260,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0qop8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lyibd")
 text = "Quit"
 
+[node name="Daisy Bell" type="AudioStreamPlayer" parent="." unique_id=1421295755]
+stream = ExtResource("5_xim88")
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="Main Buttons/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Main Buttons/options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Main Buttons/quit" to="." method="_on_quit_pressed"]
-[connection signal="value_changed" from="Settings/MusicControl" to="Settings/MusicControl" method="_on_value_changed"]
-[connection signal="value_changed" from="Settings/SFXControl" to="Settings/SFXControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/MusicControl" to="Settings/VBoxContainer/MusicControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/VBoxContainer/SFXControl" to="Settings/VBoxContainer/SFXControl" method="_on_value_changed"]
+[connection signal="toggled" from="Settings/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="pressed" from="Settings/back" to="." method="_on_back_options_pressed"]

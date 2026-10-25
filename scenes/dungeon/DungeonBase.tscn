@@ -61,16 +61,15 @@ texture = SubResource("GradientTexture2D_rtveb")
 position = Vector2(0, -13.496937)
 
 [node name="Camera" type="Node2D" parent="." unique_id=1272627557]
+script = ExtResource("3_h03bg")
 
-[node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1223136786 node_paths=PackedStringArray("camera")]
+[node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1223136786]
 visible = false
 position = Vector2(-168, -96)
 scale = Vector2(0.825, 0.825)
 offset = Vector2(0, 0.5)
 zoom = Vector2(3.81, 3.75)
 limit_enabled = false
-script = ExtResource("3_h03bg")
-camera = NodePath("..")
 
 [node name="Up" type="Area2D" parent="Camera" unique_id=1321149382]
 position = Vector2(-168, -207)
@@ -89,6 +88,7 @@ shape = SubResource("RectangleShape2D_mlh8f")
 
 [node name="Down" type="Area2D" parent="Camera" unique_id=1773177995]
 position = Vector2(-168, -4.5)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/Down" unique_id=1829637948]
 position = Vector2(0, 5.5)
@@ -134,9 +134,12 @@ position = Vector2(-337.5, -97)
 shape = SubResource("RectangleShape2D_5htxp")
 disabled = true
 
-[connection signal="body_entered" from="Camera/Up" to="Camera/Camera2D" method="_on_up_body_entered"]
-[connection signal="body_entered" from="Camera/Left" to="Camera/Camera2D" method="_on_left_body_entered"]
-[connection signal="body_entered" from="Camera/Down" to="Camera/Camera2D" method="_on_down_body_entered"]
-[connection signal="body_entered" from="Camera/Right" to="Camera/Camera2D" method="_on_right_body_entered"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=238252343]
+bus = &"Music"
+
+[connection signal="body_entered" from="Camera/Up" to="Camera" method="_on_up_body_entered"]
+[connection signal="body_entered" from="Camera/Left" to="Camera" method="_on_left_body_entered"]
+[connection signal="body_entered" from="Camera/Down" to="Camera" method="_on_down_body_entered"]
+[connection signal="body_entered" from="Camera/Right" to="Camera" method="_on_right_body_entered"]
 [connection signal="body_entered" from="Camera/enemy detector" to="Camera/enemy detector" method="_on_body_entered"]
 [connection signal="body_exited" from="Camera/enemy detector" to="Camera/enemy detector" method="_on_body_exited"]

@@ -4,7 +4,7 @@ class_name BOSS
 
 @export var speed: float = 20
 @export var damage: int = 10
-
+@onready var boss: AudioStreamPlayer = $"../boss"
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
 @onready var hp_barr: TextureProgressBar = $"../CanvasLayer/HPBarr"
@@ -14,6 +14,9 @@ const FIREBALL = preload("uid://bm1v8065l461v")
 
 var maxHealth : float = 200
 var health : float = maxHealth
+
+func _ready() -> void:
+	player.canFight = true
 
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
@@ -28,9 +31,7 @@ func _process(_delta: float) -> void:
 	
 	if health <= 0:
 		self.queue_free()
-		var tween = create_tween()
-		tween.tween_property(Music.boss, "volume_db", -80, 0.75)
-		Music.boss.stop()
+		boss.stop()
 		SceneLoader.load_scene("uid://qswdei13wm0i", 1)
 
 

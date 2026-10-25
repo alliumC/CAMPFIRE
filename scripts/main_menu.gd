@@ -40,3 +40,10 @@ func _on_back_options_pressed() -> void:
 	main_buttons.visible = true
 	button_bg.visible = true
 	settings.visible = false
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
