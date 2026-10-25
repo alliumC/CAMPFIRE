@@ -1,13 +1,9 @@
 extends Node2D
-@onready var canvas_layer: CanvasLayer = $Camera2D/CanvasLayer
 @onready var node: Node = $Node
-@onready var dialogue_system = GameSystemsScript.instantiateDialogueSystem(canvas_layer)
 @onready var title: RichTextLabel = $Title
 @onready var sub: RichTextLabel = $sub
 @onready var sub2: RichTextLabel = $sub2
-var dialogue1 = [
-	{ "Cassius" : ["Rene?", 0.3] },
-]
+
 var lastText = [
 	"YOU WILL NEVER BE ENOUGH",
 	"YOU KNOW THEY WERE ALWAYS BETTER",
@@ -17,9 +13,9 @@ var lastText = [
 ]
 
 func _ready() -> void:
-	dialogue_system.visible = false
-	await dialogue_system.show_dialogue_box(dialogue1, 0.05)
+	DialogueManager.show_dialogue_balloon(load("uid://3ur0ecqvnxph"), "start")
 	
+func start_ending() -> void:
 	await get_tree().create_timer(2).timeout
 	Sfx.riser.volume_db = 0
 	Sfx.riser.play(1)

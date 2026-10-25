@@ -17,6 +17,7 @@ var lastDirection: String = "down"
 var attack = false
 var cooldown = false
 var cooldown_heal = false
+var canMove: bool = true
 
 var ppos = global_position
 
@@ -34,53 +35,54 @@ func _process(_delta: float) -> void:
 		heal_cooldown.start()
 
 func get_player_input() -> void:
-	var direction := Input.get_vector("left", "right", "up", "down")
-	velocity = direction * speed
+	if canMove == true:
+		var direction := Input.get_vector("left", "right", "up", "down")
+		velocity = direction * speed
 
-	if direction.x != 0 or direction.y != 0:
-			if direction.x > direction.y:
-				lastDirection="right" if direction.x > 0 else "up"
-				sprite.play("walk " +lastDirection)
-			else:
-				lastDirection="down" if direction.y > 0 else "left"
-				sprite.play("walk " +lastDirection)
-	else:
-		if lastDirection:
-			sprite.play("idle "+lastDirection)
+		if direction.x != 0 or direction.y != 0:
+				if direction.x > direction.y:
+					lastDirection="right" if direction.x > 0 else "up"
+					sprite.play("walk " +lastDirection)
+				else:
+					lastDirection="down" if direction.y > 0 else "left"
+					sprite.play("walk " +lastDirection)
 		else:
-			sprite.play("idle down")	
-			
-	if Input.is_action_just_pressed("attack"):
-		if GlobalScript.item1_equipped:
-			if cooldown == false:
-				Sfx.sword.play()
-				cool_down.start()
-				cooldown = true
-				attack = true
-				var atbox = ATTACK_BOX.instantiate()
-				match lastDirection:
-					"up":
-						atbox.global_position = self.position + Vector2(0, -30)
-					"down":
-						atbox.global_position = self.position + Vector2(0, 10)
-					"right":
-						atbox.global_position = self.position + Vector2(15, -10)
-					"left":
-						atbox.global_position = self.position + Vector2(-15, -10)
+			if lastDirection:
+				sprite.play("idle "+lastDirection)
+			else:
+				sprite.play("idle down")	
 				
-				get_tree().current_scene.add_child(atbox)
-				inv.cooldown(inv.inv_1_cooldown, 0.4)
-		elif GlobalScript.item2_equipped:
-			if cooldown_heal == false:
-				Sfx.potion.play()
-				cooldown_heal = true
-				heal_cool.start()
-				currentHealth += 30
-				
-				if currentHealth > maxHealth:
-					currentHealth = maxHealth
+		if Input.is_action_just_pressed("attack"):
+			if GlobalScript.item1_equipped:
+				if cooldown == false:
+					Sfx.sword.play()
+					cool_down.start()
+					cooldown = true
+					attack = true
+					var atbox = ATTACK_BOX.instantiate()
+					match lastDirection:
+						"up":
+							atbox.global_position = self.position + Vector2(0, -30)
+						"down":
+							atbox.global_position = self.position + Vector2(0, 10)
+						"right":
+							atbox.global_position = self.position + Vector2(15, -10)
+						"left":
+							atbox.global_position = self.position + Vector2(-15, -10)
 					
-				inv.cooldown(inv.inv_2_cooldown, 20)
+					get_tree().current_scene.add_child(atbox)
+					inv.cooldown(inv.inv_1_cooldown, 0.4)
+			elif GlobalScript.item2_equipped:
+				if cooldown_heal == false:
+					Sfx.potion.play()
+					cooldown_heal = true
+					heal_cool.start()
+					currentHealth += 30
+					
+					if currentHealth > maxHealth:
+						currentHealth = maxHealth
+						
+					inv.cooldown(inv.inv_2_cooldown, 20)
 
 func _physics_process(_delta):
 	if not attack:

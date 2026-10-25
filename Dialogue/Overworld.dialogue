@@ -1,0 +1,19 @@
+~ start
+$> cassius.canMove = false
+Cassius: ...
+Cassius: [shake]Where am I...?[/shake]
+Cassius: Is this the [i]village's forest grounds...?[/i] 
+$> cassius.canMove = true
+=> END
+
+~ foundletter
+$> cassius.canMove = false
+Cassius: Rene's writing!
+Cassius: Is this for me?
+=> END
+
+~ afterreading
+Cassius: Rene...
+Cassius: I have to go get them!
+$> player.canMove = true
+=> END

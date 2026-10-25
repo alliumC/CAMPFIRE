@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://0tiy3tl3ckyr" path="res://Assets/Home/MC Sprites/protag_normal.png" id="2_qu4a1"]
 [ext_resource type="PackedScene" uid="uid://c6aob5hrbqegr" path="res://Scenes/UI/HealthBar.tscn" id="3_70d11"]
 [ext_resource type="PackedScene" uid="uid://dltkt4ue6j18h" path="res://Scenes/UI/InventoryTest.tscn" id="4_cw2d6"]
+[ext_resource type="Script" uid="uid://cd3222nx3y3k5" path="res://addons/dialogue_manager/nodes/context/dialogue_state_context.gd" id="5_5ixxa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("2_qu4a1")
@@ -256,6 +257,12 @@ one_shot = true
 
 [node name="CoolDown" type="Timer" parent="." unique_id=612230814]
 wait_time = 0.4
+
+[node name="DialogueStateContext" type="Node" parent="." unique_id=1053122214 node_paths=PackedStringArray("target")]
+script = ExtResource("5_5ixxa")
+alias = "cassius"
+target = NodePath("..")
+metadata/_custom_type_script = "uid://cd3222nx3y3k5"
 
 [connection signal="area_entered" from="PlayerHurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="HealCool" to="." method="_on_heal_cool_timeout"]

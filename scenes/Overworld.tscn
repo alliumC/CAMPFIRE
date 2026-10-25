@@ -7,6 +7,13 @@
 [ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://Scripts/cave.gd" id="3_w51ix"]
 [ext_resource type="Texture2D" uid="uid://sd2fnr06e8qw" path="res://Assets/Dungeon/Sprites-Anims/blood arrow.png" id="5_s7wd7"]
 
+[sub_resource type="Gradient" id="Gradient_7r4gi"]
+offsets = PackedFloat32Array(0, 0.9911765)
+colors = PackedColorArray(0.47843137, 0.6784314, 0.33333334, 1, 0.47843137, 0.6784314, 0.33333334, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w7kh3"]
+gradient = SubResource("Gradient_7r4gi")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7acu"]
 texture = ExtResource("2_gacct")
 11:2/0 = 0
@@ -1327,15 +1334,17 @@ sources/0 = SubResource("TileSetAtlasSource_ikia7")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7frw"]
 size = Vector2(21, 34)
 
-[sub_resource type="Gradient" id="Gradient_7r4gi"]
-offsets = PackedFloat32Array(0, 0.9911765)
-colors = PackedColorArray(0.47843137, 0.6784314, 0.33333334, 1, 0.47843137, 0.6784314, 0.33333334, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_w7kh3"]
-gradient = SubResource("Gradient_7r4gi")
-
 [node name="WORLD" type="Node" unique_id=2097567805]
 script = ExtResource("1_gacct")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=1861809659]
+energy = 0.3
+blend_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=490401471]
+position = Vector2(133.00002, -412)
+scale = Vector2(8.646485, 1344)
+texture = SubResource("GradientTexture1D_w7kh3")
 
 [node name="Map" type="Node2D" parent="." unique_id=1788962872]
 z_as_relative = false
@@ -1355,8 +1364,6 @@ scale = Vector2(0.7, 0.7)
 [node name="Camera2D" type="Camera2D" parent="Map/Player" unique_id=94649766]
 position = Vector2(2, 1)
 zoom = Vector2(3, 3)
-
-[node name="DialogueLayer" type="CanvasLayer" parent="Map/Player" unique_id=227086067]
 
 [node name="TileMaps" type="Node2D" parent="Map" unique_id=947028826]
 y_sort_enabled = true
@@ -1405,12 +1412,5 @@ script = ExtResource("3_w51ix")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Area2D" unique_id=618690877]
 position = Vector2(63, -883)
 shape = SubResource("RectangleShape2D_q7frw")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=53847958]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=490401471]
-position = Vector2(639, 360.24997)
-scale = Vector2(4.992188, 724.49994)
-texture = SubResource("GradientTexture1D_w7kh3")
 
 [connection signal="area_entered" from="Map/Area2D" to="Map/Area2D" method="_on_area_entered"]
