@@ -1,14 +1,7 @@
 extends Node
-@onready var canvas_layer: CanvasLayer = $Map/Player/DialogueLayer
-@onready var dialogue_system = GameSystemsScript.instantiateDialogueSystem(canvas_layer)
-var dialogue1 = [
-	{ "Cassius" : ["...", 0.7] },
-	{ "Cassius" : ["...[shake]Where am I?[/shake]", 0.05] },
-	{ "Cassius" : ["Is this the [i]village's forest grounds?[/i]", 0.05] }
-]
+@onready var player: Player = $Map/Player
 
 func _ready() -> void:
-	dialogue_system.visible = false
-	await dialogue_system.show_dialogue_box(dialogue1, 0.05)
+	DialogueManager.show_dialogue_balloon(load("uid://biets1ua616r5"), "start")
 	
 	await get_tree().create_timer(1.0).timeout
