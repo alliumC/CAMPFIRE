@@ -1,5 +1,5 @@
 extends Node
-@onready var player: Player = $Map/Player
+@onready var cassius: Player = $Map/Player
 
 func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(load("uid://biets1ua616r5"), "start")
