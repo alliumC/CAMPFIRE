@@ -534,5 +534,8 @@ shape = SubResource("RectangleShape2D_qeq5k")
 [node name="Camera2D" parent="Camera" parent_id_path=PackedInt32Array(1272627557) index="0" unique_id=1223136786]
 visible = true
 
+[node name="AudioStreamPlayer" parent="." index="3" unique_id=238252343]
+autoplay = true
+
 [connection signal="body_entered" from="Map/Boss Trigger" to="Map/Boss Trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/shrine check" to="." method="_on_shrine_check_body_entered"]

@@ -134,6 +134,9 @@ position = Vector2(-337.5, -97)
 shape = SubResource("RectangleShape2D_5htxp")
 disabled = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=238252343]
+bus = &"Music"
+
 [connection signal="body_entered" from="Camera/Up" to="Camera" method="_on_up_body_entered"]
 [connection signal="body_entered" from="Camera/Left" to="Camera" method="_on_left_body_entered"]
 [connection signal="body_entered" from="Camera/Down" to="Camera" method="_on_down_body_entered"]

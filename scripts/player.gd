@@ -85,6 +85,9 @@ func get_player_input() -> void:
 							currentHealth = maxHealth
 							
 						inv.cooldown(inv.inv_2_cooldown, 20)
+	else: 
+		velocity = Vector2.ZERO
+		sprite.play("idle "+ lastDirection)
 
 func _physics_process(_delta):
 	if not attack:

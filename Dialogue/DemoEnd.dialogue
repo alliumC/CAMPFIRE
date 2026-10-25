@@ -1,4 +1,3 @@
 ~ start
-Cassius: Rene...?
-$> start_ending()
+Cassius: [speed=0.3][shake]Rene...?[/shake][/speed]
 => END

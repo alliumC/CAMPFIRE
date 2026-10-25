@@ -9,8 +9,8 @@ $> cassius.canMove = true
 ~ shrine
 $> cassius.velocity = 0
 $> cassius.canFight = false
-Cassus: What...
-Cassus: What is this...?
+Cassus: [speed=0.4]What...[/speed]
+Cassus: [speed=0.5][shake]What is this...?[/shake][/speed]
 $> cassius.canFight = true
 => END
 

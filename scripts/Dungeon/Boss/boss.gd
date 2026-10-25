@@ -15,6 +15,9 @@ const FIREBALL = preload("uid://bm1v8065l461v")
 var maxHealth : float = 200
 var health : float = maxHealth
 
+func _ready() -> void:
+	player.canFight = true
+
 func _physics_process(_delta):
 	var direction = global_position.direction_to(player.global_position)
 
