@@ -14,7 +14,7 @@ var lastText = [
 
 func _ready() -> void:
 	DialogueManager.show_dialogue_balloon(load("uid://3ur0ecqvnxph"), "start")
-	
+
 func start_ending() -> void:
 	await get_tree().create_timer(2).timeout
 	Sfx.riser.volume_db = 0

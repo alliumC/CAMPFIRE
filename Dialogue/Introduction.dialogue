@@ -1,3 +1,12 @@
+~ intro
+[speed=0.7][i]They were always the more fortunate one.[/i]
+[i]Despite you both being under the same devotion,[/i]
+[i]It always seemed like they were the “favorite”.[/i]
+[i]And even now…[/i][/speed]
+
+Rene: Cassius!
+=> END
+
 ~ start
 $> cassius.canMove = false
 Cassius: ...
