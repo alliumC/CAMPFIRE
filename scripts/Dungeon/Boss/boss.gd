@@ -4,7 +4,7 @@ class_name BOSS
 
 @export var speed: float = 20
 @export var damage: int = 10
-
+@onready var boss: AudioStreamPlayer = $"../boss"
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
 @onready var hp_barr: TextureProgressBar = $"../CanvasLayer/HPBarr"
@@ -31,9 +31,7 @@ func _process(_delta: float) -> void:
 	
 	if health <= 0:
 		self.queue_free()
-		var tween = create_tween()
-		tween.tween_property(Music.boss, "volume_db", -80, 0.75)
-		Music.boss.stop()
+		boss.stop()
 		SceneLoader.load_scene("uid://qswdei13wm0i", 1)
 
 
