@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://b2c6csu5b6hcr" path="res://Assets/Dungeon/Sprites-Anims/candle anims.png" id="8_mgvni"]
 [ext_resource type="Texture2D" uid="uid://cibbqyvn15i84" path="res://Assets/Dungeon/Sprites-Anims/bloody pentagram.png" id="9_g4aha"]
 [ext_resource type="PackedScene" uid="uid://cw50vq0r1kbs0" path="res://Scenes/Enemies/Goblin.tscn" id="10_3gl8s"]
+[ext_resource type="PackedScene" uid="uid://b4vqyheplq07o" path="res://Scenes/Interation/interactable.tscn" id="11_5p64e"]
 [ext_resource type="PackedScene" uid="uid://br2tdqvja6pc1" path="res://Scenes/Enemies/Spirit.tscn" id="11_kw4up"]
+[ext_resource type="Script" uid="uid://c1l5h2l523ag" path="res://Scripts/Dungeon/bloody_pentagram.gd" id="11_uixhm"]
 [ext_resource type="Script" uid="uid://xm3lydmj07k8" path="res://Scripts/Dungeon/go_to_boss.gd" id="12_h5df2"]
 [ext_resource type="PackedScene" uid="uid://dussugdqlujc7" path="res://Scenes/Dungeon/Chest.tscn" id="13_rrfo1"]
 
@@ -262,14 +264,21 @@ gradient = SubResource("Gradient_1shxj")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_uixhm"]
+radius = 46.489586
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2a0l1"]
 size = Vector2(11.5, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8phvx"]
 size = Vector2(11.5, 58)
 
-[node name="Dungeon 1" unique_id=1960524575 instance=ExtResource("1_bfjvd")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeq5k"]
+size = Vector2(54, 20)
+
+[node name="Dungeon 1" unique_id=1960524575 node_paths=PackedStringArray("shrine_check") instance=ExtResource("1_bfjvd")]
 script = ExtResource("2_xbg2s")
+shrine_check = NodePath("Map/shrine check")
 
 [node name="Floor" type="TileMapLayer" parent="Map" parent_id_path=PackedInt32Array(132261497) index="0" unique_id=1275029572]
 position = Vector2(-198, -98)
@@ -432,6 +441,14 @@ texture = SubResource("GradientTexture2D_dhhm7")
 position = Vector2(504, 112)
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("9_g4aha")
+script = ExtResource("11_uixhm")
+
+[node name="Interactable" parent="Map/Lore/BloodyPentagram" index="0" unique_id=436187935 instance=ExtResource("11_5p64e")]
+interact_name = "Interact"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Lore/BloodyPentagram/Interactable" index="0" unique_id=493359278]
+shape = SubResource("CircleShape2D_uixhm")
+debug_color = Color(0, 1, 0, 0.41960785)
 
 [node name="Enemies" type="Node2D" parent="Map" parent_id_path=PackedInt32Array(132261497) index="5" unique_id=1609241780]
 position = Vector2(-22, -1)
@@ -488,24 +505,34 @@ endPoint = NodePath("Marker2D")
 [node name="Marker2D" type="Marker2D" parent="Map/Enemies/Spirit3" index="5" unique_id=172155350]
 position = Vector2(-287, -8)
 
-[node name="Area2D" type="Area2D" parent="Map" parent_id_path=PackedInt32Array(132261497) index="6" unique_id=408765159]
+[node name="Boss Trigger" type="Area2D" parent="Map" parent_id_path=PackedInt32Array(132261497) index="6" unique_id=408765159]
 script = ExtResource("12_h5df2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Area2D" index="0" unique_id=204538570]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Boss Trigger" index="0" unique_id=204538570]
 position = Vector2(-687.75, 93)
 shape = SubResource("RectangleShape2D_2a0l1")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map" parent_id_path=PackedInt32Array(132261497) index="7" unique_id=2009169394]
+[node name="Wall" type="StaticBody2D" parent="Map" parent_id_path=PackedInt32Array(132261497) index="7" unique_id=2009169394]
 position = Vector2(-687.75, 93)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map/StaticBody2D" index="0" unique_id=324535257]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map/Wall" index="0" unique_id=324535257]
 position = Vector2(4.75, 0)
 shape = SubResource("RectangleShape2D_8phvx")
 
 [node name="Chest" parent="Map" parent_id_path=PackedInt32Array(132261497) index="8" unique_id=217911783 instance=ExtResource("13_rrfo1")]
 position = Vector2(-189.00002, -277)
 
+[node name="shrine check" type="Area2D" parent="Map" parent_id_path=PackedInt32Array(132261497) index="9" unique_id=1883024161]
+position = Vector2(145.99998, 11)
+collision_layer = 15
+collision_mask = 15
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/shrine check" index="0" unique_id=1169041573]
+shape = SubResource("RectangleShape2D_qeq5k")
+
 [node name="Camera2D" parent="Camera" parent_id_path=PackedInt32Array(1272627557) index="0" unique_id=1223136786]
 visible = true
 
-[connection signal="body_entered" from="Map/Area2D" to="Map/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Map/Boss Trigger" to="Map/Boss Trigger" method="_on_body_entered"]
+[connection signal="body_entered" from="Map/shrine check" to="." method="_on_shrine_check_body_entered"]

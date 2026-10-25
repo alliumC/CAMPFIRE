@@ -1,11 +1,23 @@
 ~ start
 $> cassius.canMove = false
+$> cassius.velocity = 0
 Cassus: Rene?
 Cassus: Where are you?
 $> cassius.canMove = true
 => END
 
 ~ shrine
+$> cassius.velocity = 0
+$> cassius.canFight = false
 Cassus: What...
 Cassus: What is this...?
+$> cassius.canFight = true
+=> END
+
+~ pentagram
+$> cassius.velocity = 0
+$> cassius.canFight = false
+$> cassius.canMove = false
+A pentagram made of dried blood.
+$> cassius.canMove = true
 => END
