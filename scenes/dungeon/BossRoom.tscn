@@ -1,10 +1,11 @@
 [gd_scene format=4 uid="uid://13uvevqqwlpf"]
 
 [ext_resource type="TileSet" uid="uid://tyrhxra0mp52" path="res://Assets/Dungeon/dungeont tile set.tres" id="1_x1i17"]
+[ext_resource type="Script" uid="uid://c2sqtgc1bhd60" path="res://Scripts/Dungeon/Boss/boss_room.gd" id="1_xkndn"]
 [ext_resource type="PackedScene" uid="uid://dm8dvtbhkt2v5" path="res://Scenes/Enemies/BOSS.tscn" id="2_725q6"]
 [ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="3_xkndn"]
 [ext_resource type="PackedScene" uid="uid://bef8ss0co4pc4" path="res://Scenes/UI/BossBar.tscn" id="4_x3syg"]
-[ext_resource type="AudioStream" uid="uid://c2r3yewefr6rm" path="res://Sounds/Music/Boss.mp3" id="6_xkndn"]
+[ext_resource type="AudioStream" uid="uid://drje1d52tjt55" path="res://Sounds/Music/Boss Music V2.mp3" id="6_xkndn"]
 
 [sub_resource type="Gradient" id="Gradient_syqex"]
 offsets = PackedFloat32Array(0, 0.09146342, 0.6707317, 1)
@@ -16,6 +17,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Boss Room" type="Node2D" unique_id=1960524575]
+script = ExtResource("1_xkndn")
 
 [node name="Map" type="Node2D" parent="." unique_id=132261497]
 position = Vector2(22.000015, 2)
@@ -69,6 +71,5 @@ scale = Vector2(0.825, 0.825)
 zoom = Vector2(2.355, 2.37)
 limit_enabled = false
 
-[node name="boss" type="AudioStreamPlayer" parent="." unique_id=2138312873]
+[node name="boss mus" type="AudioStreamPlayer" parent="." unique_id=2138312873]
 stream = ExtResource("6_xkndn")
-autoplay = true

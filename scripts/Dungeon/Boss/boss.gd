@@ -4,7 +4,7 @@ class_name BOSS
 
 @export var speed: float = 20
 @export var damage: int = 10
-@onready var boss: AudioStreamPlayer = $"../boss"
+@onready var boss: AudioStreamPlayer = $"../boss mus"
 @onready var animations = $AnimatedSprite2D
 @onready var damage_time: Timer = $DamageTime
 @onready var hp_barr: TextureProgressBar = $"../CanvasLayer/HPBarr"
