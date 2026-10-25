@@ -1,0 +1,11 @@
+~ start
+$> cassius.canMove = false
+Cassus: Rene?
+Cassus: Where are you?
+$> cassius.canMove = true
+=> END
+
+~ shrine
+Cassus: What...
+Cassus: What is this...?
+=> END

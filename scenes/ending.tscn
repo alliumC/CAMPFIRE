@@ -17,8 +17,6 @@ color = Color(0, 0, 0, 1)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1188162752]
 anchor_mode = 0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=1173310722]
-
 [node name="Node" type="Node" parent="." unique_id=1818827381]
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=493010219]
