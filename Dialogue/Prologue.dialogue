@@ -1,0 +1,32 @@
+~ start
+Rene: Hello? Cassius? Earth to Cassus!
+Rene: What are you zoning out about? This is important!
+
+[speed=0.7][i]You just can't shake this... feeling.[/i]
+[i]You can’t exactly describe what it is — but it’s not pleasant.[/i][/speed]
+=> END
+
+~ continued
+Rene: We must descend into a dungeon found deep within the forest in order to fulfill our god’s will. 
+Cassius: “We”?
+$> cutscene_screen_2.visible = true
+$> cutscene_screen_1.visible = false
+Rene: Yes! I cannot do this alone, Cassius. I need you in order to finally fulfill my purpose. 
+
+[speed=0.7][i]You feel iffy about this.[/i]
+[i]Why should you even go with Rene?[/i][/speed]
+
+$> cutscene_screen_3.visible = true
+$> cutscene_screen_2.visible = false
+
+Rene: Well? Shall we be off?
+
+[speed=0.7][i]You so desperately want to say ‘no’.[/i]
+[i]To just walk away and leave them to face this alone.[/i]
+[i]But maybe… You can finally take part in the prosperity they always bask in.[/i]
+[i]Perhaps if you just show your devotion…[/i][/speed]
+
+Cassius: …Alright. We’ll set off.
+
+Rene: I knew I could count on you.
+=> END

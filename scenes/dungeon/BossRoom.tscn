@@ -2,8 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://tyrhxra0mp52" path="res://Assets/Dungeon/dungeont tile set.tres" id="1_x1i17"]
 [ext_resource type="Script" uid="uid://c2sqtgc1bhd60" path="res://Scripts/Dungeon/Boss/boss_room.gd" id="1_xkndn"]
-[ext_resource type="PackedScene" uid="uid://dm8dvtbhkt2v5" path="res://Scenes/Enemies/BOSS.tscn" id="2_725q6"]
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="3_xkndn"]
+[ext_resource type="PackedScene" uid="uid://dm8dvtbhkt2v5" path="res://Scenes/enemies/BOSS.tscn" id="2_725q6"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/player.tscn" id="3_xkndn"]
 [ext_resource type="PackedScene" uid="uid://bef8ss0co4pc4" path="res://Scenes/UI/BossBar.tscn" id="4_x3syg"]
 [ext_resource type="AudioStream" uid="uid://drje1d52tjt55" path="res://Sounds/Music/Boss Music V2.mp3" id="6_xkndn"]
 

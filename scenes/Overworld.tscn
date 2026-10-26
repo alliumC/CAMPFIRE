@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://byk555wkqyfg6"]
 
 [ext_resource type="Script" uid="uid://b7fsfj8c03v8d" path="res://Scripts/Overworld/overworld.gd" id="1_gacct"]
-[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/Player.tscn" id="1_puia7"]
+[ext_resource type="PackedScene" uid="uid://cweb57j5vgjfq" path="res://Scenes/player.tscn" id="1_puia7"]
 [ext_resource type="Texture2D" uid="uid://cytu7cwip8jd8" path="res://Assets/Home/Tiled_files/exterior.png" id="2_gacct"]
 [ext_resource type="Texture2D" uid="uid://qjeiv8hxhkxp" path="res://Assets/Home/Sprites-Anims/Cave.png" id="3_bos8a"]
 [ext_resource type="Script" uid="uid://bjmuvbx8gb7mu" path="res://Scripts/cave.gd" id="3_w51ix"]

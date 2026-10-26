@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://djw05hacej3es"
-path="res://.godot/imported/Star Crush.otf-3735ff284814273287a9a89928d31c74.fontdata"
+path="res://.godot/imported/Star Crush.otf-2911cd392f73b0512c74dcd6830d9510.fontdata"
 
 [deps]
 
-source_file="res://Assets/Font/Star Crush.otf"
-dest_files=["res://.godot/imported/Star Crush.otf-3735ff284814273287a9a89928d31c74.fontdata"]
+source_file="res://Assets/font/Star Crush.otf"
+dest_files=["res://.godot/imported/Star Crush.otf-2911cd392f73b0512c74dcd6830d9510.fontdata"]
 
 [params]
 
